@@ -161,6 +161,14 @@ p {
     text-decoration: none;
 }
 
+/* Tambahan untuk gambar logo */
+.logo-img {
+    height: 45px; /* Atur tinggi logo sesuai kebutuhan */
+    width: auto;
+    margin-right: 0.75rem; /* Jarak antara logo dan teks */
+    object-fit: contain;
+}
+
 .scrolled .logo {
     color: var(--color-primary);
 }
