@@ -1104,3 +1104,81 @@ p {
         scroll-behavior: auto !important;
     }
 }
+
+/* === PPDB REVISION STYLES === */
+
+/* Step 1 Start Layout (Centered Text) */
+.timeline-row.start-step {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.timeline-row.start-step .timeline-text {
+    max-width: 700px;
+}
+
+.timeline-row.start-step .step-num {
+    text-align: center;
+}
+
+/* Small note styling */
+.small-note {
+    font-size: 0.9rem;
+    color: #666;
+    margin-top: 1rem;
+}
+
+/* Step List Styling */
+.step-list {
+    list-style: none;
+    padding-left: 0;
+    margin: 1rem 0;
+}
+
+.step-list li {
+    position: relative;
+    padding-left: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: var(--color-text);
+}
+
+.step-list li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: var(--color-accent);
+    font-weight: bold;
+    font-size: 1.2rem;
+    line-height: 1;
+}
+
+/* Requirements Info Box */
+.req-info-box {
+    background: #fff;
+    padding: 3rem 2rem;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    border: 1px solid #eee;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.req-info-box .info-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.req-info-box p {
+    font-size: 1.1rem;
+    color: var(--color-text);
+    margin: 0;
+}
+
+/* Responsive tweaks for Step 1 */
+@media (max-width: 768px) {
+    .timeline-row.start-step {
+        text-align: left;
+    }
+}
