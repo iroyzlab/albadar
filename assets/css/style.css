@@ -161,14 +161,6 @@ p {
     text-decoration: none;
 }
 
-/* Tambahan untuk gambar logo */
-.logo-img {
-    height: 45px; /* Atur tinggi logo sesuai kebutuhan */
-    width: auto;
-    margin-right: 0.75rem; /* Jarak antara logo dan teks */
-    object-fit: contain;
-}
-
 .scrolled .logo {
     color: var(--color-primary);
 }
@@ -184,6 +176,13 @@ p {
 .logo-text strong {
     font-weight: 700;
     font-size: 1.1rem;
+}
+
+.logo-img {
+    height: 45px;
+    width: auto;
+    margin-right: 0.75rem;
+    object-fit: contain;
 }
 
 .main-nav .nav-list {
@@ -246,7 +245,7 @@ p {
     background-color: var(--color-text);
 }
 
-/* Hero Section */
+/* Hero Section (Homepage) */
 .hero {
     min-height: 100vh;
     position: relative;
@@ -314,7 +313,6 @@ p {
     margin-bottom: 4rem;
 }
 
-/* Hero Stats (New) */
 .hero-stats {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -543,7 +541,7 @@ p {
     margin-bottom: 0;
 }
 
-/* Stats (Stand-alone, for other pages) */
+/* Stats */
 .stats-grid {
     display: grid;
     gap: 2rem;
@@ -779,6 +777,241 @@ p {
     margin-bottom: 1rem;
 }
 
+/* === PPDB PAGE STYLES === */
+
+/* PPDB Hero */
+.ppdb-hero {
+    min-height: 70vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+    background-color: #04473A;
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+    padding: 8rem 1.5rem 4rem;
+}
+
+.ppdb-hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, rgba(4, 71, 58, 0.85), rgba(4, 71, 58, 0.95));
+}
+
+.ppdb-hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+}
+
+.ppdb-hero-subtitle {
+    font-size: 1.5rem;
+    font-weight: 400;
+    margin-top: -0.5rem;
+    margin-bottom: 1.5rem;
+    opacity: 0.9;
+}
+
+/* Info Card */
+.info-card-section {
+    margin-top: -4rem;
+    position: relative;
+    z-index: 3;
+    padding-bottom: 2rem;
+}
+
+.ppdb-info-card {
+    background: #fff;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 3rem;
+    border-radius: 16px;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+.ppdb-info-card .info-icon {
+    font-size: 2.5rem;
+    color: var(--color-primary);
+    margin-bottom: 1rem;
+}
+
+.ppdb-info-card p {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Timeline */
+.timeline-section {
+    padding: 6rem 0;
+}
+
+.timeline {
+    display: flex;
+    flex-direction: column;
+    gap: 6rem;
+    margin-top: 4rem;
+}
+
+.timeline-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+.timeline-row.reverse .timeline-text {
+    order: 2;
+}
+
+.timeline-text .step-num {
+    display: inline-block;
+    font-family: var(--font-heading);
+    font-size: 3rem;
+    color: var(--color-accent);
+    line-height: 1;
+    margin-bottom: 1rem;
+    opacity: 0.5;
+}
+
+.timeline-image {
+    background-color: #f4f1ea; /* Agar tidak kosong sebelum foto diupload */
+    min-height: 250px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.timeline-image img {
+    width: 100%;
+    border-radius: 12px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.timeline-image img:hover {
+    transform: scale(1.02);
+}
+
+/* Step 1 Start Layout */
+.timeline-row.start-step {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.timeline-row.start-step .timeline-text {
+    max-width: 700px;
+}
+
+.timeline-row.start-step .step-num {
+    text-align: center;
+}
+
+.small-note {
+    font-size: 0.9rem;
+    color: #666;
+    margin-top: 1rem;
+}
+
+.step-list {
+    list-style: none;
+    padding-left: 0;
+    margin: 1rem 0;
+}
+
+.step-list li {
+    position: relative;
+    padding-left: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: var(--color-text);
+}
+
+.step-list li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: var(--color-accent);
+    font-weight: bold;
+    font-size: 1.2rem;
+    line-height: 1;
+}
+
+/* 2 Week Service */
+.two-week-service {
+    background: linear-gradient(135deg, #0d2747 0%, #0a3d62 100%);
+    color: #fff;
+    padding: 6rem 0;
+    text-align: center;
+}
+
+.two-week-service .service-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+/* Requirements */
+.req-info-box {
+    background: #fff;
+    padding: 3rem 2rem;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    border: 1px solid #eee;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.req-info-box .info-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.req-info-box p {
+    font-size: 1.1rem;
+    color: var(--color-text);
+    margin: 0;
+}
+
+/* Final CTA PPDB */
+.ppdb-final-cta {
+    background: linear-gradient(rgba(13, 39, 71, 0.9), rgba(13, 39, 71, 0.9)), url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?q=80&w=2070&auto=format&fit=crop') no-repeat center center/cover;
+}
+
+/* Lightbox */
+.lightbox-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.9);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2000;
+    cursor: pointer;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease;
+}
+
+.lightbox-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.lightbox-overlay img {
+    max-width: 90%;
+    max-height: 90%;
+    border-radius: 8px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+}
+
 /* Responsive */
 @media (max-width: 1024px) {
     .footer-grid { grid-template-columns: 1fr 1fr; }
@@ -854,6 +1087,28 @@ p {
     }
     .hero-stats .stat-item:last-child {
         border-bottom: none;
+    }
+
+    .timeline-row,
+    .timeline-row.reverse {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .timeline-row.reverse .timeline-text {
+        order: 0;
+    }
+    
+    .ppdb-info-card {
+        padding: 2rem;
+    }
+    
+    .two-week-service {
+        padding: 4rem 1.5rem;
+    }
+
+    .timeline-row.start-step {
+        text-align: left;
     }
 }
 
@@ -1102,83 +1357,5 @@ p {
         animation-iteration-count: 1 !important;
         transition-duration: 0.01ms !important;
         scroll-behavior: auto !important;
-    }
-}
-
-/* === PPDB REVISION STYLES === */
-
-/* Step 1 Start Layout (Centered Text) */
-.timeline-row.start-step {
-    display: flex;
-    justify-content: center;
-    text-align: center;
-    margin-bottom: 2rem;
-}
-
-.timeline-row.start-step .timeline-text {
-    max-width: 700px;
-}
-
-.timeline-row.start-step .step-num {
-    text-align: center;
-}
-
-/* Small note styling */
-.small-note {
-    font-size: 0.9rem;
-    color: #666;
-    margin-top: 1rem;
-}
-
-/* Step List Styling */
-.step-list {
-    list-style: none;
-    padding-left: 0;
-    margin: 1rem 0;
-}
-
-.step-list li {
-    position: relative;
-    padding-left: 1.5rem;
-    margin-bottom: 0.5rem;
-    color: var(--color-text);
-}
-
-.step-list li::before {
-    content: "•";
-    position: absolute;
-    left: 0;
-    color: var(--color-accent);
-    font-weight: bold;
-    font-size: 1.2rem;
-    line-height: 1;
-}
-
-/* Requirements Info Box */
-.req-info-box {
-    background: #fff;
-    padding: 3rem 2rem;
-    border-radius: 16px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-    border: 1px solid #eee;
-    max-width: 600px;
-    margin: 0 auto;
-}
-
-.req-info-box .info-icon {
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
-}
-
-.req-info-box p {
-    font-size: 1.1rem;
-    color: var(--color-text);
-    margin: 0;
-}
-
-/* Responsive tweaks for Step 1 */
-@media (max-width: 768px) {
-    .timeline-row.start-step {
-        text-align: left;
     }
 }
