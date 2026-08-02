@@ -2,7 +2,6 @@
 document.addEventListener('DOMContentLoaded', function() {
     // Header scroll effect
     const header = document.getElementById('siteHeader');
-    const heroSection = document.querySelector('.hero');
     
     const handleScroll = () => {
         if (window.scrollY > 50) {
@@ -59,8 +58,8 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Lazy load animations
-    const fadeElements = document.querySelectorAll('.section, .card, .news-card, .gallery-item');
+    // Lazy load animations (Diperluas untuk halaman baru)
+    const fadeElements = document.querySelectorAll('.section, .card, .news-card, .gallery-item, .timeline-row, .feature-card, .facility-card, .program-option-card, .req-info-box, .schedule-card, .stat-item');
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
@@ -79,5 +78,23 @@ document.addEventListener('DOMContentLoaded', function() {
     const yearSpan = document.getElementById('currentYear');
     if (yearSpan) {
         yearSpan.textContent = new Date().getFullYear();
+    }
+
+    // Lightbox functionality for PPDB screenshots
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+    const zoomableImages = document.querySelectorAll('.zoomable');
+
+    zoomableImages.forEach(img => {
+        img.addEventListener('click', function() {
+            lightboxImg.src = this.src;
+            lightbox.classList.add('active');
+        });
+    });
+
+    if (lightbox) {
+        lightbox.addEventListener('click', function() {
+            lightbox.classList.remove('active');
+        });
     }
 });
