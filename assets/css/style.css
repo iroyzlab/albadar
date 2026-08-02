@@ -494,6 +494,48 @@ p {
     font-weight: bold;
 }
 
+/* Profil Lulusan Section (Dark Background Cards) */
+.profile-card {
+    text-align: center;
+    padding: 2.5rem 1.5rem;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: var(--radius-md);
+    transition: var(--transition);
+    height: 100%;
+}
+
+.profile-card:hover {
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+.profile-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background: rgba(212, 181, 130, 0.15);
+}
+
+.profile-card h3 {
+    color: var(--color-secondary);
+    font-size: 1.25rem;
+    margin-bottom: 0.75rem;
+}
+
+.profile-card p {
+    color: rgba(255, 255, 255, 0.85);
+    font-size: 0.95rem;
+    line-height: 1.5;
+    margin: 0;
+}
+
 /* Life Grid */
 .life-grid {
     display: grid;
@@ -779,7 +821,6 @@ p {
 
 /* === PPDB PAGE STYLES === */
 
-/* PPDB Hero */
 .ppdb-hero {
     min-height: 70vh;
     display: flex;
@@ -814,7 +855,6 @@ p {
     opacity: 0.9;
 }
 
-/* Info Card */
 .info-card-section {
     margin-top: -4rem;
     position: relative;
@@ -843,7 +883,6 @@ p {
     margin: 0 auto;
 }
 
-/* Timeline */
 .timeline-section {
     padding: 6rem 0;
 }
@@ -897,7 +936,6 @@ p {
     transform: scale(1.02);
 }
 
-/* Step 1 Start Layout */
 .timeline-row.start-step {
     display: flex;
     justify-content: center;
@@ -942,7 +980,6 @@ p {
     line-height: 1;
 }
 
-/* 2 Week Service */
 .two-week-service {
     background: linear-gradient(135deg, #0d2747 0%, #0a3d62 100%);
     color: #fff;
@@ -955,7 +992,6 @@ p {
     margin-bottom: 1rem;
 }
 
-/* Requirements */
 .req-info-box {
     background: #fff;
     padding: 3rem 2rem;
@@ -977,12 +1013,10 @@ p {
     margin: 0;
 }
 
-/* Final CTA PPDB */
 .ppdb-final-cta {
     background: linear-gradient(rgba(13, 39, 71, 0.9), rgba(13, 39, 71, 0.9)), url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?q=80&w=2070&auto=format&fit=crop') no-repeat center center/cover;
 }
 
-/* Lightbox */
 .lightbox-overlay {
     position: fixed;
     top: 0;
@@ -1051,7 +1085,7 @@ p {
     margin-bottom: 1rem;
 }
 
-/* Student Life Page */
+/* Student Life & Extracurricular Pages */
 .facility-card {
     background: #fff;
     border-radius: var(--radius-md);
@@ -1099,6 +1133,9 @@ p {
     color: var(--color-primary);
     border: 1px solid #e0e0e0;
     transition: var(--transition);
+    text-decoration: none;
+    cursor: pointer;
+    display: inline-block;
 }
 
 .tag-item:hover {
