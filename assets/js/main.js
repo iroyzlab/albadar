@@ -14,27 +14,41 @@ document.addEventListener('DOMContentLoaded', function() {
     window.addEventListener('scroll', handleScroll, { passive: true });
     handleScroll(); // Init on load
 
-    // Mobile menu toggle
+    // Mobile menu toggle & Overlay
     const menuToggle = document.querySelector('.menu-toggle');
     const navList = document.querySelector('.nav-list');
-    
+    const body = document.body;
+
+    // Buat elemen overlay secara otomatis
+    const overlay = document.createElement('div');
+    overlay.className = 'menu-overlay';
+    body.appendChild(overlay);
+
     if (menuToggle) {
         menuToggle.addEventListener('click', function() {
             const expanded = this.getAttribute('aria-expanded') === 'true' || false;
             this.setAttribute('aria-expanded', !expanded);
             navList.classList.toggle('active');
+            overlay.classList.toggle('active');
+            body.classList.toggle('menu-open');
         });
     }
+
+    // Fungsi untuk menutup menu
+    const closeMenu = () => {
+        menuToggle.setAttribute('aria-expanded', 'false');
+        navList.classList.remove('active');
+        overlay.classList.remove('active');
+        body.classList.remove('menu-open');
+    };
+
+    // Close mobile menu ketika overlay (area gelap) diklik
+    overlay.addEventListener('click', closeMenu);
 
     // Close mobile menu when link is clicked
     const navLinks = document.querySelectorAll('.nav-list a');
     navLinks.forEach(link => {
-        link.addEventListener('click', () => {
-            if (navList.classList.contains('active')) {
-                menuToggle.setAttribute('aria-expanded', 'false');
-                navList.classList.remove('active');
-            }
-        });
+        link.addEventListener('click', closeMenu);
     });
 
     // FAQ Accordion
@@ -58,7 +72,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Lazy load animations (Diperluas untuk halaman baru)
+    // Lazy load animations
     const fadeElements = document.querySelectorAll('.section, .card, .news-card, .gallery-item, .timeline-row, .feature-card, .facility-card, .program-option-card, .req-info-box, .schedule-card, .stat-item');
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
