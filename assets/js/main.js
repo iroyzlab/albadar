@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', function() {
         else header.classList.remove('scrolled');
     });
 
-    // Mobile Menu (Previous logic retained)
+    // Mobile Menu
     const menuToggle = document.querySelector('.menu-toggle');
     const navList = document.querySelector('.nav-list');
     const body = document.body;
@@ -24,19 +24,33 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     const closeMenu = () => {
-        menuToggle.setAttribute('aria-expanded', 'false');
-        navList.classList.remove('active');
+        if (menuToggle) menuToggle.setAttribute('aria-expanded', 'false');
+        if (navList) navList.classList.remove('active');
         overlay.classList.remove('active');
         body.classList.remove('menu-open');
     };
     overlay.addEventListener('click', closeMenu);
     document.querySelectorAll('.nav-list a').forEach(link => link.addEventListener('click', closeMenu));
 
-    // Custom Cursor
-    const cursorDot = document.getElementById('cursorDot');
-    const cursorOutline = document.getElementById('cursorOutline');
+    // Custom Cursor (Auto-inject ke semua halaman)
+    let cursorDot = document.getElementById('cursorDot');
+    let cursorOutline = document.getElementById('cursorOutline');
     
     if (window.innerWidth > 768) {
+        // Jika elemen kursor tidak ada di halaman ini, buat otomatis
+        if (!cursorDot) {
+            cursorDot = document.createElement('div');
+            cursorDot.id = 'cursorDot';
+            cursorDot.className = 'cursor-dot';
+            document.body.appendChild(cursorDot);
+        }
+        if (!cursorOutline) {
+            cursorOutline = document.createElement('div');
+            cursorOutline.id = 'cursorOutline';
+            cursorOutline.className = 'cursor-outline';
+            document.body.appendChild(cursorOutline);
+        }
+
         window.addEventListener('mousemove', (e) => {
             cursorDot.style.left = e.clientX + 'px';
             cursorDot.style.top = e.clientY + 'px';
@@ -44,7 +58,8 @@ document.addEventListener('DOMContentLoaded', function() {
             cursorOutline.style.top = e.clientY + 'px';
         });
 
-        document.querySelectorAll('a, button, .bento-card-lux').forEach(el => {
+        // Efek hover untuk semua link, tombol, dan kartu interaktif
+        document.querySelectorAll('a, button, .bento-card-lux, .tag-item, .news-card-lux, .faq-question, .step-card-lux, .facility-card').forEach(el => {
             el.addEventListener('mouseenter', () => cursorOutline.classList.add('hovered'));
             el.addEventListener('mouseleave', () => cursorOutline.classList.remove('hovered'));
         });
@@ -52,26 +67,45 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Reveal on Scroll
     const revealElements = document.querySelectorAll('.reveal, .reveal-stagger');
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach((entry, index) => {
-            if (entry.isIntersecting) {
-                // Stagger delay for hero items
-                if (entry.target.classList.contains('reveal-stagger')) {
-                    const children = Array.from(entry.target.parentNode.children).filter(c => c.classList.contains('reveal-stagger'));
-                    const delay = children.indexOf(entry.target) * 100;
-                    entry.target.style.transitionDelay = `${delay}ms`;
+    if (revealElements.length > 0) {
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    if (entry.target.classList.contains('reveal-stagger')) {
+                        const children = Array.from(entry.target.parentNode.children).filter(c => c.classList.contains('reveal-stagger'));
+                        const delay = children.indexOf(entry.target) * 100;
+                        entry.target.style.transitionDelay = `${delay}ms`;
+                    }
+                    entry.target.classList.add('in-view');
+                    observer.unobserve(entry.target);
                 }
-                entry.target.classList.add('in-view');
-                observer.unobserve(entry.target);
+            });
+        }, { threshold: 0.15 });
+        revealElements.forEach(el => observer.observe(el));
+    }
+
+    // FAQ Accordion (jika ada di halaman)
+    const faqQuestions = document.querySelectorAll('.faq-question');
+    faqQuestions.forEach(question => {
+        question.addEventListener('click', function() {
+            const expanded = this.getAttribute('aria-expanded') === 'true' || false;
+            const answer = this.nextElementSibling;
+            faqQuestions.forEach(q => {
+                q.setAttribute('aria-expanded', 'false');
+                if (q.nextElementSibling) q.nextElementSibling.style.maxHeight = null;
+            });
+            if (!expanded) {
+                this.setAttribute('aria-expanded', 'true');
+                answer.style.maxHeight = answer.scrollHeight + 'px';
             }
         });
-    }, { threshold: 0.15 });
-    revealElements.forEach(el => observer.observe(el));
+    });
 
     // Set Year
-    document.getElementById('currentYear').textContent = new Date().getFullYear();
+    const yearSpan = document.getElementById('currentYear');
+    if (yearSpan) yearSpan.textContent = new Date().getFullYear();
 
-    // Dynamic News Loader
+    // Dynamic News Loader (hanya di index.html)
     const newsContainer = document.getElementById('newsContainer');
     if (newsContainer) {
         const newsData = [
@@ -108,5 +142,22 @@ document.addEventListener('DOMContentLoaded', function() {
                 </div>
             </a>
         `).join('');
+    }
+
+    // Lightbox (hanya di ppdb.html)
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+    const zoomableImages = document.querySelectorAll('.zoomable');
+
+    if (lightbox && lightboxImg) {
+        zoomableImages.forEach(img => {
+            img.addEventListener('click', function() {
+                lightboxImg.src = this.src;
+                lightbox.classList.add('active');
+            });
+        });
+        lightbox.addEventListener('click', function() {
+            lightbox.classList.remove('active');
+        });
     }
 });
