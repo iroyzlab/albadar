@@ -37,7 +37,6 @@ document.addEventListener('DOMContentLoaded', function() {
     let cursorOutline = document.getElementById('cursorOutline');
     
     if (window.innerWidth > 768) {
-        // Jika elemen kursor tidak ada di halaman ini, buat otomatis
         if (!cursorDot) {
             cursorDot = document.createElement('div');
             cursorDot.id = 'cursorDot';
@@ -58,7 +57,6 @@ document.addEventListener('DOMContentLoaded', function() {
             cursorOutline.style.top = e.clientY + 'px';
         });
 
-        // Efek hover untuk semua link, tombol, dan kartu interaktif
         document.querySelectorAll('a, button, .bento-card-lux, .tag-item, .news-card-lux, .faq-question, .step-card-lux, .facility-card').forEach(el => {
             el.addEventListener('mouseenter', () => cursorOutline.classList.add('hovered'));
             el.addEventListener('mouseleave', () => cursorOutline.classList.remove('hovered'));
@@ -84,7 +82,7 @@ document.addEventListener('DOMContentLoaded', function() {
         revealElements.forEach(el => observer.observe(el));
     }
 
-    // FAQ Accordion (jika ada di halaman)
+    // FAQ Accordion
     const faqQuestions = document.querySelectorAll('.faq-question');
     faqQuestions.forEach(question => {
         question.addEventListener('click', function() {
@@ -105,35 +103,17 @@ document.addEventListener('DOMContentLoaded', function() {
     const yearSpan = document.getElementById('currentYear');
     if (yearSpan) yearSpan.textContent = new Date().getFullYear();
 
-    // Dynamic News Loader (hanya di index.html)
+    // Dynamic News Loader
     const newsContainer = document.getElementById('newsContainer');
     if (newsContainer) {
         const newsData = [
-            {
-                tag: "Info PPDB",
-                title: "Pendaftaran Tahun Ajaran 2027/2028 Dibuka",
-                excerpt: "SMP MBS Al Badar Prambanan resmi membuka PPDB. Segera amankan kuota Anda melalui Portal PSB.",
-                img: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?q=80&w=600&auto=format&fit=crop"
-            },
-            {
-                tag: "Kurikulum",
-                title: "Penerapan Koding & AI di Kelas",
-                excerpt: "Sebagai langkah modernisasi, sekolah menyiapkan perangkat Chromebook untuk pembelajaran KKA.",
-                img: "https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=600&auto=format&fit=crop"
-            },
-            {
-                tag: "Karakter",
-                title: "Sinergi Program Sleman Religi",
-                excerpt: "Pengintegrasian program Sleman Religi dengan kepesantrenan untuk membentuk akhlak Qur'ani.",
-                img: "https://images.unsplash.com/photo-1606761568499-6d2451b23c66?q=80&w=600&auto=format&fit=crop"
-            }
+            { tag: "Info PPDB", title: "Pendaftaran Tahun Ajaran 2027/2028 Dibuka", excerpt: "SMP MBS Al Badar Prambanan resmi membuka PPDB. Segera amankan kuota Anda melalui Portal PSB.", img: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?q=80&w=600&auto=format&fit=crop" },
+            { tag: "Kurikulum", title: "Penerapan Koding & AI di Kelas", excerpt: "Sebagai langkah modernisasi, sekolah menyiapkan perangkat Chromebook untuk pembelajaran KKA.", img: "https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=600&auto=format&fit=crop" },
+            { tag: "Karakter", title: "Sinergi Program Sleman Religi", excerpt: "Pengintegrasian program Sleman Religi dengan kepesantrenan untuk membentuk akhlak Qur'ani.", img: "https://images.unsplash.com/photo-1606761568499-6d2451b23c66?q=80&w=600&auto=format&fit=crop" }
         ];
-
         newsContainer.innerHTML = newsData.map(news => `
             <a href="news.html" class="news-card-lux">
-                <div class="news-img-wrap">
-                    <img src="${news.img}" alt="${news.title}">
-                </div>
+                <div class="news-img-wrap"><img src="${news.img}" alt="${news.title}"></div>
                 <div class="news-content-lux">
                     <span class="news-tag-lux">${news.tag}</span>
                     <h3 class="news-title-lux">${news.title}</h3>
@@ -144,11 +124,10 @@ document.addEventListener('DOMContentLoaded', function() {
         `).join('');
     }
 
-    // Lightbox (hanya di ppdb.html)
+    // Lightbox
     const lightbox = document.getElementById('lightbox');
     const lightboxImg = document.getElementById('lightbox-img');
     const zoomableImages = document.querySelectorAll('.zoomable');
-
     if (lightbox && lightboxImg) {
         zoomableImages.forEach(img => {
             img.addEventListener('click', function() {
