@@ -72,20 +72,19 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Lazy load animations
-    const fadeElements = document.querySelectorAll('.section, .card, .news-card, .gallery-item, .timeline-row, .feature-card, .facility-card, .program-option-card, .req-info-box, .schedule-card, .stat-item');
-    const observer = new IntersectionObserver((entries) => {
+    // Reveal on Scroll (Framer Motion Like)
+    const revealElements = document.querySelectorAll('.reveal');
+    const revealObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                entry.target.classList.add('visible');
-                observer.unobserve(entry.target);
+                entry.target.classList.add('in-view');
+                revealObserver.unobserve(entry.target);
             }
         });
-    }, { threshold: 0.1 });
+    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
 
-    fadeElements.forEach(el => {
-        el.classList.add('fade-in');
-        observer.observe(el);
+    revealElements.forEach(el => {
+        revealObserver.observe(el);
     });
 
     // Set current year in footer
