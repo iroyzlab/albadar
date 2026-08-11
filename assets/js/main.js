@@ -115,7 +115,7 @@ document.addEventListener('DOMContentLoaded', function() {
         ];
         newsContainer.innerHTML = newsData.map(news => `
             <a href="news.html" class="news-card-lux">
-                <div class="news-img-wrap"><img src="${news.img}" alt="${news.title}"></div>
+                <div class="news-img-wrap"><img src="${news.img}" alt="${news.title}" onerror="this.onerror=null;this.src='assets/img/placeholder.svg';"></div>
                 <div class="news-content-lux">
                     <span class="news-tag-lux">${news.tag}</span>
                     <h3 class="news-title-lux">${news.title}</h3>
