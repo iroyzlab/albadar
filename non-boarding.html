@@ -16,8 +16,15 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/style.css">
-    <!-- Floating WhatsApp Button Styles -->
+    
+    <!-- Inline CSS Overrides for Non-Boarding Page -->
     <style>
+        .main-nav {
+            margin-left: auto;
+        }
+        .logo {
+            margin-right: 3rem;
+        }
         .wa-float-btn {
             position: fixed;
             bottom: 20px;
@@ -73,68 +80,85 @@
     </header>
 
     <main>
-        <section class="page-hero">
+        <!-- PAGE HERO LUX -->
+        <section class="page-hero bg-emerald">
+            <div class="container text-center">
+                <span class="eyebrow eyebrow-light reveal">Non-Boarding Program</span>
+                <h1 class="page-title reveal">Pendidikan Berkualitas dengan Fleksibilitas Keluarga</h1>
+                <p class="page-subtitle reveal">Solusi tepat bagi keluarga yang menginginkan keunggulan pendidikan Al Badar dengan pendampingan orang tua di rumah.</p>
+            </div>
+        </section>
+
+        <!-- INTRO EDITORIAL -->
+        <section class="section editorial-intro">
             <div class="container">
-                <span class="eyebrow">Non-Boarding Program</span>
-                <h1 class="page-title">Pendidikan Berkualitas dengan Fleksibilitas Keluarga</h1>
-                <p class="page-subtitle">Solusi tepat bagi keluarga yang ingin pendidikan Al Badar dengan pendampingan orang tua di rumah.</p>
-            </div>
-        </section>
-
-        <section class="section">
-            <div class="container intro-grid">
-                <div class="intro-text">
-                    <span class="eyebrow">Sistem Fullday</span>
-                    <h2 class="section-title">Fokus Akademik & Aktivitas Sore</h2>
-                    <p>Program Full Day (Non-Boarding) dirancang untuk siswa yang pulang ke rumah setiap hari. Jam belajar efektif dimaksimalkan dari pukul 07.00 hingga 15.45 WIB, mencakup pembelajaran akademik, keagamaan, dan ekstrakurikuler dasar.</p>
-                    <p>Meskipun tidak tinggal di asrama, siswa Full Day mendapatkan kurikulum yang sama persis (Kurikulum Merdeka, ISMUBA, Koding & AI). Siswa putra dan putri tetap ditempatkan di kelas yang terpisah. Orang tua menjadi mitra utama dalam pendidikan karakter di rumah, sementara sekolah memastikan fondasi akademik dan spiritual terpenuhi dengan standar Al Badar.</p>
-                </div>
-                <div class="intro-image-wrapper">
-                    <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?q=80&w=800&auto=format&fit=crop" alt="Kegiatan Siswa Belajar di Kelas Program Full Day SMP MBS Al Badar Prambanan" loading="lazy" onerror="this.onerror=null;this.src='assets/img/placeholder.svg';">
+                <div class="editorial-grid">
+                    <div class="editorial-text reveal">
+                        <span class="eyebrow-lux">Sistem Full Day</span>
+                        <h2 class="editorial-title">Pendidikan Akademik & <br>Aktivitas Sore Terstruktur</h2>
+                    </div>
+                    <div class="editorial-desc reveal">
+                        <p>Program Full Day (Non-Boarding) dirancang khusus untuk siswa yang pulang ke rumah setiap hari. Jam belajar efektif dimaksimalkan dari pukul 07.00 hingga 15.45 WIB, mencakup pembelajaran akademik, keagamaan, dan ekstrakurikuler dasar.</p>
+                        <p>Meskipun tidak tinggal di asrama, siswa Full Day mendapatkan kurikulum yang sama persis (Kurikulum Merdeka, ISMUBA, Koding & AI) dengan pemisahan kelas putra-putri. Orang tua menjadi mitra utama dalam pendidikan karakter di rumah.</p>
+                    </div>
                 </div>
             </div>
         </section>
 
+        <!-- JADWAL KEGIATAN FULL DAY -->
         <section class="section bg-sand">
             <div class="container">
-                <div class="section-header text-center">
-                    <span class="eyebrow">Jam Efektif</span>
-                    <h2 class="section-title">Jadwal Kegiatan Siswa Full Day</h2>
+                <div class="section-header-lux center reveal">
+                    <span class="eyebrow-lux">Jam Efektif</span>
+                    <h2 class="section-title-lux">Jadwal Kegiatan Siswa Full Day</h2>
                 </div>
                 <div class="cards-grid grid-3">
-                    <div class="schedule-card">
-                        <h3>06:30 - 07:00</h3>
-                        <p>Kedatangan & Tadarus Pagi</p>
+                    <div class="feature-card reveal">
+                        <div class="card-icon" style="font-size: 1.3rem; font-weight: bold; color: var(--color-primary);">06:30 - 07:00</div>
+                        <h3>Kedatangan & Tadarus</h3>
+                        <p>Kedatangan di sekolah, penyambutan 5S, dan pembiasaan tadarus pagi di kelas.</p>
                     </div>
-                    <div class="schedule-card">
-                        <h3>07:00 - 07:30</h3>
-                        <p>Jam Ke-0 (Tahfidz) & Pertemuan Pagi Ceria (PPC)</p>
+                    <div class="feature-card reveal">
+                        <div class="card-icon" style="font-size: 1.3rem; font-weight: bold; color: var(--color-primary);">07:00 - 07:30</div>
+                        <h3>Jam Ke-0 & PPC</h3>
+                        <p>Bimbingan Tahfidz Al-Qur'an dan Pertemuan Pagi Ceria (PPC).</p>
                     </div>
-                    <div class="schedule-card">
-                        <h3>07:30 - 12:00</h3>
-                        <p>Pembelajaran Akademik Inti (Kurikulum Merdeka + KKA)</p>
+                    <div class="feature-card reveal">
+                        <div class="card-icon" style="font-size: 1.3rem; font-weight: bold; color: var(--color-primary);">07:30 - 12:00</div>
+                        <h3>Akademik Inti & KKA</h3>
+                        <p>Pembelajaran Kurikulum Merdeka terpadu Koding & AI (KKA) di kelas/lab.</p>
                     </div>
-                    <div class="schedule-card">
-                        <h3>12:00 - 13:00</h3>
-                        <p>Istirahat & Sholat Dzuhur Berjamaah</p>
+                    <div class="feature-card reveal">
+                        <div class="card-icon" style="font-size: 1.3rem; font-weight: bold; color: var(--color-primary);">12:00 - 13:00</div>
+                        <h3>Ishoma</h3>
+                        <p>Makan siang bersama, istirahat, dan Sholat Dzuhur berjamaah di masjid.</p>
                     </div>
-                    <div class="schedule-card">
-                        <h3>13:00 - 15:00</h3>
-                        <p>Pelajaran ISMUBA & Kokurikuler (Projek Profil Lulusan)</p>
+                    <div class="feature-card reveal">
+                        <div class="card-icon" style="font-size: 1.3rem; font-weight: bold; color: var(--color-primary);">13:00 - 15:00</div>
+                        <h3>ISMUBA & Kokurikuler</h3>
+                        <p>Pelajaran Al-Islam, Kemuhammadiyahan, Bahasa Arab, & Projek Profil (P5).</p>
                     </div>
-                    <div class="schedule-card">
-                        <h3>15:00 - 15:45</h3>
-                        <p>Sholat Ashar Berjamaah & Ekstrakurikuler Dasar</p>
+                    <div class="feature-card reveal">
+                        <div class="card-icon" style="font-size: 1.3rem; font-weight: bold; color: var(--color-primary);">15:00 - 15:45</div>
+                        <h3>Ashar & Ekstrakurikuler</h3>
+                        <p>Sholat Ashar berjamaah, pembinaan minat bakat dasar, dan persiapan kepulangan.</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section class="section bg-emerald text-light text-center">
+        <!-- KEMITRAAN SEKOLAH & ORANG TUA (Luxury Dark Highlight) -->
+        <section class="section bg-lux-dark text-light text-center">
             <div class="container">
-                <h2 class="section-title text-light">Kemitraan Sekolah & Orang Tua</h2>
-                <p class="lead text-light">Kebijakan Zero Smartphone juga berlaku di jam sekolah. Siswa pulang denganPR terstruktur dan tugas murojaah hafalan untuk dikerjakan bersama orang tua di rumah.</p>
-                <a href="ppdb.html" class="btn btn-gold btn-lg">Daftar Program Full Day</a>
+                <div class="section-header-lux center reveal">
+                    <span class="eyebrow-lux text-light">Sinergi Pendidikan</span>
+                    <h2 class="section-title-lux text-light">Kemitraan Erat Sekolah & Orang Tua</h2>
+                </div>
+                <p class="reveal" style="max-width: 800px; margin: 0 auto 2.5rem auto; opacity: 0.9; font-size: 1.15rem; line-height: 1.7;">Kebijakan <strong>Zero Personal Smartphone</strong> juga berlaku penuh selama jam sekolah. Siswa pulang dengan PR terstruktur dan tugas murojaah hafalan untuk didampingi bersama orang tua di rumah.</p>
+                <div class="hero-cta-group reveal" style="justify-content: center;">
+                    <a href="ppdb.html" class="btn-lux btn-gold-lux">Daftar Program Full Day</a>
+                    <a href="https://wa.me/6285729348915" class="btn-lux btn-ghost-lux" target="_blank" rel="noopener">Konsultasi Full Day</a>
+                </div>
             </div>
         </section>
     </main>
