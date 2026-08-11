@@ -2,10 +2,17 @@ document.addEventListener('DOMContentLoaded', function() {
     // Header Scroll
     const header = document.getElementById('siteHeader');
     if (header) {
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 50) header.classList.add('scrolled');
-            else header.classList.remove('scrolled');
-        });
+        const handleHeaderScroll = () => {
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        };
+
+        // Run on page load and on scroll
+        handleHeaderScroll();
+        window.addEventListener('scroll', handleHeaderScroll);
     }
 
     // Mobile Menu
