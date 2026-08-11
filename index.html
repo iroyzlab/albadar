@@ -33,7 +33,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,700;9..144,900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/style.css">
-    <!-- Floating WhatsApp Button Styles -->
+
+    <!-- Inline CSS Overrides for Index Page -->
     <style>
         .wa-float-btn {
             position: fixed;
@@ -60,6 +61,31 @@
             width: 32px;
             height: 32px;
             fill: #ffffff;
+        }
+
+        /* Hero Alignment Fixes */
+        .hero-lux-content {
+            max-width: 850px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        @media (max-width: 768px) {
+            .hero-lux {
+                padding-top: 8rem;
+            }
+            .hero-lux-title {
+                font-size: 2.5rem;
+            }
+        }
+
+        /* Step Number Styling for Admission Steps */
+        .step-number {
+            display: inline-block;
+            font-family: var(--font-heading, 'Fraunces', serif);
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--color-primary, #0F4C3A);
+            margin-bottom: 1rem;
         }
     </style>
 
@@ -147,40 +173,28 @@
             </div>
         </section>
 
-        <!-- BENTO GRID PREMIUM (MBS Colors) -->
+        <!-- BENTO GRID SECTION (Balanced Identity) -->
         <section class="section bento-section-lux">
             <div class="container">
-                <div class="section-header-lux center reveal">
-                    <span class="eyebrow-lux">Kurikulum Operasional 2027/2028</span>
-                    <h2 class="section-title-lux">Keseimbangan Akademik, Teknologi, & Ruhani</h2>
+                <div class="section-header text-center reveal">
+                    <span class="eyebrow">Kurikulum Operasional 2027/2028</span>
+                    <h2 class="section-title">Keseimbangan Ilmu Agama, Akademik, & Teknologi</h2>
                 </div>
-                <div class="bento-grid-lux">
-                    <!-- Large Card (Hijau MBS) -->
-                    <div class="bento-card-lux large reveal">
-                        <div class="bento-content">
-                            <div class="bento-icon">📚</div>
-                            <h3>ISMUBA & Deep Learning</h3>
-                            <p>Integrasi kurikulum nasional dengan Al-Islam, Kemuhammadiyahan, dan Bahasa Arab. Mengadopsi pendekatan <em>Deep Learning</em> yang berkesadaran dan menggembirakan.</p>
-                        </div>
-                        <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?q=80&w=1200&auto=format&fit=crop" alt="Siswa belajar di kelas SMP MBS Al Badar" class="bento-bg-img" loading="lazy" onerror="this.onerror=null;this.src='assets/img/placeholder.svg';">
+                <div class="cards-grid grid-3">
+                    <div class="feature-card reveal">
+                        <div class="card-icon">📖</div>
+                        <h3>ISMUBA & Tahfidz</h3>
+                        <p>Kurikulum Al-Islam, Kemuhammadiyahan, Bahasa Arab, dan target hafalan 5 Juz Al-Qur'an.</p>
                     </div>
-                    <!-- Medium Card (Putih) -->
-                    <div class="bento-card-lux reveal">
-                        <div class="bento-icon">💻</div>
+                    <div class="feature-card reveal">
+                        <div class="card-icon">💻</div>
                         <h3>Koding & AI (KKA)</h3>
                         <p>Literasi digital, koding, dan AI terstruktur. Membekali murid menjadi inovator global yang beretika.</p>
                     </div>
-                    <!-- Medium Card (Biru MBS) -->
-                    <div class="bento-card-lux blue reveal">
-                        <div class="bento-icon">🛡️</div>
+                    <div class="feature-card reveal">
+                        <div class="card-icon">🛡️</div>
                         <h3>Adab Digital</h3>
-                        <p>Kebijakan <strong>Zero Smartphone</strong>. Penggunaan perangkat sekolah yang diawasi ketat, membentuk akhlak digital tanpa kompromi.</p>
-                    </div>
-                    <!-- Wide Card (Putih) -->
-                    <div class="bento-card-lux wide reveal">
-                        <div class="bento-icon">📖</div>
-                        <h3>Tahfidz & Bahasa Aktif</h3>
-                        <p>Target hafalan 5 Juz Al-Qur'an. Pembiasaan komunikasi Bahasa Arab & Inggris aktif harian untuk membangun wawasan global dan kefahaman agama yang mendalam.</p>
+                        <p>Kebijakan Zero Smartphone. Penggunaan perangkat sekolah yang diawasi, membentuk akhlak digital.</p>
                     </div>
                 </div>
             </div>
@@ -203,30 +217,30 @@
         </section>
 
         <!-- ADMISSION STEPS -->
-        <section class="section steps-section-lux bg-lux-dark">
+        <section class="section bg-sand">
             <div class="container">
-                <div class="section-header-lux center reveal">
-                    <span class="eyebrow-lux text-light">Proses Penerimaan</span>
-                    <h2 class="section-title-lux text-light">Langkah Menuju Keluarga Kami</h2>
+                <div class="section-header text-center reveal">
+                    <span class="eyebrow">Proses Penerimaan</span>
+                    <h2 class="section-title">Langkah Menuju Keluarga Kami</h2>
                 </div>
-                <div class="steps-grid-lux">
-                    <div class="step-card-lux reveal">
-                        <span class="step-num-lux">01</span>
+                <div class="cards-grid grid-4">
+                    <div class="feature-card reveal">
+                        <div class="step-number">01</div>
                         <h3>Konsultasi</h3>
                         <p>Hubungi kami via WhatsApp untuk berdiskusi tentang visi pendidikan putra-putri Anda.</p>
                     </div>
-                    <div class="step-card-lux reveal">
-                        <span class="step-num-lux">02</span>
+                    <div class="feature-card reveal">
+                        <div class="step-number">02</div>
                         <h3>Buka Portal PSB</h3>
                         <p>Klik tombol Daftar PPDB untuk menuju Portal Resmi, lalu pilih cabang sekolah.</p>
                     </div>
-                    <div class="step-card-lux reveal">
-                        <span class="step-num-lux">03</span>
+                    <div class="feature-card reveal">
+                        <div class="step-number">03</div>
                         <h3>Lengkapi Data</h3>
                         <p>Buat akun, isi data calon siswa, dan unggah seluruh dokumen persyaratan.</p>
                     </div>
-                    <div class="step-card-lux reveal">
-                        <span class="step-num-lux">04</span>
+                    <div class="feature-card reveal">
+                        <div class="step-number">04</div>
                         <h3>2 Week Service</h3>
                         <p>Panitia memproses pendaftaran dengan layanan cepat tanpa menunggu gelombang.</p>
                     </div>
@@ -244,10 +258,10 @@
         </section>
     </main>
 
-    <footer class="site-footer-lux">
-        <div class="container footer-grid-lux">
-            <div class="footer-col-lux footer-about-lux">
-                <h3>SMP MBS Al Badar Prambanan</h3>
+    <footer class="site-footer">
+        <div class="container footer-grid">
+            <div class="footer-col footer-about">
+                <h3 class="footer-logo">SMP MBS Al Badar Prambanan</h3>
                 <p>Membentuk generasi Qur'ani dan cendekia dengan pendidikan Islam holistik.</p>
                 <div class="social-links">
                     <a href="https://www.instagram.com/mbsalbadar/" target="_blank" rel="noopener" aria-label="Instagram"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163C8.741 0 8.332.014 7.052.072 2.695.272.273 2.69.073 7.052.014 8.332 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.332 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></a>
@@ -256,21 +270,41 @@
                     <a href="mailto:smpmbs.albadar@gmail.com" aria-label="Email"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg></a>
                 </div>
             </div>
-            <div class="footer-col-lux">
+            <div class="footer-col">
                 <h4>Tautan Cepat</h4>
-                <ul><li><a href="about.html">Tentang Kami</a></li><li><a href="programs.html">Program</a></li><li><a href="student-life.html">Kehidupan Siswa</a></li><li><a href="achievements.html">Target Prestasi</a></li><li><a href="news.html">Berita</a></li><li><a href="ppdb.html">PPDB Online</a></li></ul>
+                <ul>
+                    <li><a href="about.html">Tentang Kami</a></li>
+                    <li><a href="programs.html">Program</a></li>
+                    <li><a href="student-life.html">Kehidupan Siswa</a></li>
+                    <li><a href="achievements.html">Target Prestasi</a></li>
+                    <li><a href="news.html">Berita &amp; Pengumuman</a></li>
+                    <li><a href="faq.html">FAQ</a></li>
+                </ul>
             </div>
-            <div class="footer-col-lux">
+            <div class="footer-col">
+                <h4>Program &amp; Kegiatan</h4>
+                <ul>
+                    <li><a href="boarding.html">Boarding School</a></li>
+                    <li><a href="non-boarding.html">Non-Boarding (Day School)</a></li>
+                    <li><a href="ppdb.html">PPDB Online</a></li>
+                    <li><a href="gallery.html">Galeri Foto</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
                 <h4>Kontak</h4>
                 <address>
                     Jl. Kebondalem, Jirak, Bokoharjo, Kec. Prambanan, Kabupaten Sleman, DIY 55572<br><br>
                     <a href="mailto:smpmbs.albadar@gmail.com">smpmbs.albadar@gmail.com</a><br>
-                    <a href="https://wa.me/6285729348915">+62 857-2934-8915</a>
+                    <a href="https://wa.me/6285729348915" target="_blank" rel="noopener">+62 857-2934-8915</a>
                 </address>
+                <a href="https://maps.app.goo.gl/WGBgYvKBKGZ2vmn57" target="_blank" rel="noopener" class="btn btn-outline btn-sm">Lihat di Peta</a>
             </div>
         </div>
-        <div class="footer-bottom-lux">
-            <div class="container"><p>&copy; <span id="currentYear"></span> SMP MBS Al Badar Prambanan. All Rights Reserved.</p></div>
+        <div class="footer-bottom">
+            <div class="container">
+                <p>&copy; <span id="currentYear"></span> SMP MBS Al Badar Prambanan. All Rights Reserved.</p>
+                <p><a href="privacy-policy.html">Kebijakan Privasi</a></p>
+            </div>
         </div>
     </footer>
 
