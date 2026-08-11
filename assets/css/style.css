@@ -95,14 +95,14 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
 .hero-lux { min-height: 100vh; display: flex; align-items: center; color: #fff; position: relative; overflow: hidden; }
 .hero-video-wrapper { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; }
 .hero-video { width: 100%; height: 100%; object-fit: cover; }
-.hero-overlay-lux { position: absolute; inset: 0; background: linear-gradient(135deg, rgba(4, 71, 58, 0.85) 0%, rgba(17, 54, 110, 0.85) 100%); }
+.hero-overlay-lux { position: absolute; inset: 0; background: linear-gradient(135deg, rgba(4, 71, 58, 0.88) 0%, rgba(3, 46, 38, 0.94) 100%); }
 .hero-lux-content { max-width: 800px; padding: 8rem 0; position: relative; z-index: 2; }
-.hero-badge-lux { display: inline-flex; align-items: center; gap: 0.5rem; background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.2); padding: 0.5rem 1.2rem; border-radius: 50px; font-size: 0.9rem; margin-bottom: 2rem; }
+.hero-badge-lux { display: inline-flex; align-items: center; gap: 0.5rem; background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.25); padding: 0.5rem 1.2rem; border-radius: 50px; font-size: 0.9rem; margin-bottom: 2rem; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
 .pulse-dot { width: 8px; height: 8px; background: var(--lux-gold); border-radius: 50%; animation: pulse 2s infinite; }
 @keyframes pulse { 0% { box-shadow: 0 0 0 0 rgba(212, 181, 130, 0.7); } 70% { box-shadow: 0 0 0 10px rgba(212, 181, 130, 0); } 100% { box-shadow: 0 0 0 0 rgba(212, 181, 130, 0); } }
 .hero-lux-title { font-family: var(--font-heading); font-size: clamp(3rem, 7vw, 6rem); line-height: 1.05; font-weight: 400; margin-bottom: 1.5rem; letter-spacing: -0.03em; color: #fff; }
 .hero-lux-title em { font-style: italic; color: var(--lux-gold); font-weight: 300; }
-.hero-lux-subtitle { font-size: 1.25rem; color: rgba(255,255,255,0.8); max-width: 600px; margin-bottom: 3rem; font-weight: 300; }
+.hero-lux-subtitle { font-size: 1.25rem; color: rgba(255,255,255,0.85); max-width: 600px; margin-bottom: 3rem; font-weight: 300; line-height: 1.6; }
 .hero-cta-group { display: flex; gap: 1.5rem; flex-wrap: wrap; }
 
 .editorial-intro { padding: 8rem 0; background: var(--lux-bg); }
@@ -110,27 +110,27 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
 .editorial-title { font-family: var(--font-heading); font-size: clamp(2.5rem, 4vw, 4rem); line-height: 1.1; font-weight: 400; letter-spacing: -0.02em; color: var(--lux-dark); }
 
 .bento-grid-lux { display: grid; grid-template-columns: repeat(3, 1fr); grid-auto-rows: 250px; gap: 1.5rem; }
-.bento-card-lux { background: #fff; border-radius: 24px; padding: 2.5rem; display: flex; flex-direction: column; justify-content: space-between; transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1); position: relative; overflow: hidden; border: 1px solid rgba(0,0,0,0.03); box-shadow: 0 10px 40px rgba(0,0,0,0.03); }
-.bento-card-lux:hover { transform: translateY(-8px); box-shadow: 0 20px 50px rgba(0,0,0,0.08); }
+.bento-card-lux { background: #fff; border-radius: 24px; padding: 2.5rem; display: flex; flex-direction: column; justify-content: space-between; transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.5s ease, border-color 0.5s ease; position: relative; overflow: hidden; border: 1px solid rgba(0,0,0,0.05); box-shadow: 0 10px 40px rgba(0,0,0,0.03); }
+.bento-card-lux:hover { transform: translateY(-8px); box-shadow: 0 20px 50px rgba(4, 71, 58, 0.12); border-color: rgba(212, 181, 130, 0.4); }
 .bento-card-lux.large { grid-column: span 2; grid-row: span 2; background: var(--color-primary); color: #fff; justify-content: flex-end; }
 .bento-card-lux.blue { background: var(--color-secondary); color: #fff; }
 .bento-card-lux.wide { grid-column: span 2; }
-.bento-bg-img { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0.3; z-index: 0; transition: transform 0.8s ease; }
-.bento-card-lux.large:hover .bento-bg-img { transform: scale(1.05); opacity: 0.4; }
+.bento-bg-img { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0.3; z-index: 0; transition: transform 0.8s cubic-bezier(0.25, 1, 0.5, 1); }
+.bento-card-lux.large:hover .bento-bg-img { transform: scale(1.06); opacity: 0.4; }
 .bento-content { position: relative; z-index: 1; }
 .bento-icon { font-size: 2rem; margin-bottom: 1rem; opacity: 0.8; }
 .bento-card-lux h3 { font-size: 1.5rem; margin-bottom: 0.75rem; color: inherit; }
-.bento-card-lux p { color: inherit; opacity: 0.8; }
+.bento-card-lux p { color: inherit; opacity: 0.85; line-height: 1.6; }
 
 .news-section-lux { padding: 8rem 0; background: #F0F4F8; }
 .section-header-lux { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 4rem; }
 .section-header-lux.center { justify-content: center; text-align: center; flex-direction: column; align-items: center; }
 .news-grid-lux { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; }
-.news-card-lux { background: #fff; border-radius: 16px; overflow: hidden; transition: transform 0.4s ease, box-shadow 0.4s ease; text-decoration: none; color: inherit; display: flex; flex-direction: column; }
-.news-card-lux:hover { transform: translateY(-5px); box-shadow: 0 20px 40px rgba(0,0,0,0.08); }
+.news-card-lux { background: #fff; border-radius: 16px; overflow: hidden; transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.4s ease; text-decoration: none; color: inherit; display: flex; flex-direction: column; border: 1px solid rgba(0,0,0,0.03); }
+.news-card-lux:hover { transform: translateY(-6px); box-shadow: 0 20px 45px rgba(4, 71, 58, 0.12); }
 .news-img-wrap { height: 250px; overflow: hidden; }
 .news-img-wrap img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1); }
-.news-card-lux:hover .news-img-wrap img { transform: scale(1.05); }
+.news-card-lux:hover .news-img-wrap img { transform: scale(1.08); }
 .news-content-lux { padding: 1.5rem; flex-grow: 1; display: flex; flex-direction: column; }
 .news-tag-lux { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1px; color: var(--color-secondary); margin-bottom: 0.5rem; font-weight: 600; }
 .news-title-lux { font-family: var(--font-heading); font-size: 1.3rem; margin-bottom: 1rem; line-height: 1.3; color: var(--lux-dark); }
