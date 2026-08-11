@@ -1,4 +1,4 @@
 # robots.txt
 User-agent: *
 Allow: /
-Sitemap: https://albadarprambanan.sch.id/sitemap.xml
+Sitemap: https://iroyzlab.github.io/albadar/sitemap.xml
