@@ -24,6 +24,16 @@ body { font-family: var(--font-body); background-color: var(--lux-bg); color: va
 img { max-width: 100%; height: auto; display: block; }
 a { color: var(--color-primary); text-decoration: none; transition: var(--transition); }
 
+/* Accessibility Focus States */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+    outline: 2px solid #D4B582;
+    outline-offset: 2px;
+}
+
 .container { width: 100%; max-width: 1200px; margin: 0 auto; padding: 0 1.5rem; }
 .container-sm { max-width: 800px; }
 .section { padding: 8rem 0; }
