@@ -16,8 +16,15 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/style.css">
-    <!-- Floating WhatsApp Button Styles -->
+    
+    <!-- Inline CSS Overrides for FAQ Page -->
     <style>
+        .main-nav {
+            margin-left: auto;
+        }
+        .logo {
+            margin-right: 3rem;
+        }
         .wa-float-btn {
             position: fixed;
             bottom: 20px;
@@ -73,17 +80,23 @@
     </header>
 
     <main>
-        <section class="page-hero">
-            <div class="container">
-                <span class="eyebrow">FAQ</span>
-                <h1 class="page-title">Pertanyaan yang Sering Diajukan</h1>
-                <p class="page-subtitle">Temukan jawaban atas pertanyaan umum seputar sistem pendidikan dan pendaftaran di SMP MBS Al Badar Prambanan.</p>
+        <!-- PAGE HERO LUX -->
+        <section class="page-hero bg-emerald">
+            <div class="container text-center">
+                <span class="eyebrow eyebrow-light reveal">Tanya Jawab</span>
+                <h1 class="page-title reveal">Pertanyaan yang Sering Diajukan</h1>
+                <p class="page-subtitle reveal">Temukan jawaban atas pertanyaan umum seputar sistem pendidikan, kurikulum, dan PPDB di SMP MBS Al Badar Prambanan.</p>
             </div>
         </section>
 
-        <section class="section">
+        <!-- LUXURY FAQ SECTION -->
+        <section class="section faq-section">
             <div class="container container-sm">
-                <div class="faq-accordion">
+                <div class="section-header-lux center reveal">
+                    <span class="eyebrow-lux">Pusat Informasi</span>
+                    <h2 class="section-title-lux">Jawaban Pertanyaan Umum</h2>
+                </div>
+                <div class="faq-accordion reveal">
                     <!-- Q1 -->
                     <div class="faq-item">
                         <button class="faq-question" aria-expanded="false">

@@ -16,8 +16,15 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/style.css">
-    <!-- Floating WhatsApp Button Styles -->
+    
+    <!-- Inline CSS Overrides for Achievements Page -->
     <style>
+        .main-nav {
+            margin-left: auto;
+        }
+        .logo {
+            margin-right: 3rem;
+        }
         .wa-float-btn {
             position: fixed;
             bottom: 20px;
@@ -73,36 +80,55 @@
     </header>
 
     <main>
-        <section class="page-hero">
-            <div class="container">
-                <span class="eyebrow">Target Pendidikan</span>
-                <h1 class="page-title">Arah Prestasi & Kompetisi</h1>
-                <p class="page-subtitle">Sebagai sekolah baru, kami menargetkan siswa untuk berani tampil di kompetisi akademik, tahfidz, dan inovasi digital.</p>
+        <!-- PAGE HERO LUX -->
+        <section class="page-hero bg-emerald">
+            <div class="container text-center">
+                <span class="eyebrow eyebrow-light reveal">Target Pendidikan</span>
+                <h1 class="page-title reveal">Arah Prestasi & Kompetisi</h1>
+                <p class="page-subtitle reveal">Membentuk santri yang percaya diri, berdaya saing tinggi, dan siap mengukir prestasi di berbagai ajang regional hingga internasional.</p>
             </div>
         </section>
 
-        <section class="section">
+        <!-- TARGET PRESTASI (Bento Grid Lux) -->
+        <section class="section bento-section-lux">
             <div class="container">
-                <div class="cards-grid grid-2">
-                    <div class="feature-card">
-                        <div class="card-icon">🏆</div>
-                        <h3>Akademik & Sains (STEM)</h3>
-                        <p>Persiapan kompetisi seperti Olimpiade Sains Nasional (OSN), Olimpiade Matematika, dan kompetisi inovasi STEM/Karya Ilmiah Remaja (KIR).</p>
+                <div class="section-header-lux center reveal">
+                    <span class="eyebrow-lux">Peta Kompetisi</span>
+                    <h2 class="section-title-lux">Target Prestasi Santri Al Badar</h2>
+                </div>
+                <div class="bento-grid-lux">
+                    <!-- Large Card (Akademik & Sains / Hijau MBS) -->
+                    <div class="bento-card-lux large reveal">
+                        <div class="bento-content">
+                            <div class="bento-icon">🏆</div>
+                            <h3>Akademik & Sains (STEM)</h3>
+                            <p>Pembinaan intensif menuju Olimpiade Sains Nasional (OSN), Olimpiade Matematika, serta kompetisi karya ilmiah remaja dan inovasi STEAM.</p>
+                        </div>
+                        <img src="https://images.unsplash.com/photo-1588072432836-e10032774350?q=80&w=800&auto=format&fit=crop" alt="Praktikum Sains dan Eksperimen STEM Siswa SMP MBS Al Badar" class="bento-bg-img" loading="lazy" onerror="this.onerror=null;this.src='assets/img/placeholder.svg';">
                     </div>
-                    <div class="feature-card">
-                        <div class="card-icon">📖</div>
-                        <h3>Tahfidz & Keagamaan</h3>
-                        <p>Mempersiapkan siswa untuk MTQ (Musabaqah Tilawatil Qur'an) tingkat kecamatan hingga provinsi, serta kompetisi pidato Bahasa Arab.</p>
+                    <!-- Blue Card (Digital & AI) -->
+                    <div class="bento-card-lux blue reveal">
+                        <div class="bento-content">
+                            <div class="bento-icon">💻</div>
+                            <h3>Digital & AI Innovation</h3>
+                            <p>Keikutsertaan aktif dalam kompetisi koding, robotik, dan pameran karya Kecerdasan Artifisial (AI) tingkat pelajar.</p>
+                        </div>
                     </div>
-                    <div class="feature-card">
-                        <div class="card-icon">💻</div>
-                        <h3>Digital & AI</h3>
-                        <p>Partisipasi dalam kompetisi koding, robotik, dan inovasi Kecerdasan Artifisial (AI) tingkat siswa.</p>
+                    <!-- Card 3 (Tahfidz) -->
+                    <div class="bento-card-lux reveal">
+                        <div class="bento-content">
+                            <div class="bento-icon">📖</div>
+                            <h3>Tahfidz & MTQ</h3>
+                            <p>Mempersiapkan santri tampil di ajang MTQ (Musabaqah Tilawatil Qur'an) dan Lomba Pidato Bahasa Arab.</p>
+                        </div>
                     </div>
-                    <div class="feature-card">
-                        <div class="card-icon">⚔️</div>
-                        <h3>Seni Beladiri & Olahraga</h3>
-                        <p>Pengembangan bakat di ekstrakurikuler Tapak Suci, Hizbul Wathan, Tenis Meja, dan Futsal untuk event antar sekolah.</p>
+                    <!-- Wide Card (Beladiri & Olahraga) -->
+                    <div class="bento-card-lux wide reveal">
+                        <div class="bento-content">
+                            <div class="bento-icon">⚔️</div>
+                            <h3>Seni Beladiri & Olahraga</h3>
+                            <p>Penggemblengan mental dan fisik melalui kejuaraan Tapak Suci, Kepanduan Hizbul Wathan, Tenis Meja, dan Futsal tingkat kabupaten hingga nasional.</p>
+                        </div>
                     </div>
                 </div>
             </div>

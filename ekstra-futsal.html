@@ -4,86 +4,144 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Futsal | SMP MBS Al Badar Prambanan</title>
-    <meta name="description" content="Ekstrakurikuler Futsal di SMP MBS Al Badar Prambanan, Sleman, Yogyakarta. Melatih kebugaran fisik, kerja sama tim, teknik berolahraga, dan sportivitas.">
+    <meta name="description" content="Ekstrakurikuler Futsal SMP MBS Al Badar Prambanan, Sleman, Yogyakarta. Pelatihan taktik futsal, kebugaran fisik, dan turnamen pelajar.">
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://iroyzlab.github.io/albadar/ekstra-futsal.html">
     <meta property="og:title" content="Futsal | SMP MBS Al Badar Prambanan">
-    <meta property="og:description" content="Ekstrakurikuler Futsal di SMP MBS Al Badar Prambanan, Sleman, Yogyakarta. Melatih kebugaran fisik, kerja sama tim, teknik berolahraga, dan sportivitas.">
+    <meta property="og:description" content="Ekstrakurikuler Futsal SMP MBS Al Badar Prambanan, Sleman, Yogyakarta. Pelatihan taktik futsal, kebugaran fisik, dan turnamen pelajar.">
     <meta property="og:image" content="https://iroyzlab.github.io/albadar/assets/img/logo.png">
     <link rel="icon" type="image/png" href="assets/img/favicon.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/style.css">
+    
+    <!-- Inline CSS Overrides for Ekstra Page -->
+    <style>
+        .main-nav {
+            margin-left: auto;
+        }
+        .logo {
+            margin-right: 3rem;
+        }
+        .wa-float-btn {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 999;
+            width: 60px;
+            height: 60px;
+            background-color: #25D366;
+            color: #ffffff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            text-decoration: none;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .wa-float-btn:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 14px rgba(0, 0, 0, 0.4);
+        }
+        .wa-float-btn svg {
+            width: 32px;
+            height: 32px;
+            fill: #ffffff;
+        }
+    </style>
 </head>
 <body>
     <header class="site-header" id="siteHeader">
         <div class="container header-container">
-            <a href="index.html" class="logo"><img src="assets/img/logo.png" alt="Logo SMP MBS Al Badar Prambanan" class="logo-img"><span class="logo-text">SMP MBS<br><strong>Al Badar Prambanan</strong></span></a>
+            <a href="index.html" class="logo">
+                <img src="assets/img/logo.png" alt="Logo SMP MBS Al Badar Prambanan" class="logo-img">
+                <span class="logo-text">SMP MBS<br><strong>Al Badar Prambanan</strong></span>
+            </a>
             <nav class="main-nav" aria-label="Main navigation">
-                <button class="menu-toggle" aria-label="Toggle menu" aria-expanded="false"><span class="menu-bar"></span><span class="menu-bar"></span><span class="menu-bar"></span></button>
+                <button class="menu-toggle" aria-label="Toggle menu" aria-expanded="false">
+                    <span class="menu-bar"></span><span class="menu-bar"></span><span class="menu-bar"></span>
+                </button>
                 <ul class="nav-list">
-                    <li><a href="index.html">Beranda</a></li><li><a href="about.html">Tentang Kami</a></li><li><a href="programs.html">Program</a></li><li><a href="student-life.html">Kehidupan Siswa</a></li><li><a href="news.html">Berita</a></li><li><a href="contact.html">Kontak</a></li><li><a href="ppdb.html" class="nav-cta">PPDB</a></li>
+                    <li><a href="index.html">Beranda</a></li>
+                    <li><a href="about.html">Tentang Kami</a></li>
+                    <li><a href="programs.html">Program</a></li>
+                    <li><a href="student-life.html" class="active">Kehidupan Siswa</a></li>
+                    <li><a href="news.html">Berita</a></li>
+                    <li><a href="contact.html">Kontak</a></li>
+                    <li><a href="ppdb.html" class="nav-cta">PPDB</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
     <main>
-        <section class="page-hero">
+        <!-- PAGE HERO LUX -->
+        <section class="page-hero bg-emerald">
+            <div class="container text-center">
+                <span class="eyebrow eyebrow-light reveal">Ekstrakurikuler Pilihan</span>
+                <h1 class="page-title reveal">Futsal Club</h1>
+                <p class="page-subtitle reveal">Kerjasama Tim, Ketahanan Fisik, Strategi Lapangan, dan Jiwa Sportivitas.</p>
+            </div>
+        </section>
+
+        <!-- EDITORIAL INTRO -->
+        <section class="section editorial-intro">
             <div class="container">
-                <span class="eyebrow">Ekstrakurikuler Pilihan</span>
-                <h1 class="page-title">Futsal</h1>
-                <p class="page-subtitle">Membangun Kerja Sama Tim, Stamina, dan Jiwa Sportivitas.</p>
-            </div>
-        </section>
-
-        <section class="section">
-            <div class="container intro-grid">
-                <div class="intro-text">
-                    <span class="eyebrow">Tentang Futsal</span>
-                    <h2 class="section-title">Olahraga Tim yang Dinamis</h2>
-                    <p>Futsal adalah olahraga bola kecil yang dimainkan di lapangan tertutup. Karena dimainkan dalam ruang sempit, futsal menuntut kecepatan, kelincahan, dan kerja sama tim yang sangat tinggi.</p>
-                    <p>Di SMP MBS Al Badar, ekstrakurikuler futsal tidak hanya mengejar kemenangan, tetapi membentuk karakter. Siswa dilatih untuk disiplin, menghargai rekan setim, menerima kekalahan dengan besar hati, dan menjaga kebugaran fisik untuk menunjang aktivitas belajar dan kepesantrenan.</p>
-                </div>
-                <div class="intro-image-wrapper">
-                    <img src="https://images.unsplash.com/photo-1574629810360-7efbbe195018?q=80&w=800&auto=format&fit=crop" alt="Latihan Olahraga Ekstrakurikuler Futsal Santri SMP MBS Al Badar" loading="lazy" onerror="this.onerror=null;this.src='assets/img/placeholder.svg';">
+                <div class="editorial-grid">
+                    <div class="editorial-text reveal">
+                        <span class="eyebrow-lux">Semangat Sportivitas</span>
+                        <h2 class="editorial-title">Stamina Fisik Tangguh & <br>Kerjasama Tim Solid</h2>
+                    </div>
+                    <div class="editorial-desc reveal">
+                        <p>Ekstrakurikuler Futsal di SMP MBS Al Badar Prambanan memfasilitasi minat dan bakat santri dalam cabang olahraga bola besar yang populer dan penuh kebersamaan.</p>
+                        <p>Pembinaan berfokus pada penguasaan teknik dasar mengolah bola, skema taktik pergerakan cepat, daya tahan fisik, serta penanaman adab dan jiwa sportivitas tinggi baik saat menang maupun kalah.</p>
+                    </div>
                 </div>
             </div>
         </section>
 
+        <!-- FOKUS PEMBINAAN -->
         <section class="section bg-sand">
             <div class="container">
-                <div class="section-header text-center">
-                    <span class="eyebrow">Fokus Pembinaan</span>
-                    <h2 class="section-title">Apa yang Dipelajari?</h2>
+                <div class="section-header-lux center reveal">
+                    <span class="eyebrow-lux">Fokus Pembinaan</span>
+                    <h2 class="section-title-lux">Apa yang Dipelajari?</h2>
                 </div>
                 <div class="cards-grid grid-3">
-                    <div class="feature-card">
+                    <div class="feature-card reveal">
                         <div class="card-icon">⚽</div>
-                        <h3>Teknik Dasar</h3>
-                        <p>Passing (umpan), controlling (kontrol bola), dribbling (menggiring), dan shooting.</p>
+                        <h3>Dribbling & Control</h3>
+                        <p>Keterampilan kontrol bola presisi, umpan pendek cepat (*passing*), dan tembakan gawang (*shooting*).</p>
                     </div>
-                    <div class="feature-card">
-                        <div class="card-icon">🏃</div>
-                        <h3>Fisik & Stamina</h3>
-                        <p>Latihan kardio, kecepatan, dan ketahanan fisik sesuai kebutuhan futsal.</p>
+                    <div class="feature-card reveal">
+                        <div class="card-icon">👥</div>
+                        <h3>Taktik & Organisasi Tim</h3>
+                        <p>Pola pertahanan zona, transisi serangan balik cepat, dan rotasi posisi pemain di lapangan.</p>
                     </div>
-                    <div class="feature-card">
-                        <div class="card-icon">🤝</div>
-                        <h3>Teamwork</h3>
-                        <p>Pola permainan, komunikasi lapangan, dan pemahaman posisi (formasi).</p>
+                    <div class="feature-card reveal">
+                        <div class="card-icon">🏆</div>
+                        <h3>Turnamen Pelajar</h3>
+                        <p>Pembentukan tim futsal unggulan sekolah dan partisipasi dalam liga futsal antarsekolah.</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section class="final-cta">
+        <!-- FINAL CTA LUX -->
+        <section class="section bg-lux-dark text-light text-center">
             <div class="container">
-                <h2 class="section-title">Siap Menjadi Tim?</h2>
-                <p class="lead">Jadilah bagian dari skuad futsal yang tangguh dan sportif.</p>
-                <a href="ppdb.html" class="btn btn-gold btn-lg">Daftar Sekarang</a>
+                <div class="section-header-lux center reveal">
+                    <span class="eyebrow-lux text-light">Tim Unggulan</span>
+                    <h2 class="section-title-lux text-light">Tertarik Bergabung?</h2>
+                </div>
+                <p class="reveal" style="max-width: 800px; margin: 0 auto 2.5rem auto; opacity: 0.9; font-size: 1.15rem; line-height: 1.7;">Tunjukkan keahlian dan semangat olahraga terbaik Anda di Futsal Club SMP MBS Al Badar Prambanan.</p>
+                <div class="hero-cta-group reveal" style="justify-content: center;">
+                    <a href="ppdb.html" class="btn-lux btn-gold-lux">Daftar PPDB Sekarang</a>
+                    <a href="https://wa.me/6285729348915" class="btn-lux btn-ghost-lux" target="_blank" rel="noopener">Konsultasi WhatsApp</a>
+                </div>
             </div>
         </section>
     </main>
@@ -137,6 +195,13 @@
             </div>
         </div>
     </footer>
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/6285729348915" class="wa-float-btn" target="_blank" rel="noopener" aria-label="Chat via WhatsApp">
+        <svg viewBox="0 0 24 24" fill="#ffffff" xmlns="http://www.w3.org/2000/svg">
+            <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/>
+        </svg>
+    </a>
+
     <script src="assets/js/main.js"></script>
 </body>
 </html>
