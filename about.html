@@ -61,8 +61,15 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/style.css">
-    <!-- Floating WhatsApp Button Styles -->
+    
+    <!-- Inline CSS Overrides for About Page -->
     <style>
+        .main-nav {
+            margin-left: auto;
+        }
+        .logo {
+            margin-right: 3rem;
+        }
         .wa-float-btn {
             position: fixed;
             bottom: 20px;
@@ -118,44 +125,50 @@
     </header>
 
     <main>
-        <section class="page-hero">
+        <!-- PAGE HERO LUX -->
+        <section class="page-hero bg-emerald">
+            <div class="container text-center">
+                <span class="eyebrow eyebrow-light reveal">Tentang Kami</span>
+                <h1 class="page-title reveal">Mengenal Lebih Dekat Al Badar</h1>
+                <p class="page-subtitle reveal">Sebuah lembaga pendidikan Islam fullday berbasis pesantren yang berkomitmen membentuk generasi Rabbani yang cerdas dan berakhlak Qur'ani.</p>
+            </div>
+        </section>
+
+        <!-- SEJARAH & LOKASI (Editorial Layout) -->
+        <section class="section editorial-intro">
             <div class="container">
-                <span class="eyebrow eyebrow-light">Tentang Kami</span>
-                <h1 class="page-title">Mengenal Lebih Dekat Al Badar</h1>
-                <p class="page-subtitle">Sebuah lembaga pendidikan Islam fullday berbasis pesantren yang berkomitmen membentuk generasi Rabbani yang cerdas dan berakhlak Qur'ani.</p>
-            </div>
-        </section>
-
-        <section class="section">
-            <div class="container intro-grid">
-                <div class="intro-text">
-                    <span class="eyebrow">Sejarah & Lokasi</span>
-                    <h2 class="section-title">Lingkungan Kondusif untuk Tafaqquh Fiddin</h2>
-                    <p>SMP Muhammadiyah Boarding School Al Badar Prambanan resmi menyelenggarakan kegiatan pendidikan pada Tahun Pelajaran 2026/2027. Berlokasi di Jamusan, Bokoharjo, Prambanan, Kabupaten Sleman, sekolah ini hadir di lingkungan pedesaan yang asri dan jauh dari kebisingan kota.</p>
-                    <p>Letaknya yang berada di area persawahan dengan udara sejuk membuat suasana pembelajaran terasa nyaman, tenang, dan kondusif. Sebagai sekolah berbasis fullday dengan kurikulum pesantren, kami menerapkan sistem di mana siswa putra dan putri tidak ditempatkan dalam satu kelas yang sama, serta menanamkan karakter melalui berbagai kegiatan berbasis keagamaan.</p>
-                </div>
-                <div class="intro-image-wrapper">
-                    <img src="https://images.unsplash.com/photo-1541339907198-e08756dedf3f?q=80&w=800&auto=format&fit=crop" alt="Suasana Lingkungan Asri Kampus Pesantren SMP MBS Al Badar Prambanan Sleman" loading="lazy" onerror="this.onerror=null;this.src='assets/img/placeholder.svg';">
+                <div class="editorial-grid">
+                    <div class="editorial-text reveal">
+                        <span class="eyebrow-lux">Sejarah & Lokasi</span>
+                        <h2 class="editorial-title">Lingkungan Kondusif <br>untuk Tafaqquh Fiddin</h2>
+                    </div>
+                    <div class="editorial-desc reveal">
+                        <p>SMP Muhammadiyah Boarding School Al Badar Prambanan resmi menyelenggarakan kegiatan pendidikan pada Tahun Pelajaran 2026/2027. Berlokasi di Jamusan, Bokoharjo, Prambanan, Kabupaten Sleman, sekolah ini hadir di lingkungan pedesaan yang asri dan jauh dari kebisingan kota.</p>
+                        <p>Letaknya yang berada di area persawahan dengan udara sejuk membuat suasana pembelajaran terasa nyaman, tenang, dan kondusif. Sebagai sekolah berbasis fullday dengan kurikulum pesantren, kami menerapkan sistem di mana siswa putra dan putri tidak ditempatkan dalam satu kelas yang sama, serta menanamkan karakter melalui berbagai kegiatan berbasis keagamaan.</p>
+                    </div>
                 </div>
             </div>
         </section>
 
+        <!-- VISI & MISI (Manifesto Style - Luxury Typography) -->
         <section class="section bg-sand">
             <div class="container">
-                <div class="section-header text-center">
-                    <span class="eyebrow">Dasar Kami</span>
-                    <h2 class="section-title">Visi & Misi</h2>
+                <div class="section-header-lux center reveal">
+                    <span class="eyebrow-lux">Dasar Kami</span>
+                    <h2 class="section-title-lux">Visi & Misi Al Badar</h2>
                 </div>
-                <div class="cards-grid grid-2">
-                    <div class="feature-card">
-                        <h3>Visi</h3>
-                        <p>"Terwujudnya generasi rabbani yang cerdas, berdaya saing, dan berakhlak Qur’ani melalui pembinaan intensif di lingkungan pesantren."</p>
+                <div class="editorial-grid" style="align-items: flex-start;">
+                    <div class="editorial-text reveal">
+                        <span class="eyebrow-lux">Manifesto Visi</span>
+                        <h3 class="editorial-title" style="font-size: 2.2rem; line-height: 1.35; font-style: italic; color: var(--color-primary);">
+                            "Terwujudnya generasi rabbani yang cerdas, berdaya saing, dan berakhlak Qur’ani melalui pembinaan intensif di lingkungan pesantren."
+                        </h3>
                     </div>
-                    <div class="feature-card">
-                        <h3>Misi</h3>
-                        <ul class="check-list">
-                            <li>Mengembangkan kemampuan menghafal Al-Qur'an dan tafaqquh fiddin.</li>
-                            <li>Membimbing murid mencintai Al-Qur'an dan mampu berdakwah bijak.</li>
+                    <div class="editorial-desc reveal">
+                        <span class="eyebrow-lux">Misi Utama</span>
+                        <ul class="check-list" style="margin-top: 1rem;">
+                            <li>Mengembangkan kemampuan menghafal Al-Qur'an dan <em>tafaqquh fiddin</em>.</li>
+                            <li>Membimbing murid mencintai Al-Qur'an dan mampu berdakwah secara bijak.</li>
                             <li>Mendorong murid menjadi insan beriman dan berintelektual tinggi.</li>
                             <li>Menanamkan nilai Islam melalui sinergi rumah, pesantren, masjid, & masyarakat.</li>
                             <li>Membentuk murid aktif dalam pendidikan, dakwah, & kegiatan sosial.</li>
@@ -166,52 +179,95 @@
             </div>
         </section>
 
-        <section class="section">
+        <!-- KEUNGGULAN / NILAI UTAMA (Bento Grid Lux) -->
+        <section class="section bento-section-lux">
             <div class="container">
-                <div class="section-header text-center">
-                    <span class="eyebrow">Keunggulan Sekolah</span>
-                    <h2 class="section-title">Apa yang Membedakan Kami</h2>
+                <div class="section-header-lux center reveal">
+                    <span class="eyebrow-lux">Keunggulan Sekolah</span>
+                    <h2 class="section-title-lux">Apa yang Membedakan Kami</h2>
                 </div>
-                <div class="cards-grid grid-4">
-                    <div class="value-card">
-                        <div class="value-icon">⚖️</div>
-                        <h3>Keseimbangan Pendidikan</h3>
-                        <p>Konsep rahmatan lil 'alamin: keseimbangan antara dunia-akhirat, ilmu-amal, dan hak-kewajiban.</p>
+                <div class="bento-grid-lux">
+                    <!-- Large Card (Hijau MBS) -->
+                    <div class="bento-card-lux large reveal">
+                        <div class="bento-content">
+                            <div class="bento-icon">⚖️</div>
+                            <h3>Keseimbangan Pendidikan</h3>
+                            <p>Konsep <em>rahmatan lil 'alamin</em>: Keseimbangan yang harmonis antara ilmu dunia & bekal akhirat, penguasaan teori & pengamalan, serta hak dan kewajiban sebagai hamba Allah.</p>
+                        </div>
+                        <img src="https://images.unsplash.com/photo-1541339907198-e08756dedf3f?q=80&w=800&auto=format&fit=crop" alt="Suasana Lingkungan Asri Kampus Pesantren SMP MBS Al Badar Prambanan Sleman" class="bento-bg-img" loading="lazy" onerror="this.onerror=null;this.src='assets/img/placeholder.svg';">
                     </div>
-                    <div class="value-card">
-                        <div class="value-icon">🛡️</div>
+                    <!-- Card 2 (Putih) -->
+                    <div class="bento-card-lux reveal">
+                        <div class="bento-icon">🛡️</div>
                         <h3>Penguatan Karakter</h3>
-                        <p>Pembiasaan sholat berjamaah, 5S (senyum, sapa, salam, sopan, santun), dan kemandirian pesantren.</p>
+                        <p>Pembiasaan sholat berjamaah tepat waktu, penerapan 5S (Senyum, Sapa, Salam, Sopan, Santun), dan kemandirian budaya pesantren.</p>
                     </div>
-                    <div class="value-card">
-                        <div class="value-icon">🗣️</div>
+                    <!-- Card 3 (Biru MBS) -->
+                    <div class="bento-card-lux blue reveal">
+                        <div class="bento-icon">🗣️</div>
                         <h3>Pengembangan Bahasa</h3>
-                        <p>Program bilingual aktif (Bahasa Arab & Inggris) harian untuk membuka jendela dunia global.</p>
+                        <p>Program bilingual aktif (Bahasa Arab & Inggris) harian untuk membuka jendela wawasan dunia global dan kedalaman literasi agama.</p>
                     </div>
-                    <div class="value-card">
-                        <div class="value-icon">📖</div>
-                        <h3>Program Tahfidz</h3>
-                        <p>Target hafalan 5 Juz Al-Qur'an dengan pendampingan musyrif/musyrifah yang terstruktur.</p>
+                    <!-- Wide Card (Putih) -->
+                    <div class="bento-card-lux wide reveal">
+                        <div class="bento-content">
+                            <div class="bento-icon">📖</div>
+                            <h3>Program Tahfidz Intensif</h3>
+                            <p>Target hafalan 5 Juz Al-Qur'an selama masa studi dengan pendampingan intensif musyrif dan musyrifah berkualitas di lingkungan yang terpisah putra-putri.</p>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
+        <!-- PROFIL LULUSAN (8 Dimensi) -->
         <section class="section bg-sand">
             <div class="container">
-                <div class="section-header text-center">
-                    <span class="eyebrow">Profil Lulusan</span>
-                    <h2 class="section-title">8 Dimensi yang Kami Bangun</h2>
+                <div class="section-header-lux center reveal">
+                    <span class="eyebrow-lux">Profil Lulusan</span>
+                    <h2 class="section-title-lux">8 Dimensi yang Kami Bangun</h2>
                 </div>
-                <div class="tags-grid">
-                    <span class="tag-item">Keimanan & Ketakwaan</span>
-                    <span class="tag-item">Kewargaan</span>
-                    <span class="tag-item">Kreativitas</span>
-                    <span class="tag-item">Penalaran Kritis</span>
-                    <span class="tag-item">Kolaborasi</span>
-                    <span class="tag-item">Kemandirian</span>
-                    <span class="tag-item">Kesehatan</span>
-                    <span class="tag-item">Komunikasi</span>
+                <div class="cards-grid grid-4">
+                    <div class="feature-card text-center reveal">
+                        <div class="card-icon">✨</div>
+                        <h3>Keimanan & Ketakwaan</h3>
+                        <p>Fondasi akidah dan spiritualitas yang kokoh dalam beribadah sehari-hari.</p>
+                    </div>
+                    <div class="feature-card text-center reveal">
+                        <div class="card-icon">🇮🇩</div>
+                        <h3>Kewargaan</h3>
+                        <p>Cinta tanah air, beretika, dan berkontribusi aktif bagi kemaslahatan masyarakat.</p>
+                    </div>
+                    <div class="feature-card text-center reveal">
+                        <div class="card-icon">💡</div>
+                        <h3>Kreativitas</h3>
+                        <p>Mampu berpikir out-of-the-box dan menghasilkan solusi inovatif secara mandiri.</p>
+                    </div>
+                    <div class="feature-card text-center reveal">
+                        <div class="card-icon">🧠</div>
+                        <h3>Penalaran Kritis</h3>
+                        <p>Mampu menganalisis masalah logis berbasis ilmu pengetahuan dan fikrah Islamiah.</p>
+                    </div>
+                    <div class="feature-card text-center reveal">
+                        <div class="card-icon">🤝</div>
+                        <h3>Kolaborasi</h3>
+                        <p>Keterampilan bekerja sama dalam tim, empati tinggi, dan jiwa kepemimpinan.</p>
+                    </div>
+                    <div class="feature-card text-center reveal">
+                        <div class="card-icon">🎒</div>
+                        <h3>Kemandirian</h3>
+                        <p>Tangguh, disiplin mengelola waktu, dan bertanggung jawab atas tugas pribadi.</p>
+                    </div>
+                    <div class="feature-card text-center reveal">
+                        <div class="card-icon">🏃</div>
+                        <h3>Kesehatan</h3>
+                        <p>Menjaga kebugaran jasmani, jiwa yang sehat, serta gaya hidup bersih beradab.</p>
+                    </div>
+                    <div class="feature-card text-center reveal">
+                        <div class="card-icon">🗣️</div>
+                        <h3>Komunikasi</h3>
+                        <p>Keahlian menyampaikan gagasan secara santun, lugas, dan menguasai bahasa internasional.</p>
+                    </div>
                 </div>
             </div>
         </section>

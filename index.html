@@ -36,6 +36,12 @@
 
     <!-- Inline CSS Overrides for Index Page -->
     <style>
+        .main-nav {
+            margin-left: auto;
+        }
+        .logo {
+            margin-right: 3rem;
+        }
         .wa-float-btn {
             position: fixed;
             bottom: 20px;
@@ -76,16 +82,6 @@
             .hero-lux-title {
                 font-size: 2.5rem;
             }
-        }
-
-        /* Step Number Styling for Admission Steps */
-        .step-number {
-            display: inline-block;
-            font-family: var(--font-heading, 'Fraunces', serif);
-            font-size: 2rem;
-            font-weight: 700;
-            color: var(--color-primary, #0F4C3A);
-            margin-bottom: 1rem;
         }
     </style>
 
@@ -173,28 +169,36 @@
             </div>
         </section>
 
-        <!-- BENTO GRID SECTION (Balanced Identity) -->
+        <!-- BENTO GRID PREMIUM (MBS Colors) -->
         <section class="section bento-section-lux">
             <div class="container">
-                <div class="section-header text-center reveal">
-                    <span class="eyebrow">Kurikulum Operasional 2027/2028</span>
-                    <h2 class="section-title">Keseimbangan Ilmu Agama, Akademik, & Teknologi</h2>
+                <div class="section-header-lux center reveal">
+                    <span class="eyebrow-lux">Kurikulum Operasional 2027/2028</span>
+                    <h2 class="section-title-lux">Keseimbangan Akademik, Teknologi, & Ruhani</h2>
                 </div>
-                <div class="cards-grid grid-3">
-                    <div class="feature-card reveal">
-                        <div class="card-icon">📖</div>
-                        <h3>ISMUBA & Tahfidz</h3>
-                        <p>Kurikulum Al-Islam, Kemuhammadiyahan, Bahasa Arab, dan target hafalan 5 Juz Al-Qur'an.</p>
+                <div class="bento-grid-lux">
+                    <!-- Large Card (Hijau MBS) -->
+                    <div class="bento-card-lux large reveal">
+                        <div class="bento-content">
+                            <div class="bento-icon">📖</div>
+                            <h3>ISMUBA & Tahfidz</h3>
+                            <p>Integrasi kurikulum nasional dengan Al-Islam, Kemuhammadiyahan, Bahasa Arab, dan target hafalan 5 Juz Al-Qur'an dengan metode <em>Deep Learning</em>.</p>
+                        </div>
+                        <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?q=80&w=1200&auto=format&fit=crop" alt="Siswa belajar di kelas SMP MBS Al Badar" class="bento-bg-img" loading="lazy" onerror="this.onerror=null;this.src='assets/img/placeholder.svg';">
                     </div>
-                    <div class="feature-card reveal">
-                        <div class="card-icon">💻</div>
+                    <!-- Medium Card (Biru MBS) -->
+                    <div class="bento-card-lux blue reveal">
+                        <div class="bento-icon">💻</div>
                         <h3>Koding & AI (KKA)</h3>
                         <p>Literasi digital, koding, dan AI terstruktur. Membekali murid menjadi inovator global yang beretika.</p>
                     </div>
-                    <div class="feature-card reveal">
-                        <div class="card-icon">🛡️</div>
-                        <h3>Adab Digital</h3>
-                        <p>Kebijakan Zero Smartphone. Penggunaan perangkat sekolah yang diawasi, membentuk akhlak digital.</p>
+                    <!-- Wide Card (White/Light) -->
+                    <div class="bento-card-lux wide reveal">
+                        <div class="bento-content">
+                            <div class="bento-icon">🛡️</div>
+                            <h3>Adab Digital</h3>
+                            <p>Kebijakan <strong>Zero Smartphone</strong>. Penggunaan perangkat sekolah yang diawasi ketat, membentuk akhlak digital tanpa kompromi.</p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -216,31 +220,31 @@
             </div>
         </section>
 
-        <!-- ADMISSION STEPS -->
-        <section class="section bg-sand">
+        <!-- ADMISSION STEPS (Luxury Dark) -->
+        <section class="section steps-section-lux bg-lux-dark">
             <div class="container">
-                <div class="section-header text-center reveal">
-                    <span class="eyebrow">Proses Penerimaan</span>
-                    <h2 class="section-title">Langkah Menuju Keluarga Kami</h2>
+                <div class="section-header-lux center reveal">
+                    <span class="eyebrow-lux text-light">Proses Penerimaan</span>
+                    <h2 class="section-title-lux text-light">Langkah Menuju Keluarga Kami</h2>
                 </div>
-                <div class="cards-grid grid-4">
-                    <div class="feature-card reveal">
-                        <div class="step-number">01</div>
+                <div class="steps-grid-lux">
+                    <div class="step-card-lux reveal">
+                        <span class="step-num-lux">01</span>
                         <h3>Konsultasi</h3>
                         <p>Hubungi kami via WhatsApp untuk berdiskusi tentang visi pendidikan putra-putri Anda.</p>
                     </div>
-                    <div class="feature-card reveal">
-                        <div class="step-number">02</div>
+                    <div class="step-card-lux reveal">
+                        <span class="step-num-lux">02</span>
                         <h3>Buka Portal PSB</h3>
                         <p>Klik tombol Daftar PPDB untuk menuju Portal Resmi, lalu pilih cabang sekolah.</p>
                     </div>
-                    <div class="feature-card reveal">
-                        <div class="step-number">03</div>
+                    <div class="step-card-lux reveal">
+                        <span class="step-num-lux">03</span>
                         <h3>Lengkapi Data</h3>
                         <p>Buat akun, isi data calon siswa, dan unggah seluruh dokumen persyaratan.</p>
                     </div>
-                    <div class="feature-card reveal">
-                        <div class="step-number">04</div>
+                    <div class="step-card-lux reveal">
+                        <span class="step-num-lux">04</span>
                         <h3>2 Week Service</h3>
                         <p>Panitia memproses pendaftaran dengan layanan cepat tanpa menunggu gelombang.</p>
                     </div>
