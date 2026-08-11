@@ -24,6 +24,16 @@ body { font-family: var(--font-body); background-color: var(--lux-bg); color: va
 img { max-width: 100%; height: auto; display: block; }
 a { color: var(--color-primary); text-decoration: none; transition: var(--transition); }
 
+/* Accessibility Focus States */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+    outline: 2px solid #D4B582;
+    outline-offset: 2px;
+}
+
 .container { width: 100%; max-width: 1200px; margin: 0 auto; padding: 0 1.5rem; }
 .container-sm { max-width: 800px; }
 .section { padding: 8rem 0; }
@@ -38,7 +48,8 @@ a { color: var(--color-primary); text-decoration: none; transition: var(--transi
 h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 400; line-height: 1.2; color: var(--lux-dark); margin-bottom: 1rem; }
 p { margin-bottom: 1rem; color: var(--color-text-muted); }
 .lead { font-size: 1.25rem; font-weight: 300; margin-bottom: 2rem; }
-.eyebrow { display: inline-block; font-size: 0.875rem; font-weight: 500; text-transform: uppercase; letter-spacing: 1px; color: var(--color-accent); margin-bottom: 0.5rem; }
+.eyebrow { display: inline-block; font-size: 0.875rem; font-weight: 500; text-transform: uppercase; letter-spacing: 1px; color: #6B5220; margin-bottom: 0.5rem; }
+.eyebrow-light, .page-hero .eyebrow, .ppdb-hero .eyebrow, .bg-emerald .eyebrow, .bg-lux-dark .eyebrow { color: var(--lux-gold); }
 .eyebrow-lux { display: inline-block; font-size: 0.875rem; font-weight: 500; text-transform: uppercase; letter-spacing: 3px; color: var(--color-secondary); margin-bottom: 1rem; }
 .section-title { margin-bottom: 2rem; }
 .section-title-lux { font-family: var(--font-heading); font-size: clamp(2.5rem, 5vw, 4rem); line-height: 1.1; font-weight: 400; letter-spacing: -0.02em; color: var(--lux-dark); margin-bottom: 2rem; }
