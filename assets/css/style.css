@@ -27,6 +27,7 @@ a { color: var(--color-primary); text-decoration: none; transition: var(--transi
 .section { padding: 8rem 0; }
 .bg-sand { background-color: #F0F4F8; }
 .bg-lux-dark { background-color: var(--lux-dark); color: #fff; }
+.bg-emerald { background-color: var(--color-primary); color: #fff; }
 .text-light { color: #fff; }
 .text-center { text-align: center; }
 .mt-lg { margin-top: 3rem; }
@@ -270,12 +271,19 @@ body.menu-open .menu-bar { background-color: var(--lux-dark); }
 .reveal-stagger { opacity: 0; transform: translateY(40px); transition: opacity 1s cubic-bezier(0.25, 1, 0.5, 1), transform 1s cubic-bezier(0.25, 1, 0.5, 1); }
 .reveal-stagger.in-view { opacity: 1; transform: translateY(0); }
 
+/* Gallery Section */
+.gallery-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+.gallery-item { border-radius: 16px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.05); transition: transform 0.3s ease, box-shadow 0.3s ease; }
+.gallery-item:hover { transform: translateY(-5px); box-shadow: 0 15px 30px rgba(0,0,0,0.1); }
+.gallery-item img { width: 100%; height: 260px; object-fit: cover; display: block; transition: transform 0.5s ease; }
+.gallery-item:hover img { transform: scale(1.05); }
+
 /* Responsive */
 @media (max-width: 1024px) {
     .bento-grid-lux { grid-template-columns: repeat(2, 1fr); }
     .bento-card-lux.large { grid-column: span 2; }
     .editorial-grid { grid-template-columns: 1fr; gap: 2rem; }
-    .news-grid-lux, .news-grid { grid-template-columns: repeat(2, 1fr); }
+    .news-grid-lux, .news-grid, .gallery-grid { grid-template-columns: repeat(2, 1fr); }
     .steps-grid-lux, .grid-4 { grid-template-columns: repeat(2, 1fr); }
     .footer-grid-lux { grid-template-columns: 1fr 1fr; gap: 2rem; }
     .timeline-row, .timeline-row.reverse { grid-template-columns: 1fr; gap: 2rem; }
@@ -291,7 +299,7 @@ body.menu-open .menu-bar { background-color: var(--lux-dark); }
     .bento-grid-lux { grid-template-columns: 1fr; }
     .bento-card-lux.large, .bento-card-lux.wide { grid-column: span 1; grid-row: span 1; min-height: 300px; }
     .section-header-lux { flex-direction: column; align-items: flex-start; gap: 2rem; }
-    .news-grid-lux, .news-grid, .steps-grid-lux, .footer-grid-lux { grid-template-columns: 1fr; }
+    .news-grid-lux, .news-grid, .steps-grid-lux, .footer-grid-lux, .gallery-grid { grid-template-columns: 1fr; }
     .hero-lux-content { padding: 6rem 0; }
     .grid-2, .grid-3, .grid-4, .intro-grid, .program-option-grid { grid-template-columns: 1fr; gap: 2rem; }
 }
