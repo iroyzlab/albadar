@@ -33,8 +33,15 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/style.css">
-    <!-- Floating WhatsApp Button Styles -->
+    
+    <!-- Inline CSS Overrides for Programs Page -->
     <style>
+        .main-nav {
+            margin-left: auto;
+        }
+        .logo {
+            margin-right: 3rem;
+        }
         .wa-float-btn {
             position: fixed;
             bottom: 20px;
@@ -90,102 +97,98 @@
     </header>
 
     <main>
-        <section class="page-hero">
-            <div class="container">
-                <span class="eyebrow">Program Pendidikan</span>
-                <h1 class="page-title">Kurikulum Merdeka Berbasis Pesantren</h1>
-                <p class="page-subtitle">Menyatukan keunggulan akademik, penguasaan teknologi masa depan, dan kedalaman spiritual Islam.</p>
+        <!-- PAGE HERO LUX -->
+        <section class="page-hero bg-emerald">
+            <div class="container text-center">
+                <span class="eyebrow eyebrow-light reveal">Program Pendidikan</span>
+                <h1 class="page-title reveal">Kurikulum Merdeka Berbasis Pesantren</h1>
+                <p class="page-subtitle reveal">Menyatukan keunggulan akademik, penguasaan teknologi masa depan, dan kedalaman spiritual Islam.</p>
             </div>
         </section>
 
-        <!-- Pilihan Program -->
-        <section class="section">
+        <!-- PILIHAN PROGRAM (Bento Grid Lux) -->
+        <section class="section bento-section-lux">
             <div class="container">
-                <div class="program-option-grid">
-                    <div class="program-option-card">
-                        <img src="https://images.unsplash.com/photo-1564981797816-1043664bf78d?q=80&w=800&auto=format&fit=crop" alt="Fasilitas dan Lingkungan Asrama Program Boarding School SMP MBS Al Badar" loading="lazy" onerror="this.onerror=null;this.src='assets/img/placeholder.svg';">
-                        <div class="program-content">
-                            <span class="eyebrow">Program Asrama</span>
-                            <h2>SMP Boarding</h2>
-                            <p>Program pendidikan penuh waktu di mana siswa tinggal di asrama. Fokus pada pembentukan karakter 24 jam, kemandirian, dan pencapaian target Tahfidz 5 Juz.</p>
-                            <ul class="check-list">
-                                <li>Pendampingan musyrif/musyrifah intensif</li>
-                                <li>Pembiasaan ibadah harian berjamaah</li>
-                                <li>Lingkungan Islami terkontrol sepenuhnya</li>
-                            </ul>
-                            <a href="ppdb.html" class="btn btn-primary">Daftar Boarding</a>
+                <div class="section-header-lux center reveal">
+                    <span class="eyebrow-lux">Pilihan Jalur Studi</span>
+                    <h2 class="section-title-lux">Program Boarding & Full Day</h2>
+                </div>
+                <div class="bento-grid-lux">
+                    <!-- Boarding Card (Large Green) -->
+                    <div class="bento-card-lux large reveal">
+                        <div class="bento-content">
+                            <span class="eyebrow-lux" style="color: var(--lux-gold);">Program Asrama</span>
+                            <h3>SMP Boarding School</h3>
+                            <p>Program pendidikan penuh waktu di mana siswa tinggal di asrama. Fokus pada pembentukan karakter 24 jam, kemandirian, dan pencapaian target Tahfidz 5 Juz dengan bimbingan intensif musyrif & musyrifah.</p>
+                            <a href="ppdb.html" class="btn-lux btn-gold-lux mt-md" style="align-self: flex-start;">Daftar Boarding</a>
                         </div>
+                        <img src="https://images.unsplash.com/photo-1564981797816-1043664bf78d?q=80&w=800&auto=format&fit=crop" alt="Fasilitas dan Lingkungan Asrama Program Boarding School SMP MBS Al Badar" class="bento-bg-img" loading="lazy" onerror="this.onerror=null;this.src='assets/img/placeholder.svg';">
                     </div>
-                    <div class="program-option-card">
-                        <img src="https://images.unsplash.com/photo-1610484826917-0f101a7a0a7f?q=80&w=800&auto=format&fit=crop" alt="Suasana Pembelajaran Kelas Program Full Day School SMP MBS Al Badar" loading="lazy" onerror="this.onerror=null;this.src='assets/img/placeholder.svg';">
-                        <div class="program-content">
-                            <span class="eyebrow">Program Harian</span>
-                            <h2>SMP Full Day</h2>
-                            <p>Program harian (Non-Boarding) dengan jam belajar efektif hingga sore (07.00 - 15.45 WIB). Menerapkan kurikulum yang sama dengan Boarding, namun siswa pulang ke rumah.</p>
-                            <ul class="check-list">
-                                <li>Jam belajar padat dan terstruktur</li>
-                                <li>Pembiasaan adab dan karakter Islami</li>
-                                <li>Kemitraan erat dengan orang tua di rumah</li>
-                            </ul>
-                            <a href="ppdb.html" class="btn btn-outline">Daftar Full Day</a>
+                    <!-- Full Day Card (Blue/Wide) -->
+                    <div class="bento-card-lux blue wide reveal">
+                        <div class="bento-content">
+                            <span class="eyebrow-lux" style="color: var(--lux-gold);">Program Harian</span>
+                            <h3>SMP Full Day School</h3>
+                            <p>Program harian (Non-Boarding) dengan jam belajar efektif (07.00 - 15.45 WIB). Menerapkan kurikulum yang sama dengan Boarding (Kurikulum Merdeka, ISMUBA, Koding & AI), dengan pembiasaan karakter terpadu.</p>
+                            <a href="ppdb.html" class="btn-lux btn-ghost-lux mt-md" style="align-self: flex-start;">Daftar Full Day</a>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Struktur Kurikulum -->
+        <!-- STRUKTUR KURIKULUM OPERASIONAL -->
         <section class="section bg-sand">
             <div class="container">
-                <div class="section-header text-center">
-                    <span class="eyebrow">Sistem Pembelajaran</span>
-                    <h2 class="section-title">Struktur Kurikulum Operasional</h2>
+                <div class="section-header-lux center reveal">
+                    <span class="eyebrow-lux">Sistem Pembelajaran</span>
+                    <h2 class="section-title-lux">Struktur Kurikulum Operasional</h2>
                 </div>
                 <div class="cards-grid grid-4">
-                    <div class="feature-card">
+                    <div class="feature-card reveal">
                         <div class="card-icon">📚</div>
                         <h3>Intrakurikuler</h3>
-                        <p>Kurikulum Merdeka yang dipadukan dengan ISMUBA (Al-Islam, Kemuhammadiyahan, Bahasa Arab) dan KKA (Koding & AI). Beban belajar 57 JP per minggu.</p>
+                        <p>Kurikulum Merdeka dipadukan dengan ISMUBA dan Koding & AI (KKA). Beban belajar 57 JP per minggu.</p>
                     </div>
-                    <div class="feature-card">
+                    <div class="feature-card reveal">
                         <div class="card-icon">🤝</div>
-                        <h3>Kokurikuler</h3>
-                        <p>Projek Penguatan Profil Lulusan (P5) lintas disiplin ilmu. Tema unggulan: Gaya Hidup Berkelanjutan, Suara Demokrasi, dan Kearifan Lokal.</p>
+                        <h3>Kokurikuler (P5)</h3>
+                        <p>Projek Penguatan Profil Lulusan lintas disiplin ilmu: Gaya Hidup Berkelanjutan & Demokrasi.</p>
                     </div>
-                    <div class="feature-card">
+                    <div class="feature-card reveal">
                         <div class="card-icon">⚽</div>
                         <h3>Ekstrakurikuler</h3>
-                        <p>Pengembangan minat dan bakat. Wajib: Hizbul Wathan & Tapak Suci. Pilihan: STEM, Coding & AI, Tenis Meja, Futsal, Jurnalistik, dll.</p>
+                        <p>Wajib: Hizbul Wathan & Tapak Suci. Pilihan: STEM, Coding & AI, Futsal, Jurnalistik, Tenis Meja, Sinematografi.</p>
                     </div>
-                    <div class="feature-card">
+                    <div class="feature-card reveal">
                         <div class="card-icon">🕌</div>
-                        <h3>Pembiasaan</h3>
-                        <p>Pertemuan Pagi Ceria (PPC), Sleman Religi, Gerakan 7 KAIH, dan budaya 5S (Senyum, Sapa, Salam, Sopan, Santun) dalam keseharian.</p>
+                        <h3>Pembiasaan Religi</h3>
+                        <p>Pertemuan Pagi Ceria (PPC), Sleman Religi, Gerakan 7 KAIH, dan budaya 5S dalam keseharian.</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Mata Pelajaran Khas -->
+        <!-- MATA PELAJARAN KHAS -->
         <section class="section">
             <div class="container">
-                <div class="section-header text-center">
-                    <span class="eyebrow">Keunggulan Akademik</span>
-                    <h2 class="section-title">Mata Pelajaran Khas</h2>
+                <div class="section-header-lux center reveal">
+                    <span class="eyebrow-lux">Keunggulan Akademik</span>
+                    <h2 class="section-title-lux">Mata Pelajaran Khas</h2>
                 </div>
                 <div class="cards-grid grid-3">
-                    <div class="value-card">
-                        <div class="value-icon">📖</div>
+                    <div class="feature-card reveal">
+                        <div class="card-icon">📖</div>
                         <h3>ISMUBA & Bahasa Arab</h3>
-                        <p>Pendalaman Al-Qur'an Hadits, Akidah Akhlak, Fikih, dan Bahasa Arab aktif untuk komunikasi global dan kefahaman sumber agama.</p>
+                        <p>Pendalaman Al-Qur'an Hadits, Akidah Akhlak, Fikih, dan Bahasa Arab aktif untuk komunikasi global & pemahaman agama.</p>
                     </div>
-                    <div class="value-card">
-                        <div class="value-icon">💻</div>
+                    <div class="feature-card reveal">
+                        <div class="card-icon">💻</div>
                         <h3>Koding & AI (KKA)</h3>
                         <p>Literasi digital, computational thinking, dan pengenalan Kecerdasan Artifisial untuk mempersiapkan murid menjadi inovator.</p>
                     </div>
-                    <div class="value-card">
-                        <div class="value-icon">🔬</div>
+                    <div class="feature-card reveal">
+                        <div class="card-icon">🔬</div>
                         <h3>STEM / STEAM</h3>
                         <p>Pembelajaran Sains, Teknologi, Rekayasa, dan Matematika berbasis proyek untuk melatih penalaran kritis dan kreativitas.</p>
                     </div>
@@ -193,31 +196,33 @@
             </div>
         </section>
 
-        <!-- Kebijakan Digital -->
-        <section class="section bg-emerald text-light">
+        <!-- ADAB DIGITAL / ZERO SMARTPHONE (Luxury Dark) -->
+        <section class="section bg-lux-dark text-light">
             <div class="container text-center">
-                <div class="section-header text-center">
-                    <span class="eyebrow" style="color: var(--color-secondary);">Adab Digital</span>
-                    <h2 class="section-title text-light">Fiqih Informasi & Zero Smartphone</h2>
+                <div class="section-header-lux center reveal">
+                    <span class="eyebrow-lux text-light">Adab Digital</span>
+                    <h2 class="section-title-lux text-light">Fiqih Informasi & Zero Smartphone</h2>
                 </div>
-                <p class="lead text-light" style="max-width: 800px; margin: 0 auto 2rem auto;">Sebagai institusi yang mengusung nilai Tafaqquh fi al-Dīn, digitalisasi pembelajaran tidak dimaknai sekadar memindahkan buku ke layar, melainkan sebagai alat akselerasi kognitif yang tunduk pada kerangka Adab.</p>
-                <div class="cards-grid grid-3">
-                    <div class="stat-item">
-                        <span class="stat-number">🚫</span>
-                        <span class="stat-label">Zero Personal Smartphone: Siswa dilarang membawa gawai pribadi. Digitalisasi 100% menggunakan perangkat sekolah (Chromebook/Lab).</span>
+                <p class="reveal" style="max-width: 800px; margin: 0 auto 3rem auto; opacity: 0.9; font-size: 1.1rem; line-height: 1.7;">Sebagai institusi yang mengusung nilai <em>Tafaqquh fi al-Dīn</em>, digitalisasi pembelajaran tidak dimaknai sekadar memindahkan buku ke layar, melainkan sebagai alat akselerasi kognitif yang tunduk pada kerangka Adab.</p>
+                <div class="steps-grid-lux">
+                    <div class="step-card-lux reveal">
+                        <span class="step-num-lux">01</span>
+                        <h3 style="color: #fff;">Zero Smartphone</h3>
+                        <p>Siswa dilarang membawa gawai pribadi. Digitalisasi 100% menggunakan perangkat sekolah (Chromebook/Lab).</p>
                     </div>
-                    <div class="stat-item">
-                        <span class="stat-number">🔐</span>
-                        <span class="stat-label">DNS Filtering: Akses internet terpusat dan diblokir otomatis untuk situs negatif, pornografi, dan judi.</span>
+                    <div class="step-card-lux reveal">
+                        <span class="step-num-lux">02</span>
+                        <h3 style="color: #fff;">DNS Filtering</h3>
+                        <p>Akses internet terpusat dan diblokir otomatis untuk situs negatif, pornografi, dan judi.</p>
                     </div>
-                    <div class="stat-item">
-                        <span class="stat-number">🤝</span>
-                        <span class="stat-label">Etika Digital: Insersi materi Fiqih Informasi (Tabayyun Digital, etika chat, kesadaran jejak digital).</span>
+                    <div class="step-card-lux reveal">
+                        <span class="step-num-lux">03</span>
+                        <h3 style="color: #fff;">Fiqih Informasi</h3>
+                        <p>Insersi materi etika digital (Tabayyun Digital, etika chat, dan kesadaran jejak digital).</p>
                     </div>
                 </div>
             </div>
         </section>
-
     </main>
 
     <footer class="site-footer">

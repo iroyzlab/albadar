@@ -16,8 +16,15 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/style.css">
-    <!-- Floating WhatsApp Button Styles -->
+    
+    <!-- Inline CSS Overrides for Student Life Page -->
     <style>
+        .main-nav {
+            margin-left: auto;
+        }
+        .logo {
+            margin-right: 3rem;
+        }
         .wa-float-btn {
             position: fixed;
             bottom: 20px;
@@ -73,47 +80,60 @@
     </header>
 
     <main>
-        <section class="page-hero">
-            <div class="container">
-                <span class="eyebrow">Kehidupan Siswa</span>
-                <h1 class="page-title">Belajar, Bertumbuh, Berprestasi</h1>
-                <p class="page-subtitle">Tidak hanya belajar di kelas, siswa Al Badar adalah bagian dari ekosistem pesantren yang aktif, religius, dan kreatif.</p>
+        <!-- PAGE HERO LUX -->
+        <section class="page-hero bg-emerald">
+            <div class="container text-center">
+                <span class="eyebrow eyebrow-light reveal">Kehidupan Siswa</span>
+                <h1 class="page-title reveal">Belajar, Bertumbuh, Berprestasi</h1>
+                <p class="page-subtitle reveal">Tidak hanya belajar di kelas, siswa Al Badar adalah bagian dari ekosistem pesantren yang aktif, religius, dan kreatif.</p>
             </div>
         </section>
 
-        <section class="section">
+        <!-- FASILITAS PENDUKUNG (Bento Grid Lux) -->
+        <section class="section bento-section-lux">
             <div class="container">
-                <div class="section-header text-center">
-                    <span class="eyebrow">Fasilitas Pendukung</span>
-                    <h2 class="section-title">Lingkungan yang Mendukung</h2>
+                <div class="section-header-lux center reveal">
+                    <span class="eyebrow-lux">Fasilitas Pendukung</span>
+                    <h2 class="section-title-lux">Lingkungan Pembelajaran Modern & Kondusif</h2>
                 </div>
-                <div class="cards-grid grid-3">
-                    <div class="facility-card">
-                        <img src="https://images.unsplash.com/photo-1581056771107-24ca5f033842?q=80&w=600&auto=format&fit=crop" alt="Fasilitas Perpustakaan dan Taman Baca SMP MBS Al Badar" loading="lazy" onerror="this.onerror=null;this.src='assets/img/placeholder.svg';">
-                        <h3>Perpustakaan & Taman Baca</h3>
-                        <p>Koleksi buku lengkap untuk mendukung literasi dan riset siswa.</p>
+                <div class="bento-grid-lux">
+                    <!-- Perpustakaan (Large Card) -->
+                    <div class="bento-card-lux large reveal">
+                        <div class="bento-content">
+                            <div class="bento-icon">📚</div>
+                            <h3>Perpustakaan & Taman Baca</h3>
+                            <p>Koleksi buku literasi umum, referensi keislaman, majalah digital, dan ruang baca nyaman untuk mendukung riset dan wawasan siswa.</p>
+                        </div>
+                        <img src="https://images.unsplash.com/photo-1581056771107-24ca5f033842?q=80&w=600&auto=format&fit=crop" alt="Fasilitas Perpustakaan dan Taman Baca SMP MBS Al Badar" class="bento-bg-img" loading="lazy" onerror="this.onerror=null;this.src='assets/img/placeholder.svg';">
                     </div>
-                    <div class="facility-card">
-                        <img src="https://images.unsplash.com/photo-1577412647305-991150c7d163?q=80&w=600&auto=format&fit=crop" alt="Masjid Sekolah Pusat Kegiatan Ibadah Santri SMP MBS Al Badar" loading="lazy" onerror="this.onerror=null;this.src='assets/img/placeholder.svg';">
-                        <h3>Masjid Sekolah</h3>
-                        <p>Pusat ibadah dan kegiatan keagamaan (Sleman Religi) sehari-hari.</p>
+                    <!-- Masjid Sekolah (Blue Card) -->
+                    <div class="bento-card-lux blue reveal">
+                        <div class="bento-content">
+                            <div class="bento-icon">🕌</div>
+                            <h3>Masjid Sekolah</h3>
+                            <p>Pusat ibadah harian, Sleman Religi, kajian sore, dan pembiasaan sholat berjamaah tepat waktu bagi seluruh santri.</p>
+                        </div>
                     </div>
-                    <div class="facility-card">
-                        <img src="https://images.unsplash.com/photo-1574629810360-7efbbe195018?q=80&w=600&auto=format&fit=crop" alt="Laboratorium Komputer dan Digital SMP MBS Al Badar Prambanan" loading="lazy" onerror="this.onerror=null;this.src='assets/img/placeholder.svg';">
-                        <h3>Lab Komputer & Digital</h3>
-                        <p>Fasilitas Chromebook dan Lab untuk pembelajaran Koding, AI, dan Informatika.</p>
+                    <!-- Lab Komputer (Wide Card) -->
+                    <div class="bento-card-lux wide reveal">
+                        <div class="bento-content">
+                            <div class="bento-icon">💻</div>
+                            <h3>Lab Komputer & Digital</h3>
+                            <p>Fasilitas Chromebook modern dan laboratorium komputer terintegrasi untuk pembelajaran Koding, AI, dan Informatika berbasis Adab Digital.</p>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
+        <!-- EKSTRAKURIKULER (Premium Tag Pills) -->
         <section class="section bg-sand">
             <div class="container">
-                <div class="section-header text-center">
-                    <span class="eyebrow">Ekspresi & Bakat</span>
-                    <h2 class="section-title">Ekstrakurikuler</h2>
+                <div class="section-header-lux center reveal">
+                    <span class="eyebrow-lux">Ekspresi & Bakat</span>
+                    <h2 class="section-title-lux">Pengembangan Karakter & Ekstrakurikuler</h2>
                 </div>
-                <div class="tags-grid">
+                <div class="tags-grid reveal">
                     <a href="ekstra-hizbul-wathan.html" class="tag-item">Hizbul Wathan <small>(Wajib)</small></a>
                     <a href="ekstra-tapak-suci.html" class="tag-item">Tapak Suci <small>(Wajib)</small></a>
                     <a href="ekstra-tenis-meja.html" class="tag-item">Tenis Meja</a>
