@@ -74,16 +74,39 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Search Form Logic
+    // Search Bar Logic
+    const searchToggle = document.getElementById('searchToggle');
     const searchForm = document.getElementById('searchForm');
     const searchInput = document.getElementById('searchInput');
-    if (searchForm && searchInput) {
+    const searchClose = document.getElementById('searchClose');
+
+    if (searchForm) {
+        // Toggle Search Bar Open/Close
+        if (searchToggle) {
+            searchToggle.addEventListener('click', function() {
+                searchForm.classList.toggle('active');
+                if (searchForm.classList.contains('active') && searchInput) {
+                    searchInput.focus(); // Focus input when opened
+                }
+            });
+        }
+
+        // Close Search Bar
+        if (searchClose) {
+            searchClose.addEventListener('click', function() {
+                searchForm.classList.remove('active');
+            });
+        }
+
+        // Handle Search Submit (Redirect to Google)
         searchForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-            const searchValue = searchInput.value.trim();
-            if (searchValue) {
-                const targetUrl = 'https://www.google.com/search?q=site:iroyzlab.github.io/albadar/+' + encodeURIComponent(searchValue);
-                window.location.href = targetUrl;
+            e.preventDefault(); // Prevent page reload
+            if (searchInput) {
+                const searchQuery = searchInput.value.trim();
+                if (searchQuery) {
+                    const googleSearchUrl = 'https://www.google.com/search?q=site:iroyzlab.github.io/albadar/+' + encodeURIComponent(searchQuery);
+                    window.location.href = googleSearchUrl;
+                }
             }
         });
     }
