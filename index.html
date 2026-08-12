@@ -35,6 +35,73 @@
     <link rel="stylesheet" href="assets/css/style.css">
 
     <!-- Inline CSS Overrides for Index Page -->
+    <style>
+        .stats-section {
+            padding: 3.5rem 0;
+            background-color: var(--lux-dark);
+            border-top: 1px solid rgba(212, 181, 130, 0.15);
+            border-bottom: 1px solid rgba(212, 181, 130, 0.15);
+            position: relative;
+            z-index: 2;
+        }
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+            align-items: center;
+        }
+        .stat-card {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(212, 181, 130, 0.12);
+            border-radius: 12px;
+            padding: 2rem 1.25rem;
+            text-align: center;
+            transition: transform 0.3s ease, border-color 0.3s ease, background 0.3s ease;
+        }
+        .stat-card:hover {
+            transform: translateY(-4px);
+            border-color: var(--lux-gold);
+            background: rgba(212, 181, 130, 0.05);
+        }
+        .stat-number {
+            font-family: var(--font-heading);
+            font-size: 3.25rem;
+            font-weight: 700;
+            color: var(--lux-gold);
+            line-height: 1;
+            margin-bottom: 0.5rem;
+            letter-spacing: -0.02em;
+        }
+        .stat-label {
+            font-family: var(--font-body);
+            font-size: 0.95rem;
+            font-weight: 500;
+            color: rgba(255, 255, 255, 0.85);
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+        }
+        @media (max-width: 992px) {
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1.25rem;
+            }
+        }
+        @media (max-width: 768px) {
+            .stats-section {
+                padding: 2.5rem 0;
+            }
+            .stats-grid {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+            .stat-card {
+                padding: 1.5rem 1rem;
+            }
+            .stat-number {
+                font-size: 2.75rem;
+            }
+        }
+    </style>
 
     <!-- Schema.org School Structured Data -->
     <script type="application/ld+json">
@@ -100,6 +167,30 @@
                 <div class="hero-cta-group reveal-stagger">
                     <a href="https://psb.mbs.sch.id" class="btn-lux btn-gold-lux" target="_blank" rel="noopener">Daftar PPDB Sekarang</a>
                     <a href="https://wa.me/6285729348915" class="btn-lux btn-ghost-lux" target="_blank" rel="noopener">Konsultasi WhatsApp</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- PREMIUM STATISTICS SECTION -->
+        <section class="stats-section bg-lux-dark">
+            <div class="container">
+                <div class="stats-grid">
+                    <div class="stat-card reveal-stagger">
+                        <div class="stat-number">17</div>
+                        <div class="stat-label">Peserta Didik</div>
+                    </div>
+                    <div class="stat-card reveal-stagger">
+                        <div class="stat-number">21</div>
+                        <div class="stat-label">Tenaga Pendidik</div>
+                    </div>
+                    <div class="stat-card reveal-stagger">
+                        <div class="stat-number">1</div>
+                        <div class="stat-label">Angkatan Pertama</div>
+                    </div>
+                    <div class="stat-card reveal-stagger">
+                        <div class="stat-number">11</div>
+                        <div class="stat-label">Ekstrakurikuler</div>
+                    </div>
                 </div>
             </div>
         </section>
