@@ -51,14 +51,12 @@ document.addEventListener('DOMContentLoaded', function() {
         if (toggleLink) {
             toggleLink.addEventListener('click', function(e) {
                 if (window.innerWidth <= 1024) {
+                    e.preventDefault();
                     const isOpen = item.classList.contains('open');
                     dropdownItems.forEach(d => {
                         if (d !== item) d.classList.remove('open');
                     });
-                    if (!isOpen) {
-                        e.preventDefault();
-                        item.classList.add('open');
-                    }
+                    item.classList.toggle('open');
                 }
             });
         }

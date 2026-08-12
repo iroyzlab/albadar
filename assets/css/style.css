@@ -378,16 +378,20 @@ p {
 }
 
 .dropdown-arrow {
-    font-size: 0.65em;
-    margin-left: 3px;
     display: inline-block;
+    width: 6px;
+    height: 6px;
+    border-right: 1.5px solid currentColor;
+    border-bottom: 1.5px solid currentColor;
+    transform: rotate(45deg) translateY(-2px);
+    margin-left: 5px;
     transition: transform 0.3s ease;
     vertical-align: middle;
 }
 
 .nav-item.dropdown:hover .dropdown-arrow,
 .nav-item.dropdown.open .dropdown-arrow {
-    transform: rotate(180deg);
+    transform: rotate(225deg) translateY(-2px);
 }
 
 .dropdown-menu {
@@ -1903,11 +1907,13 @@ body.menu-open .menu-bar {
         color: var(--lux-gold) !important;
         font-weight: 700;
     }
+    .main-nav .nav-list a.nav-cta-secondary,
     .main-nav .nav-list a.nav-cta {
-        margin-top: 0.5rem;
-        text-align: center;
-        display: inline-block;
-        width: auto;
+        display: block !important;
+        width: 100% !important;
+        text-align: center !important;
+        margin-top: 0.5rem !important;
+        box-sizing: border-box !important;
     }
     /* Mobile / Drawer Dropdown & Search overrides */
     .nav-item.dropdown {
@@ -1921,19 +1927,23 @@ body.menu-open .menu-bar {
         overflow: hidden;
         transform: none;
         box-shadow: none;
-        background: transparent;
-        padding-left: 1rem;
-        border-radius: 0;
+        background: rgba(0, 0, 0, 0.04);
+        padding-left: 0.5rem;
+        border-radius: 8px;
         min-width: auto;
         transition: max-height 0.3s ease, opacity 0.3s ease, padding 0.3s ease;
     }
-    .nav-item.dropdown.open .dropdown-menu,
-    .nav-item.dropdown:hover .dropdown-menu {
+    .nav-item.dropdown.open .dropdown-menu {
         opacity: 1;
         visibility: visible;
         max-height: 300px;
-        padding-top: 0.25rem;
+        padding-top: 0.5rem;
         padding-bottom: 0.5rem;
+        margin-top: 0.35rem;
+    }
+    .dropdown-menu li a {
+        padding-left: 1.25rem !important;
+        font-size: 0.9rem !important;
     }
     .nav-search {
         width: 100%;
