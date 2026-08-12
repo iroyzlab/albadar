@@ -344,6 +344,33 @@ p {
     color: #fff !important;
 }
 
+.main-nav a.nav-cta-secondary {
+    background: transparent;
+    border: 1px solid var(--lux-gold);
+    color: var(--lux-gold) !important;
+    padding: 0.45rem 1.15rem;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 0.85rem;
+    white-space: nowrap;
+    transition: var(--transition);
+    flex-shrink: 0;
+}
+
+.main-nav a.nav-cta-secondary:hover {
+    background: rgba(212, 181, 130, 0.15);
+    color: #ffffff !important;
+}
+
+.site-header.scrolled .main-nav a.nav-cta-secondary {
+    border-color: var(--color-primary);
+    color: var(--color-primary) !important;
+}
+
+.site-header.scrolled .main-nav a.nav-cta-secondary:hover {
+    background: rgba(4, 71, 58, 0.1);
+}
+
 /* Dropdown Menu Styles */
 .nav-item.dropdown {
     position: relative;
@@ -410,68 +437,105 @@ p {
     color: var(--color-primary) !important;
 }
 
-/* Search Form Styles */
-.nav-search,
+/* Premium Expandable Search Component */
 .nav-search-item {
+    position: relative;
     display: flex;
     align-items: center;
     flex-shrink: 0;
 }
 
-.search-form {
-    display: flex;
-    align-items: center;
-    background: rgba(255, 255, 255, 0.15);
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    border-radius: 20px;
-    padding: 0.2rem 0.4rem 0.2rem 0.75rem;
-    transition: var(--transition);
-    flex-shrink: 0;
-}
-
-.site-header.scrolled .search-form {
-    background: rgba(0, 0, 0, 0.05);
-    border-color: rgba(0, 0, 0, 0.15);
-}
-
-.search-form input {
-    border: none;
-    background: transparent;
-    color: #fff;
-    font-size: 0.85rem;
-    font-family: var(--font-body);
-    outline: none;
-    width: 100px;
-    transition: width 0.3s ease, color 0.3s ease;
-}
-
-.site-header.scrolled .search-form input {
-    color: var(--lux-dark);
-}
-
-.search-form input::placeholder {
-    color: rgba(255, 255, 255, 0.7);
-}
-
-.site-header.scrolled .search-form input::placeholder {
-    color: rgba(0, 0, 0, 0.5);
-}
-
-.search-form input:focus {
-    width: 130px;
-}
-
-.search-form button {
+.search-toggle-btn {
     background: transparent;
     border: none;
+    color: #ffffff;
     cursor: pointer;
-    padding: 0 0.2rem;
-    font-size: 0.85rem;
-    line-height: 1;
-    color: inherit;
+    padding: 0.4rem;
     display: flex;
     align-items: center;
     justify-content: center;
+    border-radius: 50%;
+    transition: var(--transition);
+}
+
+.site-header.scrolled .search-toggle-btn {
+    color: var(--lux-dark);
+}
+
+.search-toggle-btn:hover {
+    color: var(--lux-gold);
+}
+
+.search-form-overlay {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    background: #ffffff;
+    padding: 0.35rem 0.5rem 0.35rem 0.85rem;
+    border-radius: 30px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    display: none;
+    align-items: center;
+    gap: 0.4rem;
+    z-index: 1020;
+    border: 1px solid rgba(212, 181, 130, 0.3);
+    min-width: 250px;
+}
+
+.search-form-overlay.active {
+    display: flex;
+    animation: searchFadeIn 0.25s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+@keyframes searchFadeIn {
+    from { opacity: 0; transform: translateY(-50%) scale(0.95); }
+    to { opacity: 1; transform: translateY(-50%) scale(1); }
+}
+
+.search-form-overlay input {
+    border: none;
+    outline: none;
+    background: transparent;
+    color: var(--lux-dark);
+    font-size: 0.85rem;
+    font-family: var(--font-body);
+    width: 140px;
+}
+
+.search-form-overlay input::placeholder {
+    color: #888888;
+}
+
+.search-form-overlay button[type="submit"] {
+    background: var(--color-primary);
+    color: #ffffff;
+    border: none;
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.search-form-overlay button[type="submit"]:hover {
+    background: var(--color-secondary);
+}
+
+.search-close-btn {
+    background: transparent;
+    border: none;
+    color: #888888;
+    cursor: pointer;
+    font-size: 0.9rem;
+    padding: 0.2rem 0.4rem;
+    line-height: 1;
+    transition: var(--transition);
+}
+
+.search-close-btn:hover {
+    color: var(--lux-dark);
 }
 
 .menu-toggle {
@@ -1666,30 +1730,30 @@ p {
 /* === FLOATING WHATSAPP BUTTON (GLOBAL) === */
 .wa-float-btn {
     position: fixed;
-    bottom: 20px;
-    right: 20px;
+    bottom: 15px;
+    right: 15px;
     z-index: 999;
-    width: 60px;
-    height: 60px;
+    width: 45px;
+    height: 45px;
     background-color: #25D366;
     color: #ffffff;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
     text-decoration: none;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .wa-float-btn:hover {
-    transform: scale(1.1);
-    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
+    transform: scale(1.05);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
 }
 
 .wa-float-btn svg {
-    width: 32px;
-    height: 32px;
+    width: 24px;
+    height: 24px;
     fill: #ffffff;
 }
 

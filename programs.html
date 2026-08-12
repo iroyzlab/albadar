@@ -35,6 +35,75 @@
     <link rel="stylesheet" href="assets/css/style.css">
     
     <!-- Inline CSS Overrides for Programs Page -->
+    <style>
+        .curriculum-cat-card {
+            background: #ffffff;
+            border-radius: 16px;
+            padding: 2.25rem 1.75rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+        .curriculum-cat-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.09);
+        }
+        .curriculum-cat-card.green-top {
+            border-top: 4px solid #04473A;
+        }
+        .curriculum-cat-card.blue-top {
+            border-top: 4px solid #11366E;
+        }
+        .curriculum-cat-card.gold-top {
+            border-top: 4px solid #D4B582;
+        }
+        .curriculum-card-header {
+            display: flex;
+            align-items: center;
+            gap: 0.85rem;
+            margin-bottom: 1.25rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid #f0f0f0;
+        }
+        .curriculum-card-icon {
+            font-size: 2.2rem;
+            line-height: 1;
+        }
+        .curriculum-card-title {
+            font-family: var(--font-heading);
+            font-size: 1.35rem;
+            font-weight: 700;
+            color: var(--lux-dark);
+            margin: 0;
+        }
+        .curriculum-subject-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .curriculum-subject-list li {
+            position: relative;
+            padding-left: 1.5rem;
+            margin-bottom: 0.75rem;
+            font-size: 0.95rem;
+            color: #444444;
+            line-height: 1.5;
+        }
+        .curriculum-subject-list li:last-child {
+            margin-bottom: 0;
+        }
+        .curriculum-subject-list li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            top: 0;
+            color: var(--lux-gold);
+            font-weight: 700;
+            font-size: 0.9rem;
+        }
+    </style>
 </head>
 <body>
     <header class="site-header" id="siteHeader">
@@ -43,51 +112,46 @@
                 <img src="assets/img/logo.png" alt="Logo SMP MBS Al Badar Prambanan" class="logo-img">
                 <span class="logo-text">SMP MBS<br><strong>Al Badar Prambanan</strong></span>
             </a>
-                        <nav class="main-nav" aria-label="Main navigation">
+                                    <nav class="main-nav" aria-label="Main navigation">
                 <button class="menu-toggle" aria-label="Toggle menu" aria-expanded="false">
                     <span class="menu-bar"></span><span class="menu-bar"></span><span class="menu-bar"></span>
                 </button>
                 <ul class="nav-list">
-                    <li><a href="index.html">Beranda</a></li>
                     <li class="nav-item dropdown">
-                        <a href="about.html">Tentang Kami <span class="dropdown-arrow">▼</span></a>
+                        <a href="about.html">Sekolah Kami <span class="dropdown-arrow">▼</span></a>
                         <ul class="dropdown-menu">
                             <li><a href="about.html">Profil &amp; Sejarah</a></li>
                             <li><a href="about.html">Visi &amp; Misi</a></li>
-                            <li><a href="about.html">Keunggulan Sekolah</a></li>
+                            <li><a href="programs.html">Program Pendidikan</a></li>
                         </ul>
                     </li>
                     <li class="nav-item dropdown">
-                        <a href="programs.html" class="active">Program <span class="dropdown-arrow">▼</span></a>
+                        <a href="student-life.html">Student Life <span class="dropdown-arrow">▼</span></a>
                         <ul class="dropdown-menu">
-                            <li><a href="boarding.html">Boarding School</a></li>
-                            <li><a href="non-boarding.html">Full Day School</a></li>
-                            <li><a href="programs.html">Kurikulum Khas</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a href="student-life.html">Kehidupan Siswa <span class="dropdown-arrow">▼</span></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="student-life.html">Fasilitas</a></li>
-                            <li><a href="student-life.html">Ekstrakurikuler</a></li>
-                            <li><a href="achievements.html">Target Prestasi</a></li>
+                            <li><a href="student-life.html">Kegiatan Siswa &amp; Fasilitas</a></li>
                             <li><a href="gallery.html">Galeri Foto</a></li>
+                            <li><a href="achievements.html">Target Prestasi</a></li>
                         </ul>
                     </li>
                     <li class="nav-item dropdown">
                         <a href="news.html">Berita &amp; Info <span class="dropdown-arrow">▼</span></a>
                         <ul class="dropdown-menu">
-                            <li><a href="news.html">Berita Terbaru</a></li>
+                            <li><a href="news.html">Kabar Terbaru</a></li>
                             <li><a href="faq.html">FAQ</a></li>
-                            <li><a href="contact.html">Kontak</a></li>
                         </ul>
                     </li>
-                    <li class="nav-search">
-                        <form id="searchForm" class="search-form">
-                            <input type="text" id="searchInput" placeholder="Cari info..." aria-label="Search">
-                            <button type="submit" aria-label="Submit Search">🔍</button>
+                    <!-- Premium Expandable Search -->
+                    <li class="nav-search-item">
+                        <button id="searchToggle" class="search-toggle-btn" aria-label="Open Search">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                        </button>
+                        <form id="searchForm" class="search-form-overlay">
+                            <input type="text" id="searchInput" placeholder="Ketik kata kunci..." aria-label="Search">
+                            <button type="submit" aria-label="Submit Search">Cari</button>
+                            <button type="button" id="searchClose" class="search-close-btn" aria-label="Close Search">✕</button>
                         </form>
                     </li>
+                    <li><a href="contact.html" class="nav-cta-secondary">Kontak</a></li>
                     <li><a href="ppdb.html" class="nav-cta">PPDB</a></li>
                 </ul>
             </nav>
@@ -142,26 +206,52 @@
                     <span class="eyebrow-lux">Sistem Pembelajaran</span>
                     <h2 class="section-title-lux">Struktur Kurikulum Operasional</h2>
                 </div>
-                <div class="cards-grid grid-4">
-                    <div class="feature-card reveal">
-                        <div class="card-icon">📚</div>
-                        <h3>Intrakurikuler</h3>
-                        <p>Kurikulum Merdeka dipadukan dengan ISMUBA dan Koding & AI (KKA). Beban belajar 57 JP per minggu.</p>
+                <div class="cards-grid grid-3">
+                    <!-- Card 1: Materi Diniyah (Islamic Studies) -->
+                    <div class="curriculum-cat-card green-top reveal-stagger">
+                        <div class="curriculum-card-header">
+                            <span class="curriculum-card-icon">🕌</span>
+                            <h3 class="curriculum-card-title">Materi Diniyah</h3>
+                        </div>
+                        <ul class="curriculum-subject-list">
+                            <li>Tauhid/Aqidah</li>
+                            <li>Fiqih</li>
+                            <li>Al-Qur'an Hadits</li>
+                            <li>Tahfidz (Target 5 Juz)</li>
+                            <li>Bahasa Arab</li>
+                            <li>Kemuhammadiyahan (ISMUBA)</li>
+                        </ul>
                     </div>
-                    <div class="feature-card reveal">
-                        <div class="card-icon">🤝</div>
-                        <h3>Kokurikuler (P5)</h3>
-                        <p>Projek Penguatan Profil Lulusan lintas disiplin ilmu: Gaya Hidup Berkelanjutan & Demokrasi.</p>
+
+                    <!-- Card 2: Materi Teknologi (IT & KKA) -->
+                    <div class="curriculum-cat-card blue-top reveal-stagger">
+                        <div class="curriculum-card-header">
+                            <span class="curriculum-card-icon">💻</span>
+                            <h3 class="curriculum-card-title">Materi Teknologi</h3>
+                        </div>
+                        <ul class="curriculum-subject-list">
+                            <li>Koding &amp; Kecerdasan Artifisial (KKA)</li>
+                            <li>Computational Thinking</li>
+                            <li>Logika Pemrograman (Scratch/Python)</li>
+                            <li>Literasi Digital</li>
+                            <li>Fiqih Informasi (Adab Digital)</li>
+                        </ul>
                     </div>
-                    <div class="feature-card reveal">
-                        <div class="card-icon">⚽</div>
-                        <h3>Ekstrakurikuler</h3>
-                        <p>Wajib: Hizbul Wathan & Tapak Suci. Pilihan: STEM, Coding & AI, Futsal, Jurnalistik, Tenis Meja, Sinematografi.</p>
-                    </div>
-                    <div class="feature-card reveal">
-                        <div class="card-icon">🕌</div>
-                        <h3>Pembiasaan Religi</h3>
-                        <p>Pertemuan Pagi Ceria (PPC), Sleman Religi, Gerakan 7 KAIH, dan budaya 5S dalam keseharian.</p>
+
+                    <!-- Card 3: Materi Diknas (Nasional) -->
+                    <div class="curriculum-cat-card gold-top reveal-stagger">
+                        <div class="curriculum-card-header">
+                            <span class="curriculum-card-icon">📚</span>
+                            <h3 class="curriculum-card-title">Materi Diknas</h3>
+                        </div>
+                        <ul class="curriculum-subject-list">
+                            <li>Matematika</li>
+                            <li>Ilmu Pengetahuan Alam (IPA)</li>
+                            <li>Ilmu Pengetahuan Sosial (IPS)</li>
+                            <li>Bahasa Indonesia</li>
+                            <li>Bahasa Inggris</li>
+                            <li>Pendidikan Pancasila</li>
+                        </ul>
                     </div>
                 </div>
             </div>

@@ -25,51 +25,46 @@
                 <img src="assets/img/logo.png" alt="Logo SMP MBS Al Badar Prambanan" class="logo-img">
                 <span class="logo-text">SMP MBS<br><strong>Al Badar Prambanan</strong></span>
             </a>
-                        <nav class="main-nav" aria-label="Main navigation">
+                                    <nav class="main-nav" aria-label="Main navigation">
                 <button class="menu-toggle" aria-label="Toggle menu" aria-expanded="false">
                     <span class="menu-bar"></span><span class="menu-bar"></span><span class="menu-bar"></span>
                 </button>
                 <ul class="nav-list">
-                    <li><a href="index.html">Beranda</a></li>
                     <li class="nav-item dropdown">
-                        <a href="about.html">Tentang Kami <span class="dropdown-arrow">▼</span></a>
+                        <a href="about.html">Sekolah Kami <span class="dropdown-arrow">▼</span></a>
                         <ul class="dropdown-menu">
                             <li><a href="about.html">Profil &amp; Sejarah</a></li>
                             <li><a href="about.html">Visi &amp; Misi</a></li>
-                            <li><a href="about.html">Keunggulan Sekolah</a></li>
+                            <li><a href="programs.html">Program Pendidikan</a></li>
                         </ul>
                     </li>
                     <li class="nav-item dropdown">
-                        <a href="programs.html">Program <span class="dropdown-arrow">▼</span></a>
+                        <a href="student-life.html">Student Life <span class="dropdown-arrow">▼</span></a>
                         <ul class="dropdown-menu">
-                            <li><a href="boarding.html">Boarding School</a></li>
-                            <li><a href="non-boarding.html">Full Day School</a></li>
-                            <li><a href="programs.html">Kurikulum Khas</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a href="student-life.html">Kehidupan Siswa <span class="dropdown-arrow">▼</span></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="student-life.html">Fasilitas</a></li>
-                            <li><a href="student-life.html">Ekstrakurikuler</a></li>
-                            <li><a href="achievements.html">Target Prestasi</a></li>
+                            <li><a href="student-life.html">Kegiatan Siswa &amp; Fasilitas</a></li>
                             <li><a href="gallery.html">Galeri Foto</a></li>
+                            <li><a href="achievements.html">Target Prestasi</a></li>
                         </ul>
                     </li>
                     <li class="nav-item dropdown">
                         <a href="news.html">Berita &amp; Info <span class="dropdown-arrow">▼</span></a>
                         <ul class="dropdown-menu">
-                            <li><a href="news.html">Berita Terbaru</a></li>
+                            <li><a href="news.html">Kabar Terbaru</a></li>
                             <li><a href="faq.html">FAQ</a></li>
-                            <li><a href="contact.html">Kontak</a></li>
                         </ul>
                     </li>
-                    <li class="nav-search">
-                        <form id="searchForm" class="search-form">
-                            <input type="text" id="searchInput" placeholder="Cari info..." aria-label="Search">
-                            <button type="submit" aria-label="Submit Search">🔍</button>
+                    <!-- Premium Expandable Search -->
+                    <li class="nav-search-item">
+                        <button id="searchToggle" class="search-toggle-btn" aria-label="Open Search">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                        </button>
+                        <form id="searchForm" class="search-form-overlay">
+                            <input type="text" id="searchInput" placeholder="Ketik kata kunci..." aria-label="Search">
+                            <button type="submit" aria-label="Submit Search">Cari</button>
+                            <button type="button" id="searchClose" class="search-close-btn" aria-label="Close Search">✕</button>
                         </form>
                     </li>
+                    <li><a href="contact.html" class="nav-cta-secondary">Kontak</a></li>
                     <li><a href="ppdb.html" class="nav-cta">PPDB</a></li>
                 </ul>
             </nav>
