@@ -1076,24 +1076,31 @@ p {
 }
 
 .partners-text {
-    flex: 0 0 30%;
-    max-width: 350px;
+    flex: 0 0 220px;
+    max-width: 220px;
     text-align: left;
 }
 
 .partners-text .section-title-lux {
-    margin-bottom: 1rem;
+    font-size: 1.65rem;
+    margin-bottom: 0.75rem;
+    line-height: 1.25;
 }
 
 .partners-text .section-subtitle {
+    font-size: 0.85rem;
+    line-height: 1.4;
+    color: #666;
     margin-top: 0;
     margin-bottom: 0;
 }
 
 .partners-marquee-wrap {
     flex: 1;
-    min-width: 300px;
+    min-width: 0;
     overflow: hidden;
+    mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%);
 }
 
 .section-subtitle {
@@ -1108,17 +1115,15 @@ p {
 .marquee-container {
     overflow: hidden;
     white-space: nowrap;
-    padding: 1.5rem 0;
+    padding: 1rem 0;
     position: relative;
-    mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
-    -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
 }
 
 .marquee-track {
     display: flex;
-    gap: 5rem;
+    gap: 4rem;
     width: max-content;
-    animation: marquee 30s linear infinite;
+    animation: marquee 25s linear infinite;
     align-items: center;
 }
 
@@ -2118,6 +2123,9 @@ body.menu-open .menu-bar {
     .partners-text {
         flex: 1 1 100%;
         max-width: 100%;
+    }
+    .partners-text .section-title-lux {
+        font-size: 1.75rem;
     }
     .partners-marquee-wrap {
         flex: 1 1 100%;
