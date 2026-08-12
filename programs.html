@@ -103,6 +103,134 @@
             font-weight: 700;
             font-size: 0.9rem;
         }
+
+        /* Side-by-side Program Comparison */
+        .program-compare-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+            align-items: stretch;
+        }
+        .compare-card {
+            background: #ffffff;
+            border-radius: 20px;
+            padding: 2.5rem 2rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 100%;
+            position: relative;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .compare-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 18px 40px rgba(0, 0, 0, 0.1);
+        }
+        .compare-card.card-gold {
+            border: 2px solid var(--lux-gold);
+            background: linear-gradient(180deg, #ffffff 0%, #fffdf9 100%);
+        }
+        .compare-card.card-blue {
+            border: 2px solid var(--color-secondary);
+            background: linear-gradient(180deg, #ffffff 0%, #f4f7fc 100%);
+        }
+        .compare-badge {
+            position: absolute;
+            top: -14px;
+            right: 24px;
+            background: var(--lux-gold);
+            color: var(--lux-dark);
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            padding: 0.35rem 1rem;
+            border-radius: 20px;
+            box-shadow: 0 4px 10px rgba(212, 181, 130, 0.4);
+        }
+        .compare-header {
+            margin-bottom: 1rem;
+        }
+        .compare-icon {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            display: inline-block;
+        }
+        .compare-title {
+            font-family: var(--font-heading);
+            font-size: 1.75rem;
+            font-weight: 700;
+            color: var(--lux-dark);
+            margin-bottom: 0.35rem;
+        }
+        .compare-tagline {
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: var(--color-primary);
+            font-style: italic;
+            margin: 0;
+        }
+        .compare-card.card-blue .compare-tagline {
+            color: var(--color-secondary);
+        }
+        .compare-features {
+            list-style: none;
+            padding: 0;
+            margin: 1.5rem 0 2rem 0;
+            flex-grow: 1;
+        }
+        .compare-features li {
+            position: relative;
+            padding-left: 1.75rem;
+            margin-bottom: 0.9rem;
+            font-size: 0.98rem;
+            color: #333333;
+            line-height: 1.5;
+        }
+        .compare-features li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            top: 0;
+            font-weight: 700;
+            font-size: 1.05rem;
+        }
+        .compare-card.card-gold .compare-features li::before {
+            color: var(--color-accent);
+        }
+        .compare-card.card-blue .compare-features li::before {
+            color: var(--color-secondary);
+        }
+        .compare-btn-blue {
+            background: var(--color-secondary);
+            color: #ffffff !important;
+            border-radius: 50px;
+            padding: 0.85rem 2rem;
+            font-weight: 600;
+            text-align: center;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: inline-block;
+            width: 100%;
+        }
+        .compare-btn-blue:hover {
+            background: var(--color-primary);
+            box-shadow: 0 6px 18px rgba(17, 54, 110, 0.25);
+        }
+        .compare-card .btn-gold-lux {
+            width: 100%;
+            text-align: center;
+        }
+        @media (max-width: 768px) {
+            .program-compare-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+            .compare-card {
+                padding: 2rem 1.5rem;
+            }
+        }
     </style>
 </head>
 <body>
@@ -168,32 +296,45 @@
             </div>
         </section>
 
-        <!-- PILIHAN PROGRAM (Bento Grid Lux) -->
-        <section class="section bento-section-lux">
+        <!-- PILIHAN PROGRAM (Side-by-side Premium Comparison) -->
+        <section class="section">
             <div class="container">
                 <div class="section-header-lux center reveal">
                     <span class="eyebrow-lux">Pilihan Jalur Studi</span>
-                    <h2 class="section-title-lux">Program Boarding & Full Day</h2>
+                    <h2 class="section-title-lux">Program Boarding vs Full Day</h2>
                 </div>
-                <div class="bento-grid-lux">
-                    <!-- Boarding Card (Large Green) -->
-                    <div class="bento-card-lux large reveal">
-                        <div class="bento-content">
-                            <span class="eyebrow-lux" style="color: var(--lux-gold);">Program Asrama</span>
-                            <h3>SMP Boarding School</h3>
-                            <p>Program pendidikan penuh waktu di mana siswa tinggal di asrama. Fokus pada pembentukan karakter 24 jam, kemandirian, dan pencapaian target Tahfidz 5 Juz dengan bimbingan intensif musyrif & musyrifah.</p>
-                            <a href="ppdb.html" class="btn-lux btn-gold-lux mt-md" style="align-self: flex-start;">Daftar Boarding</a>
+                <div class="program-compare-grid">
+                    <!-- Card 1: SMP Boarding (Kuning/Emas Theme) -->
+                    <div class="compare-card card-gold reveal">
+                        <span class="compare-badge">Rekomendasi Utama</span>
+                        <div class="compare-header">
+                            <span class="compare-icon">🕌</span>
+                            <h3 class="compare-title">SMP Boarding School</h3>
+                            <p class="compare-tagline">"Kurikulum IT Tuntas &amp; Karakter 24 Jam"</p>
                         </div>
-                        <img src="https://images.unsplash.com/photo-1564981797816-1043664bf78d?q=80&w=800&auto=format&fit=crop" alt="Fasilitas dan Lingkungan Asrama Program Boarding School SMP MBS Al Badar" class="bento-bg-img" loading="lazy" onerror="this.onerror=null;this.src='assets/img/placeholder.svg';">
+                        <ul class="compare-features">
+                            <li>Tinggal di Asrama (Putra/Putri Terpisah)</li>
+                            <li>Target Tahfidz 5 Juz</li>
+                            <li>Pendampingan Musyrif 24 Jam</li>
+                            <li>Lingkungan Zero Smartphone</li>
+                        </ul>
+                        <a href="ppdb.html" class="btn-lux btn-gold-lux">Daftar Boarding</a>
                     </div>
-                    <!-- Full Day Card (Blue/Wide) -->
-                    <div class="bento-card-lux blue wide reveal">
-                        <div class="bento-content">
-                            <span class="eyebrow-lux" style="color: var(--lux-gold);">Program Harian</span>
-                            <h3>SMP Full Day School</h3>
-                            <p>Program harian (Non-Boarding) dengan jam belajar efektif (07.00 - 15.45 WIB). Menerapkan kurikulum yang sama dengan Boarding (Kurikulum Merdeka, ISMUBA, Koding & AI), dengan pembiasaan karakter terpadu.</p>
-                            <a href="ppdb.html" class="btn-lux btn-ghost-lux mt-md" style="align-self: flex-start;">Daftar Full Day</a>
+
+                    <!-- Card 2: SMP Full Day (Biru MBS Theme) -->
+                    <div class="compare-card card-blue reveal">
+                        <div class="compare-header">
+                            <span class="compare-icon">🎒</span>
+                            <h3 class="compare-title">SMP Full Day School</h3>
+                            <p class="compare-tagline">"Fokus Keahlian IT &amp; Kurikulum Nasional"</p>
                         </div>
+                        <ul class="compare-features">
+                            <li>Belajar hingga 15.45 WIB</li>
+                            <li>Kurikulum Merdeka + ISMUBA</li>
+                            <li>Kemitraan Erat dengan Orang Tua</li>
+                            <li>Pembiasaan Adab Digital</li>
+                        </ul>
+                        <a href="ppdb.html" class="compare-btn-blue">Daftar Full Day</a>
                     </div>
                 </div>
             </div>
