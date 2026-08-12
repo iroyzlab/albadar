@@ -72,19 +72,54 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Search Bar Logic
+    // Comprehensive Site Search Index Array
+    const siteSearchIndex = [
+        { keywords: 'mbs tentang, profil, sejarah, visi, misi, tentang mbs', title: 'Tentang MBS Al Badar', url: 'about.html' },
+        { keywords: 'mbs program, kurikulum, akademik, mata pelajaran, program mbs', title: 'Program & Kurikulum MBS', url: 'programs.html' },
+        { keywords: 'mbs boarding, asrama, santri, boarding mbs', title: 'Program Boarding MBS', url: 'boarding.html' },
+        { keywords: 'mbs fullday, harian, non boarding, fullday mbs', title: 'Program Full Day MBS', url: 'non-boarding.html' },
+        { keywords: 'mbs ppdb, pendaftaran, psb, daftar mbs, ppdb mbs', title: 'Panduan PPDB MBS', url: 'ppdb.html' },
+        { keywords: 'mbs kegiatan, siswa, ekstrakurikuler, fasilitas, kehidupan mbs', title: 'Kehidupan Siswa MBS', url: 'student-life.html' },
+        { keywords: 'mbs berita, kabar, pengumuman, info mbs', title: 'Berita & Info MBS', url: 'news.html' },
+        { keywords: 'mbs kontak, alamat, telepon, wa, email, kontak mbs', title: 'Kontak MBS', url: 'contact.html' },
+        { keywords: 'mbs faq, tanya, jawab, bantuan', title: 'FAQ MBS', url: 'faq.html' }
+    ];
+
+    // Search Bar & Autocomplete Logic
     const searchToggle = document.getElementById('searchToggle');
     const searchForm = document.getElementById('searchForm');
     const searchInput = document.getElementById('searchInput');
     const searchClose = document.getElementById('searchClose');
 
-    if (searchForm) {
+    if (searchForm && searchInput) {
+        // Create or find searchResultsContainer
+        let searchResultsContainer = document.getElementById('searchResultsContainer');
+        if (!searchResultsContainer) {
+            searchResultsContainer = document.createElement('div');
+            searchResultsContainer.id = 'searchResultsContainer';
+            const searchItemParent = searchForm.closest('.nav-search-item') || searchForm.parentElement;
+            if (searchItemParent) {
+                searchItemParent.appendChild(searchResultsContainer);
+            } else {
+                searchForm.appendChild(searchResultsContainer);
+            }
+        }
+
+        const hideSearchResults = () => {
+            if (searchResultsContainer) {
+                searchResultsContainer.classList.remove('active');
+                searchResultsContainer.innerHTML = '';
+            }
+        };
+
         // Toggle Search Bar Open/Close
         if (searchToggle) {
             searchToggle.addEventListener('click', function() {
                 searchForm.classList.toggle('active');
-                if (searchForm.classList.contains('active') && searchInput) {
-                    searchInput.focus(); // Focus input when opened
+                if (searchForm.classList.contains('active')) {
+                    searchInput.focus();
+                } else {
+                    hideSearchResults();
                 }
             });
         }
@@ -93,18 +128,56 @@ document.addEventListener('DOMContentLoaded', function() {
         if (searchClose) {
             searchClose.addEventListener('click', function() {
                 searchForm.classList.remove('active');
+                hideSearchResults();
             });
         }
 
+        // Autocomplete on Input
+        searchInput.addEventListener('input', function() {
+            const query = searchInput.value.trim().toLowerCase();
+            if (!query) {
+                hideSearchResults();
+                return;
+            }
+
+            const matches = siteSearchIndex.filter(item => 
+                item.keywords.toLowerCase().includes(query) || 
+                item.title.toLowerCase().includes(query)
+            );
+
+            searchResultsContainer.innerHTML = '';
+            if (matches.length > 0) {
+                matches.forEach(match => {
+                    const a = document.createElement('a');
+                    a.href = match.url;
+                    a.className = 'search-suggestion-item';
+                    a.textContent = match.title;
+                    searchResultsContainer.appendChild(a);
+                });
+            } else {
+                const emptyMsg = document.createElement('div');
+                emptyMsg.className = 'search-suggestion-empty';
+                emptyMsg.textContent = 'Tidak ada hasil di situs ini. Tekan Enter untuk cari di Google.';
+                searchResultsContainer.appendChild(emptyMsg);
+            }
+
+            searchResultsContainer.classList.add('active');
+        });
+
+        // Close suggestions when clicking outside
+        document.addEventListener('click', function(e) {
+            if (!searchForm.contains(e.target) && !searchResultsContainer.contains(e.target) && (!searchToggle || !searchToggle.contains(e.target))) {
+                hideSearchResults();
+            }
+        });
+
         // Handle Search Submit (Redirect to Google)
         searchForm.addEventListener('submit', function(e) {
-            e.preventDefault(); // Prevent page reload
-            if (searchInput) {
-                const searchQuery = searchInput.value.trim();
-                if (searchQuery) {
-                    const googleSearchUrl = 'https://www.google.com/search?q=site:iroyzlab.github.io/albadar/+' + encodeURIComponent(searchQuery);
-                    window.location.href = googleSearchUrl;
-                }
+            e.preventDefault();
+            const searchQuery = searchInput.value.trim();
+            if (searchQuery) {
+                const googleSearchUrl = 'https://www.google.com/search?q=site:iroyzlab.github.io/albadar/+' + encodeURIComponent(searchQuery);
+                window.location.href = googleSearchUrl;
             }
         });
     }
