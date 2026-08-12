@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', function() {
         window.addEventListener('scroll', handleHeaderScroll);
     }
 
-    // Mobile Menu
+    // Mobile Menu & Dropdowns
     const menuToggle = document.querySelector('.menu-toggle');
     const navList = document.querySelector('.nav-list');
     const body = document.body;
@@ -23,23 +23,70 @@ document.addEventListener('DOMContentLoaded', function() {
     overlay.className = 'menu-overlay';
     body.appendChild(overlay);
 
+    const dropdownItems = document.querySelectorAll('.nav-item.dropdown');
+
     if (menuToggle) {
         menuToggle.addEventListener('click', () => {
             const expanded = menuToggle.getAttribute('aria-expanded') === 'true' || false;
             menuToggle.setAttribute('aria-expanded', !expanded);
-            navList.classList.toggle('active');
+            if (navList) navList.classList.toggle('active');
             overlay.classList.toggle('active');
             body.classList.toggle('menu-open');
         });
     }
+
     const closeMenu = () => {
         if (menuToggle) menuToggle.setAttribute('aria-expanded', 'false');
         if (navList) navList.classList.remove('active');
         overlay.classList.remove('active');
         body.classList.remove('menu-open');
+        dropdownItems.forEach(d => d.classList.remove('open'));
     };
-    overlay.addEventListener('click', closeMenu);
-    document.querySelectorAll('.nav-list a').forEach(link => link.addEventListener('click', closeMenu));
+
+    if (overlay) overlay.addEventListener('click', closeMenu);
+
+    // Mobile dropdown toggle handling
+    dropdownItems.forEach(item => {
+        const toggleLink = item.querySelector(':scope > a');
+        if (toggleLink) {
+            toggleLink.addEventListener('click', function(e) {
+                if (window.innerWidth <= 1024) {
+                    const isOpen = item.classList.contains('open');
+                    dropdownItems.forEach(d => {
+                        if (d !== item) d.classList.remove('open');
+                    });
+                    if (!isOpen) {
+                        e.preventDefault();
+                        item.classList.add('open');
+                    }
+                }
+            });
+        }
+    });
+
+    // Close menu when clicking normal links or dropdown sub-links
+    document.querySelectorAll('.nav-list a').forEach(link => {
+        link.addEventListener('click', (e) => {
+            if (link.parentElement && link.parentElement.classList.contains('dropdown') && window.innerWidth <= 1024) {
+                return;
+            }
+            closeMenu();
+        });
+    });
+
+    // Search Form Logic
+    const searchForm = document.getElementById('searchForm');
+    const searchInput = document.getElementById('searchInput');
+    if (searchForm && searchInput) {
+        searchForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            const searchValue = searchInput.value.trim();
+            if (searchValue) {
+                const targetUrl = 'https://www.google.com/search?q=site:iroyzlab.github.io/albadar/+' + encodeURIComponent(searchValue);
+                window.location.href = targetUrl;
+            }
+        });
+    }
 
     // Custom Cursor (Auto-inject ke semua halaman)
     let cursorDot = document.getElementById('cursorDot');

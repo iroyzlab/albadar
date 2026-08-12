@@ -26,19 +26,51 @@
                 <img src="assets/img/logo.png" alt="Logo SMP MBS Al Badar Prambanan" class="logo-img">
                 <span class="logo-text">SMP MBS<br><strong>Al Badar Prambanan</strong></span>
             </a>
-            <nav class="main-nav" aria-label="Main navigation">
+                        <nav class="main-nav" aria-label="Main navigation">
                 <button class="menu-toggle" aria-label="Toggle menu" aria-expanded="false">
-                    <span class="menu-bar"></span>
-                    <span class="menu-bar"></span>
-                    <span class="menu-bar"></span>
+                    <span class="menu-bar"></span><span class="menu-bar"></span><span class="menu-bar"></span>
                 </button>
                 <ul class="nav-list">
                     <li><a href="index.html">Beranda</a></li>
-                    <li><a href="about.html">Tentang Kami</a></li>
-                    <li><a href="programs.html">Program</a></li>
-                    <li><a href="student-life.html" class="active">Kehidupan Siswa</a></li>
-                    <li><a href="news.html">Berita</a></li>
-                    <li><a href="contact.html">Kontak</a></li>
+                    <li class="nav-item dropdown">
+                        <a href="about.html">Tentang Kami <span class="dropdown-arrow">▼</span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="about.html">Profil &amp; Sejarah</a></li>
+                            <li><a href="about.html">Visi &amp; Misi</a></li>
+                            <li><a href="about.html">Keunggulan Sekolah</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a href="programs.html">Program <span class="dropdown-arrow">▼</span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="boarding.html">Boarding School</a></li>
+                            <li><a href="non-boarding.html">Full Day School</a></li>
+                            <li><a href="programs.html">Kurikulum Khas</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a href="student-life.html" class="active">Kehidupan Siswa <span class="dropdown-arrow">▼</span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="student-life.html">Fasilitas</a></li>
+                            <li><a href="student-life.html">Ekstrakurikuler</a></li>
+                            <li><a href="achievements.html">Target Prestasi</a></li>
+                            <li><a href="gallery.html">Galeri Foto</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a href="news.html">Berita &amp; Info <span class="dropdown-arrow">▼</span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="news.html">Berita Terbaru</a></li>
+                            <li><a href="faq.html">FAQ</a></li>
+                            <li><a href="contact.html">Kontak</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-search">
+                        <form id="searchForm" class="search-form">
+                            <input type="text" id="searchInput" placeholder="Cari info..." aria-label="Search">
+                            <button type="submit" aria-label="Submit Search">🔍</button>
+                        </form>
+                    </li>
                     <li><a href="ppdb.html" class="nav-cta">PPDB</a></li>
                 </ul>
             </nav>
