@@ -1247,11 +1247,12 @@ p {
 .step-timeline-item:not(:last-child)::after {
     content: '';
     position: absolute;
-    top: 54px;
+    top: 63.5px;
     left: 50%;
     width: calc(100% + 1rem);
-    height: 2px;
-    background: #e0e0e0;
+    height: 0;
+    border-top: 2px dashed #e0e0e0;
+    background: transparent;
     z-index: 0;
 }
 
@@ -1268,14 +1269,14 @@ p {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    padding: 4px;
+    padding: 6px;
     transition: all 0.3s ease;
     box-shadow: 0 4px 10px rgba(0,0,0,0.05);
 }
 
 .step-icon-inner {
-    width: 60px;
-    height: 60px;
+    width: 75px;
+    height: 75px;
     background: #11366E;
     color: #fff;
     border-radius: 50%;
@@ -1288,12 +1289,12 @@ p {
 }
 
 .step-icon-inner svg {
-    width: 24px;
-    height: 24px;
+    width: 30px;
+    height: 30px;
 }
 
 .step-num-small {
-    font-size: 0.65rem;
+    font-size: 0.7rem;
     font-weight: 600;
     line-height: 1;
 }
