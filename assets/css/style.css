@@ -175,7 +175,7 @@ p {
 
 .section-title-lux {
     font-family: var(--font-heading);
-    font-size: clamp(2.2rem, 5vw, 4rem);
+    font-size: clamp(1.8rem, 3vw, 2.5rem);
     line-height: 1.1;
     font-weight: 400;
     letter-spacing: -0.02em;
@@ -803,7 +803,7 @@ p {
 
 .page-title {
     font-family: var(--font-heading);
-    font-size: clamp(2.2rem, 5vw, 4rem);
+    font-size: clamp(1.8rem, 4vw, 2.5rem);
     margin-bottom: 1rem;
     color: #fff;
     line-height: 1.15;
@@ -832,7 +832,7 @@ p {
 
 .editorial-title {
     font-family: var(--font-heading);
-    font-size: clamp(2.2rem, 4vw, 4rem);
+    font-size: clamp(1.8rem, 3vw, 2.5rem);
     line-height: 1.1;
     font-weight: 400;
     letter-spacing: -0.02em;
@@ -968,7 +968,7 @@ p {
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
-    margin-bottom: 4rem;
+    margin-bottom: 3rem;
 }
 
 .section-header-lux.center {
@@ -1365,7 +1365,7 @@ p {
 
 .cta-title-lux {
     font-family: var(--font-heading);
-    font-size: clamp(2.2rem, 5vw, 4.5rem);
+    font-size: clamp(1.8rem, 4vw, 3rem);
     font-weight: 400;
     margin-bottom: 2rem;
     position: relative;
