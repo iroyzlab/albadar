@@ -7,7 +7,7 @@ Dokumentasi ini memuat panduan struktur, filosofi, palet warna, dan aturan penge
 ## 1. Identitas & Filosofi Sekolah
 
 - **Nama Resmi**: SMP Muhammadiyah Boarding School (MBS) Al Badar Prambanan
-- **Tagline / Visi Utama**: *"Membentuk Generasi Qur'ani dan Cendekia"*
+- **Tagline / Visi Utama**: *"Generasi Rabbani, Cerdas & Berakhlak Qur'ani"*
 - **Visi**: *"Terwujudnya generasi rabbani yang cerdas, berdaya saing, dan berakhlak Qur’ani melalui pembinaan intensif di lingkungan pesantren."*
 - **Lokasi**: Jamusan, Jirak, Bokoharjo, Kec. Prambanan, Kabupaten Sleman, DIY 55572
 - **Domain Web Resmi (GitHub Pages)**: `https://iroyzlab.github.io/albadar/`
