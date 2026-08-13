@@ -2,10 +2,10 @@ DATA RESMI SMP MBS AL BADAR PRAMBANAN (TA 2026/2027)
 File ini adalah sumber kebenaran mutlak (Single Source of Truth) untuk website.
 
 1. Sejarah & Afiliasi
-Awal mula: Berawal dari PPM TahfizhMu Al Badar pada tahun 2019.
-Afiliasi: Pada tahun 2026, berafiliasi dengan MBS (Muhammadiyah Boarding School) Yogyakarta dan resmi menjadi SMP MBS Al Badar Prambanan.
-Pengembangan: Sebelumnya hanya ada program Boarding. Pada TA 2026/2027, dibuka program Full Day (Non-Boarding).
-Skala: Saat ini baru membuka penerimaan untuk Kelas 7. (Kelas 8 dan 9 akan menyusul di tahun-tahun berikutnya).
+Awal mula: Berawal dari PPM TahfizhMu Al Badar pada tahun 2019 yang fokus pada pendidikan Al-Qur'an dan kepesantrenan.
+Afiliasi: Pada tahun 2026, berafiliasi dengan PPM MBS (Muhammadiyah Boarding School) Yogyakarta dan resmi menjadi SMP MBS Al Badar Prambanan.
+Pengembangan: Sebelumnya hanya ada program Boarding. Pada TA 2026/2027, dikembangkan dengan membuka program Full Day (Non-Boarding).
+Skala: Saat ini baru membuka penerimaan untuk Kelas 7 (Angkatan Pertama). Total santri boarding yang ada saat ini adalah 35 santri (dari berbagai tingkat yang masih asrama), sedangkan siswa kelas 7 yang baru berjumlah 17 orang.
 2. Identitas & Lokasi
 Nama: SMP Muhammadiyah Boarding School (MBS) Al Badar Prambanan
 Alamat: Jl. Kebondalem, Jirak, Bokoharjo, Kec. Prambanan, Kabupaten Sleman, DIY 55572
