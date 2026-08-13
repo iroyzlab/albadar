@@ -728,7 +728,7 @@ p {
     max-width: 850px;
     margin: 0 auto;
     text-align: center;
-    padding: 9rem 1.5rem 6rem;
+    padding: 9rem 1.5rem 8rem;
     position: relative;
     z-index: 2;
 }
@@ -2404,40 +2404,47 @@ body.menu-open .menu-bar {
     }
 }
 
-/* Institutional Statistics Section (Tube/Pill Layout) */
+/* Institutional Floating Statistics Section (Blunt Rectangle 5-Column Layout) */
 .stats-section,
 .luxury-stats-section {
     background-color: transparent !important;
     background: transparent !important;
-    padding: 3rem 0;
+    margin-top: -60px;
+    padding: 0;
     border-top: none;
     border-bottom: none;
     position: relative;
-    z-index: 2;
+    z-index: 10;
 }
 
 .luxury-stats-grid {
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    max-width: 800px;
+    align-items: stretch;
+    max-width: 1000px;
     margin: 0 auto;
-    background: #11366E;
-    border-radius: 100px;
-    padding: 1.5rem 2rem;
-    box-shadow: 0 10px 30px rgba(17, 54, 110, 0.2);
-    gap: 1rem;
+    background: linear-gradient(135deg, #11366E 0%, #04473A 100%);
+    border: 1px solid rgba(212, 181, 130, 0.4);
+    border-radius: 20px;
+    padding: 2.5rem 1rem;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
+    gap: 0.5rem;
 }
 
 .luxury-stat-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
     background: transparent;
     border: none;
     border-radius: 0;
     box-shadow: none;
-    border-right: 1px solid rgba(255, 255, 255, 0.2);
-    padding: 0 1rem;
-    text-align: center;
+    border-right: 1px solid rgba(255, 255, 255, 0.15);
+    padding: 0 0.75rem;
     flex: 1;
+    gap: 0.35rem;
     transition: none;
 }
 
@@ -2451,43 +2458,55 @@ body.menu-open .menu-bar {
     box-shadow: none;
 }
 
+.stat-icon {
+    width: 32px;
+    height: 32px;
+    color: #D4B582;
+    margin-bottom: 0.25rem;
+    flex-shrink: 0;
+}
+
 .luxury-stat-card .stat-number {
-    font-size: 2rem;
+    font-size: 2.2rem;
     color: #fff;
     font-weight: 700;
     font-family: var(--font-heading, 'Fraunces', serif);
     line-height: 1;
-    margin-bottom: 0.25rem;
+    margin: 0;
     letter-spacing: normal;
 }
 
 .luxury-stat-card .stat-label {
-    font-size: 0.75rem;
-    color: #D4B582;
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.85);
     text-transform: uppercase;
-    letter-spacing: 1px;
+    letter-spacing: 0.5px;
     font-weight: 500;
     font-family: var(--font-body, 'Inter', sans-serif);
+    line-height: 1.35;
 }
 
 @media (max-width: 768px) {
     .stats-section,
     .luxury-stats-section {
-        padding: 2rem 0;
+        margin-top: -40px;
+        padding: 0;
     }
     .luxury-stats-grid {
-        flex-direction: column;
-        border-radius: 20px;
-        gap: 0;
-        padding: 1.5rem 1rem;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        border-radius: 16px;
+        gap: 1rem;
+        padding: 2rem 1rem;
     }
     .luxury-stat-card {
         border-right: none;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-        padding: 1rem 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+        padding: 1rem 0.5rem;
         width: 100%;
     }
     .luxury-stat-card:last-child {
+        grid-column: span 2;
         border-bottom: none;
     }
 }
