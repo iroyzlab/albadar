@@ -2440,17 +2440,23 @@ body.menu-open .menu-bar {
     background: transparent;
     border: none;
     border-radius: 12px;
-    box-shadow: none;
+    box-shadow: none !important;
     border-right: 1px solid rgba(0, 0, 0, 0.08) !important;
     padding: 0.6rem 0.75rem;
     flex: 1;
     text-align: left;
-    transition: box-shadow 0.3s ease, background-color 0.3s ease;
+    transition: background-color 0.3s ease;
     cursor: pointer;
 }
 
 .luxury-stat-card:last-child {
     border-right: none !important;
+}
+
+.luxury-stat-card:hover,
+.luxury-stat-card:active {
+    background-color: transparent !important;
+    box-shadow: none !important;
 }
 
 .stat-icon,
@@ -2460,11 +2466,20 @@ body.menu-open .menu-bar {
     padding: 8px !important;
     box-sizing: content-box !important;
     border-radius: 50% !important;
-    background-color: #f0f2f5 !important;
-    color: #11366E !important;
+    background-color: #11366E !important;
+    color: #ffffff !important;
+    border: 2px solid transparent !important;
     margin: 0;
     flex-shrink: 0;
-    transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1) !important;
+    transition: all 0.3s ease !important;
+}
+
+.luxury-stat-card:hover .stat-icon,
+.luxury-stat-card:active .stat-icon {
+    border-color: #D4B582 !important;
+    background-color: #11366E !important;
+    color: #ffffff !important;
+    transform: rotate(-15deg) !important;
 }
 
 .stat-info {
@@ -2473,6 +2488,11 @@ body.menu-open .menu-bar {
     line-height: 1.1;
     text-align: left;
     transition: transform 0.3s ease;
+}
+
+.luxury-stat-card:hover .stat-info,
+.luxury-stat-card:active .stat-info {
+    transform: translateY(-4px);
 }
 
 .stat-number,
@@ -2490,7 +2510,7 @@ body.menu-open .menu-bar {
 
 .stat-label,
 .luxury-stat-card .stat-label {
-    font-size: 0.5rem !important;
+    font-size: 0.45rem !important;
     color: #888888 !important;
     text-transform: uppercase;
     letter-spacing: 0.5px;
@@ -2503,27 +2523,13 @@ body.menu-open .menu-bar {
     transition: color 0.3s ease;
 }
 
-/* Desktop Hover Effects (No card outline, icon circle turns gold, icon glyph stays blue) */
-@media (min-width: 769px) {
-    .luxury-stat-card:hover {
-        background-color: transparent !important;
-        box-shadow: none !important;
-    }
-    .luxury-stat-card:hover .stat-info {
-        transform: translateY(-4px);
-    }
-    .luxury-stat-card:hover .stat-icon {
-        background-color: #D4B582 !important;
-        color: #11366E !important;
-        transform: scale(1.2) rotate(-15deg) !important;
-    }
-    .luxury-stat-card:hover .stat-number,
-    .luxury-stat-card:hover .stat-label {
-        color: #11366E !important;
-    }
+.luxury-stat-card:hover .stat-number,
+.luxury-stat-card:active .stat-number,
+.luxury-stat-card:hover .stat-label,
+.luxury-stat-card:active .stat-label {
+    color: #11366E !important;
 }
 
-/* Mobile Active / Tap Effects (Gold card outline + icon circle turns gold, icon glyph stays blue) */
 @media (max-width: 768px) {
     .stats-section,
     .luxury-stats-section {
@@ -2549,15 +2555,16 @@ body.menu-open .menu-bar {
     }
     .luxury-stat-card:active {
         background-color: transparent !important;
-        box-shadow: inset 0 0 0 1px #D4B582 !important;
+        box-shadow: none !important;
     }
     .luxury-stat-card:active .stat-info {
         transform: translateY(-4px);
     }
     .luxury-stat-card:active .stat-icon {
-        background-color: #D4B582 !important;
-        color: #11366E !important;
-        transform: scale(1.2) rotate(-15deg) !important;
+        border-color: #D4B582 !important;
+        background-color: #11366E !important;
+        color: #ffffff !important;
+        transform: rotate(-15deg) !important;
     }
     .luxury-stat-card:active .stat-number,
     .luxury-stat-card:active .stat-label {
