@@ -224,6 +224,43 @@
         .tag-gold { background: rgba(212, 181, 130, 0.15); color: #B38E46; }
         .tag-green { background: rgba(4, 71, 58, 0.1); color: #04473A; }
         .tag-blue { background: rgba(17, 54, 110, 0.1); color: #11366E; }
+
+        /* Premium Advantage Cards (Keunggulan Sekolah) */
+        .premium-advantage {
+            background: #ffffff;
+            border-radius: 16px;
+            padding: 2rem 1.5rem;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            text-align: left;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .premium-advantage:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.08);
+        }
+        .premium-advantage .card-icon {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: #D4B582;
+            line-height: 1;
+        }
+        .premium-advantage h3 {
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+            color: #11366E;
+            font-family: var(--font-heading);
+            font-weight: 700;
+        }
+        .premium-advantage p {
+            font-size: 0.85rem;
+            color: #666;
+            line-height: 1.5;
+            margin: 0;
+        }
     </style>
 
     <!-- Schema.org School Structured Data -->
@@ -451,37 +488,49 @@
             </div>
         </section>
 
-        <!-- PROGRAM UNGGULAN (Pilar Pendidikan Al Badar) -->
+        <!-- KEUNGGULAN SEKOLAH (Mengapa Memilih Al Badar?) -->
         <section class="section">
             <div class="container">
                 <div class="section-header-lux center reveal">
-                    <span class="eyebrow-lux">Program Unggulan</span>
-                    <h2 class="section-title-lux">Pilar Pendidikan Al Badar</h2>
+                    <span class="eyebrow-lux">Keunggulan Sekolah</span>
+                    <h2 class="section-title-lux">Mengapa Memilih Al Badar?</h2>
                 </div>
-                <div class="cards-grid grid-4">
-                    <!-- Card 1: Green top border -->
-                    <div class="pilar-card green-top reveal-stagger">
-                        <div class="pilar-icon">📖</div>
-                        <h3 class="pilar-title">Al-Qur'an &amp; Tahfidz</h3>
-                        <p class="pilar-desc">Program tahfidz intensif dengan target hafalan 15 Juz (Boarding) &amp; 4 Juz (Full Day) serta pembiasaan tilawah harian.</p>
+                <div class="cards-grid grid-3">
+                    <!-- Card 1: Tahfidz Qur'an -->
+                    <div class="premium-advantage reveal-stagger">
+                        <div class="card-icon">📖</div>
+                        <h3>Tahfidz Qur'an</h3>
+                        <p>Program hafalan Al-Qur'an terstruktur dengan target juz yang pasti sesuai jenjang.</p>
                     </div>
-                    <!-- Card 2: Blue top border -->
-                    <div class="pilar-card blue-top reveal-stagger">
-                        <div class="pilar-icon">🗣️</div>
-                        <h3 class="pilar-title">Bahasa Arab &amp; Inggris</h3>
-                        <p class="pilar-desc">Pembiasaan komunikasi aktif dwi-bahasa untuk membangun wawasan global dan kefahaman agama.</p>
+                    <!-- Card 2: Akademik Unggul -->
+                    <div class="premium-advantage reveal-stagger">
+                        <div class="card-icon">📚</div>
+                        <h3>Akademik Unggul</h3>
+                        <p>Kurikulum nasional yang integratif dengan pendekatan Deep Learning yang bermakna.</p>
                     </div>
-                    <!-- Card 3: Gold top border -->
-                    <div class="pilar-card gold-top reveal-stagger">
-                        <div class="pilar-icon">💻</div>
-                        <h3 class="pilar-title">KKA &amp; Coding</h3>
-                        <p class="pilar-desc">Literasi digital, koding &amp; AI (KKA), Chromebook sekolah, Fiqih Informasi (Adab Digital), serta Zero Personal Smartphone.</p>
+                    <!-- Card 3: Bahasa Arab & Inggris -->
+                    <div class="premium-advantage reveal-stagger">
+                        <div class="card-icon">🗣️</div>
+                        <h3>Bahasa Arab &amp; Inggris</h3>
+                        <p>Pembiasaan bilingual aktif harian untuk membangun wawasan global santri.</p>
                     </div>
-                    <!-- Card 4: Dark top border -->
-                    <div class="pilar-card dark-top reveal-stagger">
-                        <div class="pilar-icon">🔬</div>
-                        <h3 class="pilar-title">Sains &amp; STEM</h3>
-                        <p class="pilar-desc">Pembelajaran sains berbasis proyek (STEM) yang melatih penalaran kritis dan kreativitas.</p>
+                    <!-- Card 4: Tapak Suci -->
+                    <div class="premium-advantage reveal-stagger">
+                        <div class="card-icon">🥋</div>
+                        <h3>Tapak Suci</h3>
+                        <p>Ekstrakurikuler wajib beladiri untuk membentuk fisik yang tangguh dan mental yang baja.</p>
+                    </div>
+                    <!-- Card 5: Hizbul Wathan -->
+                    <div class="premium-advantage reveal-stagger">
+                        <div class="card-icon">🏕️</div>
+                        <h3>Hizbul Wathan</h3>
+                        <p>Kepanduan Muhammadiyah untuk melatih kemandirian, kepemimpinan, dan cinta alam.</p>
+                    </div>
+                    <!-- Card 6: Boarding Islami -->
+                    <div class="premium-advantage reveal-stagger">
+                        <div class="card-icon">🕌</div>
+                        <h3>Boarding Islami</h3>
+                        <p>Lingkungan asrama Islami yang terkontrol, penuh adab, dan sinergi dengan orang tua.</p>
                     </div>
                 </div>
             </div>
