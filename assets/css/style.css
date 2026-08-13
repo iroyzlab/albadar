@@ -2404,7 +2404,7 @@ body.menu-open .menu-bar {
     }
 }
 
-/* Institutional Floating Statistics Bar (Sleek Horizontal Bar) */
+/* Institutional Floating Statistics Bar (White Card / Blue Accent) */
 .stats-section,
 .luxury-stats-section {
     background-color: transparent !important;
@@ -2423,11 +2423,11 @@ body.menu-open .menu-bar {
     align-items: center;
     max-width: 1000px;
     margin: 0 auto;
-    background: linear-gradient(135deg, #11366E 0%, #04473A 100%);
-    border: 1px solid rgba(212, 181, 130, 0.4);
+    background: #ffffff !important;
+    border: 1px solid rgba(0, 0, 0, 0.05) !important;
     border-radius: 16px;
     padding: 1rem 2rem;
-    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1) !important;
     gap: 0.5rem;
 }
 
@@ -2441,7 +2441,7 @@ body.menu-open .menu-bar {
     border: none;
     border-radius: 0;
     box-shadow: none;
-    border-right: 1px solid rgba(255, 255, 255, 0.15);
+    border-right: 1px solid rgba(0, 0, 0, 0.08) !important;
     padding: 0 0.75rem;
     flex: 1;
     text-align: left;
@@ -2449,7 +2449,7 @@ body.menu-open .menu-bar {
 }
 
 .luxury-stat-card:last-child {
-    border-right: none;
+    border-right: none !important;
 }
 
 .luxury-stat-card:hover {
@@ -2458,10 +2458,11 @@ body.menu-open .menu-bar {
     box-shadow: none;
 }
 
-.stat-icon {
-    width: 24px;
-    height: 24px;
-    color: #D4B582;
+.stat-icon,
+.luxury-stat-card .stat-icon {
+    width: 36px !important;
+    height: 36px !important;
+    color: #11366E !important;
     margin: 0;
     flex-shrink: 0;
 }
@@ -2475,8 +2476,8 @@ body.menu-open .menu-bar {
 
 .stat-number,
 .luxury-stat-card .stat-number {
-    font-size: 1.5rem;
-    color: #fff;
+    font-size: 1.5rem !important;
+    color: #11366E !important;
     font-weight: 700;
     font-family: var(--font-heading, 'Fraunces', serif);
     line-height: 1;
@@ -2487,14 +2488,14 @@ body.menu-open .menu-bar {
 
 .stat-label,
 .luxury-stat-card .stat-label {
-    font-size: 0.7rem;
-    color: rgba(255, 255, 255, 0.85);
+    font-size: 0.6rem !important;
+    color: #888888 !important;
     text-transform: uppercase;
     letter-spacing: 0.5px;
     font-weight: 500;
     font-family: var(--font-body, 'Inter', sans-serif);
     margin: 0;
-    max-width: 120px;
+    max-width: 110px !important;
     line-height: 1.2;
     display: block;
 }
@@ -2513,13 +2514,13 @@ body.menu-open .menu-bar {
         padding: 1.25rem 1rem;
     }
     .luxury-stat-card {
-        border-right: none;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+        border-right: none !important;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.08) !important;
         padding: 0.75rem 0.25rem;
         width: 100%;
     }
     .luxury-stat-card:last-child {
         grid-column: span 2;
-        border-bottom: none;
+        border-bottom: none !important;
     }
 }
