@@ -11,7 +11,7 @@ Dokumentasi ini memuat panduan struktur, filosofi, palet warna, dan aturan penge
 - **Visi**: *"Terwujudnya generasi rabbani yang cerdas, berdaya saing, dan berakhlak Qur’ani melalui pembinaan intensif di lingkungan pesantren."*
 - **Lokasi**: Jamusan, Jirak, Bokoharjo, Kec. Prambanan, Kabupaten Sleman, DIY 55572
 - **Domain Web Resmi (GitHub Pages)**: `https://iroyzlab.github.io/albadar/`
-- **Fokus Kurikulum**: Integrasi pendidikan akademik nasional, pembentukan karakter Islam, Tahfidz Al-Qur'an (target 5 Juz), penguasaan bahasa internasional (Arab & Inggris), serta penguasaan teknologi masa depan (Coding & AI, STEM).
+- **Fokus Kurikulum**: Integrasi pendidikan akademik nasional, pembentukan karakter Islam, Tahfidz Al-Qur'an (target 15 Juz Boarding / 4 Juz Full Day), penguasaan bahasa internasional (Arab & Inggris), serta penguasaan teknologi masa depan (Coding & AI, STEM).
 
 ---
 
