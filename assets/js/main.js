@@ -256,6 +256,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Dynamic News Loader
     const newsContainer = document.getElementById('newsContainer');
     if (newsContainer) {
+        newsContainer.style.display = 'contents';
         const newsData = [
             {
                 tag: "Kegiatan Santri",
@@ -289,7 +290,7 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         ];
         newsContainer.innerHTML = newsData.slice(0, 3).map(news => `
-            <a href="news.html" class="news-card-lux">
+            <a href="news.html" class="news-card-lux reveal-stagger">
                 <div class="news-img-wrap"><img src="${news.img}" alt="${news.title}" loading="lazy" onerror="this.onerror=null;this.src='assets/img/placeholder.svg';"></div>
                 <div class="news-content-lux">
                     <span class="news-tag-lux">${news.tag}</span>
