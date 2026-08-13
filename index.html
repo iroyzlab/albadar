@@ -275,6 +275,37 @@
         @media (max-width: 1024px) { .pillars-grid { flex-wrap: wrap; } .pillar-card { flex: 0 0 30%; margin-bottom: 1rem; } }
         @media (max-width: 768px) { .pillar-card { flex: 0 0 45%; } }
         @media (max-width: 480px) { .pillar-card { flex: 0 0 100%; } }
+
+        /* Rounded CTA Box */
+        .cta-rounded-box {
+            background: linear-gradient(135deg, #04473A 0%, #11366E 100%);
+            border-radius: 24px;
+            padding: 6rem 2rem;
+            text-align: center;
+            box-shadow: 0 20px 50px rgba(4, 71, 58, 0.15);
+            max-width: 1000px;
+            margin: 0 auto;
+            position: relative;
+            overflow: hidden;
+        }
+        .cta-rounded-box::before {
+            content: '';
+            position: absolute;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(212, 181, 130, 0.15) 0%, transparent 70%);
+            top: 50%; left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        .cta-rounded-box > * {
+            position: relative;
+            z-index: 1;
+        }
+        @media (max-width: 768px) {
+            .cta-rounded-box {
+                border-radius: 0;
+            }
+        }
     </style>
 
     <!-- Schema.org School Structured Data -->
@@ -708,11 +739,13 @@
         </section>
 
         <!-- FINAL CTA LUX -->
-        <section class="cta-lux">
-            <div class="container text-center">
-                <h2 class="cta-title-lux reveal">Siap Menjadi Bagian dari <br>Keluarga Besar Al Badar?</h2>
-                <p class="reveal">Mari bersama membangun masa depan cemerlang bagi putra-putri Anda.</p>
-                <a href="https://psb.mbs.sch.id" class="btn-lux btn-gold-lux mt-lg reveal" target="_blank" rel="noopener">Daftar PPDB Online</a>
+        <section class="section cta-section-wrapper" style="padding: 4rem 0;">
+            <div class="container">
+                <div class="cta-rounded-box reveal">
+                    <h2 class="cta-title-lux" style="color: #ffffff; margin-bottom: 1rem;">Bergabung Bersama Keluarga Besar MBS</h2>
+                    <p style="color: rgba(255, 255, 255, 0.9); font-size: 1.1rem; max-width: 600px; margin: 0 auto 2rem auto;">Mari bersama membangun masa depan cemerlang bagi putra-putri Anda.</p>
+                    <a href="https://psb.mbs.sch.id" class="btn-lux btn-gold-lux" target="_blank" rel="noopener">Daftar PPDB Online</a>
+                </div>
             </div>
         </section>
     </main>
