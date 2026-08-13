@@ -2404,7 +2404,7 @@ body.menu-open .menu-bar {
     }
 }
 
-/* Institutional Floating Statistics Bar (White Card / Gold Hover Effect) */
+/* Institutional Floating Statistics Bar (White Card / Blue Accent) */
 .stats-section,
 .luxury-stats-section {
     background-color: transparent !important;
@@ -2426,7 +2426,7 @@ body.menu-open .menu-bar {
     background: #ffffff !important;
     border: 1px solid rgba(0, 0, 0, 0.05) !important;
     border-radius: 16px;
-    padding: 0.75rem 1.5rem;
+    padding: 1rem 2rem;
     box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1) !important;
     gap: 0.5rem;
 }
@@ -2453,12 +2453,6 @@ body.menu-open .menu-bar {
     border-right: none !important;
 }
 
-.luxury-stat-card:hover,
-.luxury-stat-card:active {
-    background-color: transparent !important;
-    box-shadow: inset 0 0 0 1px #D4B582 !important;
-}
-
 .stat-icon,
 .luxury-stat-card .stat-icon {
     width: 24px !important;
@@ -2473,24 +2467,12 @@ body.menu-open .menu-bar {
     transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1) !important;
 }
 
-.luxury-stat-card:hover .stat-icon,
-.luxury-stat-card:active .stat-icon {
-    transform: scale(1.2) rotate(-15deg) !important;
-    background-color: #D4B582 !important;
-    color: #ffffff !important;
-}
-
 .stat-info {
     display: flex;
     flex-direction: column;
     line-height: 1.1;
     text-align: left;
     transition: transform 0.3s ease;
-}
-
-.luxury-stat-card:hover .stat-info,
-.luxury-stat-card:active .stat-info {
-    transform: translateY(-4px);
 }
 
 .stat-number,
@@ -2508,26 +2490,40 @@ body.menu-open .menu-bar {
 
 .stat-label,
 .luxury-stat-card .stat-label {
-    font-size: 0.55rem !important;
+    font-size: 0.5rem !important;
     color: #888888 !important;
     text-transform: uppercase;
     letter-spacing: 0.5px;
     font-weight: 500;
     font-family: var(--font-body, 'Inter', sans-serif);
     margin: 0;
-    max-width: 110px !important;
+    white-space: nowrap !important;
     line-height: 1.2;
     display: block;
     transition: color 0.3s ease;
 }
 
-.luxury-stat-card:hover .stat-number,
-.luxury-stat-card:active .stat-number,
-.luxury-stat-card:hover .stat-label,
-.luxury-stat-card:active .stat-label {
-    color: #11366E !important;
+/* Desktop Hover Effects (No card outline, icon circle turns gold, icon glyph stays blue) */
+@media (min-width: 769px) {
+    .luxury-stat-card:hover {
+        background-color: transparent !important;
+        box-shadow: none !important;
+    }
+    .luxury-stat-card:hover .stat-info {
+        transform: translateY(-4px);
+    }
+    .luxury-stat-card:hover .stat-icon {
+        background-color: #D4B582 !important;
+        color: #11366E !important;
+        transform: scale(1.2) rotate(-15deg) !important;
+    }
+    .luxury-stat-card:hover .stat-number,
+    .luxury-stat-card:hover .stat-label {
+        color: #11366E !important;
+    }
 }
 
+/* Mobile Active / Tap Effects (Gold card outline + icon circle turns gold, icon glyph stays blue) */
 @media (max-width: 768px) {
     .stats-section,
     .luxury-stats-section {
@@ -2550,5 +2546,21 @@ body.menu-open .menu-bar {
     .luxury-stat-card:last-child {
         grid-column: span 2;
         border-bottom: none !important;
+    }
+    .luxury-stat-card:active {
+        background-color: transparent !important;
+        box-shadow: inset 0 0 0 1px #D4B582 !important;
+    }
+    .luxury-stat-card:active .stat-info {
+        transform: translateY(-4px);
+    }
+    .luxury-stat-card:active .stat-icon {
+        background-color: #D4B582 !important;
+        color: #11366E !important;
+        transform: scale(1.2) rotate(-15deg) !important;
+    }
+    .luxury-stat-card:active .stat-number,
+    .luxury-stat-card:active .stat-label {
+        color: #11366E !important;
     }
 }
