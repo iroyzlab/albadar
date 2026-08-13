@@ -207,6 +207,23 @@
         .editorial-desc p:last-child {
             margin-bottom: 0;
         }
+
+        /* Header Spacing & Prestasi Card Tags */
+        .main-nav { margin-left: auto; }
+        .logo { margin-right: 3rem; }
+        .card-tag {
+            display: inline-block;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            margin-bottom: 0.75rem;
+        }
+        .tag-gold { background: rgba(212, 181, 130, 0.15); color: #B38E46; }
+        .tag-green { background: rgba(4, 71, 58, 0.1); color: #04473A; }
+        .tag-blue { background: rgba(17, 54, 110, 0.1); color: #11366E; }
     </style>
 
     <!-- Schema.org School Structured Data -->
@@ -382,6 +399,58 @@
             </div>
         </section>
 
+        <!-- DYNAMIC NEWS SECTION -->
+        <section class="section news-section-lux">
+            <div class="container">
+                <div class="section-header-lux reveal">
+                    <div>
+                        <span class="eyebrow-lux">Informasi Terbaru</span>
+                        <h2 class="section-title-lux">Berita & Pengumuman</h2>
+                    </div>
+                    <a href="news.html" class="btn-text-lux">Lihat Semua <span>→</span></a>
+                </div>
+                <div class="news-grid-lux" id="newsContainer">
+                    <!-- Berita akan otomatis dimuat di sini oleh JavaScript -->
+                </div>
+            </div>
+        </section>
+
+        <!-- PRESTASI SISWA SECTION -->
+        <section class="section prestasi-section-lux">
+            <div class="container">
+                <div class="section-header-lux center reveal">
+                    <span class="eyebrow-lux">Prestasi Terbaru</span>
+                    <h2 class="section-title-lux">Bukti Dedikasi &amp; Potensi Siswa</h2>
+                </div>
+                <div class="cards-grid grid-3">
+                    <!-- Card 1 -->
+                    <div class="feature-card reveal-stagger">
+                        <span class="card-tag tag-gold">OPI</span>
+                        <div class="card-icon">🏅</div>
+                        <h3 style="font-family: var(--font-heading); font-size: 1.25rem; font-weight: 700; color: var(--lux-dark); margin-bottom: 0.5rem;">Olimpiade Pelajar Indonesia</h3>
+                        <p style="font-size: 0.95rem; color: #555555; line-height: 1.6; margin: 0;">Meraih medali Perak dan Perunggu pada ajang olimpiade tingkat nasional.</p>
+                    </div>
+                    <!-- Card 2 -->
+                    <div class="feature-card reveal-stagger">
+                        <span class="card-tag tag-green">Kompas</span>
+                        <div class="card-icon">🥇</div>
+                        <h3 style="font-family: var(--font-heading); font-size: 1.25rem; font-weight: 700; color: var(--lux-dark); margin-bottom: 0.5rem;">Kompetisi Pelajar Ambis</h3>
+                        <p style="font-size: 0.95rem; color: #555555; line-height: 1.6; margin: 0;">Mengharumkan nama sekolah dengan raihan medali Emas, Perak, dan Perunggu.</p>
+                    </div>
+                    <!-- Card 3 -->
+                    <div class="feature-card reveal-stagger">
+                        <span class="card-tag tag-blue">Mendatang</span>
+                        <div class="card-icon">☪️</div>
+                        <h3 style="font-family: var(--font-heading); font-size: 1.25rem; font-weight: 700; color: var(--lux-dark); margin-bottom: 0.5rem;">Olimnus Islamic</h3>
+                        <p style="font-size: 0.95rem; color: #555555; line-height: 1.6; margin: 0;">Bersiap menghadapi kompetisi diniyah tingkat nasional dalam waktu dekat.</p>
+                    </div>
+                </div>
+                <div class="text-center reveal" style="margin-top: 2.5rem;">
+                    <a href="achievements.html" class="btn-text-lux">Lihat Semua Prestasi <span>→</span></a>
+                </div>
+            </div>
+        </section>
+
         <!-- PROGRAM UNGGULAN (Pilar Pendidikan Al Badar) -->
         <section class="section">
             <div class="container">
@@ -414,22 +483,6 @@
                         <h3 class="pilar-title">Sains &amp; STEM</h3>
                         <p class="pilar-desc">Pembelajaran sains berbasis proyek (STEM) yang melatih penalaran kritis dan kreativitas.</p>
                     </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- DYNAMIC NEWS SECTION -->
-        <section class="section news-section-lux">
-            <div class="container">
-                <div class="section-header-lux reveal">
-                    <div>
-                        <span class="eyebrow-lux">Informasi Terbaru</span>
-                        <h2 class="section-title-lux">Berita & Pengumuman</h2>
-                    </div>
-                    <a href="news.html" class="btn-text-lux">Lihat Semua <span>→</span></a>
-                </div>
-                <div class="news-grid-lux" id="newsContainer">
-                    <!-- Berita akan otomatis dimuat di sini oleh JavaScript -->
                 </div>
             </div>
         </section>
