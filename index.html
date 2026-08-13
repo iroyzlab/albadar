@@ -261,6 +261,20 @@
             line-height: 1.5;
             margin: 0;
         }
+
+        /* Pillars Section (1-Row Horizontal Layout) */
+        .pillars-section { background-color: #11366E; padding: 6rem 0; }
+        .pillars-grid { display: flex; gap: 1rem; justify-content: space-between; align-items: stretch; }
+        .pillar-card { flex: 1; min-width: 0; background: rgba(255,255,255,0.05); border: 1px solid rgba(212, 181, 130, 0.2); border-radius: 12px; padding: 1.5rem 1rem; text-align: center; color: #fff; display: flex; flex-direction: column; align-items: center; transition: all 0.3s ease; }
+        .pillar-card:hover { background: rgba(212, 181, 130, 0.1); box-shadow: 0 0 25px rgba(212, 181, 130, 0.3); border-color: rgba(212, 181, 130, 0.5); }
+        .pillar-icon-circle { width: 50px; height: 50px; border: 2px solid #D4B582; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-bottom: 1rem; color: #D4B582; transition: transform 0.3s ease; }
+        .pillar-card:hover .pillar-icon-circle { transform: rotate(15deg); }
+        .pillar-icon-circle svg { width: 24px; height: 24px; }
+        .pillar-card h3 { color: #D4B582; font-size: 0.9rem; margin-bottom: 0.5rem; }
+        .pillar-card p { font-size: 0.7rem; color: rgba(255,255,255,0.7); line-height: 1.4; margin: 0; }
+        @media (max-width: 1024px) { .pillars-grid { flex-wrap: wrap; } .pillar-card { flex: 0 0 30%; margin-bottom: 1rem; } }
+        @media (max-width: 768px) { .pillar-card { flex: 0 0 45%; } }
+        @media (max-width: 480px) { .pillar-card { flex: 0 0 100%; } }
     </style>
 
     <!-- Schema.org School Structured Data -->
@@ -489,46 +503,58 @@
         </section>
 
         <!-- PROGRAM UNGGULAN (Pilar Pendidikan Al Badar) -->
-        <section class="section">
+        <section class="section pillars-section">
             <div class="container">
-                <div class="section-header-lux center reveal">
-                    <span class="eyebrow-lux">Program Unggulan</span>
-                    <h2 class="section-title-lux">Pilar Pendidikan Al Badar</h2>
+                <div class="section-header-lux center reveal" style="margin-bottom: 3rem;">
+                    <span class="eyebrow-lux" style="color: #D4B582;">Program Unggulan</span>
+                    <h2 class="section-title-lux" style="color: #ffffff;">Pilar Pendidikan Al Badar</h2>
                 </div>
-                <div class="cards-grid grid-3">
-                    <!-- Card 1: Tahfidz & Qur'an -->
-                    <div class="premium-advantage reveal-stagger" style="border-top: 4px solid #11366E;">
-                        <div class="card-icon">📖</div>
+                <div class="pillars-grid reveal">
+                    <!-- 1. Tahfidz -->
+                    <div class="pillar-card">
+                        <div class="pillar-icon-circle">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
+                        </div>
                         <h3>Tahfidz &amp; Qur'an</h3>
                         <p>Program tahfidz intensif dengan target hafalan juz yang pasti sesuai jenjang.</p>
                     </div>
-                    <!-- Card 2: Bahasa Arab & Inggris -->
-                    <div class="premium-advantage reveal-stagger" style="border-top: 4px solid #04473A;">
-                        <div class="card-icon">🗣️</div>
+                    <!-- 2. Bahasa -->
+                    <div class="pillar-card">
+                        <div class="pillar-icon-circle">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+                        </div>
                         <h3>Bahasa Arab &amp; Inggris</h3>
                         <p>Pembiasaan bilingual aktif harian untuk membangun wawasan global santri.</p>
                     </div>
-                    <!-- Card 3: Coding & AI (KKA) -->
-                    <div class="premium-advantage reveal-stagger" style="border-top: 4px solid #11366E;">
-                        <div class="card-icon">💻</div>
+                    <!-- 3. Coding -->
+                    <div class="pillar-card">
+                        <div class="pillar-icon-circle">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+                        </div>
                         <h3>Coding &amp; AI (KKA)</h3>
                         <p>Literasi digital, koding, dan kecerdasan artifisial untuk membentuk inovator masa depan.</p>
                     </div>
-                    <!-- Card 4: Sains & STEM -->
-                    <div class="premium-advantage reveal-stagger" style="border-top: 4px solid #04473A;">
-                        <div class="card-icon">🔬</div>
+                    <!-- 4. Sains -->
+                    <div class="pillar-card">
+                        <div class="pillar-icon-circle">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3h6v4l5 12a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1L9 7V3z"></path><path d="M7 15h10"></path></svg>
+                        </div>
                         <h3>Sains &amp; STEM</h3>
                         <p>Pembelajaran sains berbasis proyek (STEM) yang melatih penalaran kritis dan kreativitas.</p>
                     </div>
-                    <!-- Card 5: Hizbul Wathan -->
-                    <div class="premium-advantage reveal-stagger" style="border-top: 4px solid #11366E;">
-                        <div class="card-icon">🏕️</div>
+                    <!-- 5. HW -->
+                    <div class="pillar-card">
+                        <div class="pillar-icon-circle">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 20l9-16 9 16"></path><line x1="12" y1="4" x2="12" y2="20"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+                        </div>
                         <h3>Hizbul Wathan</h3>
                         <p>Kepanduan Muhammadiyah untuk melatih kemandirian, kepemimpinan, dan cinta alam.</p>
                     </div>
-                    <!-- Card 6: Tapak Suci -->
-                    <div class="premium-advantage reveal-stagger" style="border-top: 4px solid #04473A;">
-                        <div class="card-icon">🥋</div>
+                    <!-- 6. Tapak Suci -->
+                    <div class="pillar-card">
+                        <div class="pillar-icon-circle">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><circle cx="12" cy="12" r="6"></circle><circle cx="12" cy="12" r="2"></circle></svg>
+                        </div>
                         <h3>Tapak Suci</h3>
                         <p>Ekstrakurikuler wajib beladiri untuk membentuk fisik yang tangguh dan mental yang baja.</p>
                     </div>
