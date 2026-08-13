@@ -182,6 +182,29 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
+    // Dynamic News Loader (Must run BEFORE Reveal on Scroll and Custom Cursor)
+    const newsContainer = document.getElementById('newsContainer');
+    if (newsContainer) {
+        const newsData = [
+            { tag: "Kegiatan Santri", title: "Penyerahan Resmi Santri Baru Angkatan Pertama", excerpt: "Senin, 13 Juli 2026 - Kegiatan penyerahan dan penerimaan santri baru dilaksanakan secara khidmat...", img: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?q=80&w=600&auto=format&fit=crop" },
+            { tag: "Orientasi", title: "FORTASI: Forum Orientasi dan Taaruf Santri", excerpt: "14-16 Juli 2026 - Kegiatan orientasi selama 3 hari untuk mengenalkan budaya pesantren, kurikulum,...", img: "https://images.unsplash.com/photo-1577896851231-70ef18881754?q=80&w=600&auto=format&fit=crop" },
+            { tag: "Event Nasional", title: "Partisipasi Santri dalam Peringatan Hari Anak Nasional", excerpt: "Rabu, 22 Juli 2026 - Siswa kelas 7 mengikuti rangkaian HAN 2026 di Kompleks Candi Prambanan. Beberapa santri...", img: "https://images.unsplash.com/photo-1509062522246-3755977927d7?q=80&w=600&auto=format&fit=crop" },
+            { tag: "Pengembangan Guru", title: "Bimbingan Teknis Kurikulum Satuan Pendidikan (KSP)", excerpt: "Rabu, 29 Juli 2026 - Guru dan tenaga kependidikan mengikuti bimbingan teknis penyusunan dan evaluasi...", img: "https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=600&auto=format&fit=crop" },
+            { tag: "Boarding Experience", title: "Albadar Camp (ABC) Perdana", excerpt: "15-16 Agustus 2026 - Kegiatan malam bina iman dan taqwa (MABIT) bulanan dari Sabtu siang hingga Ahad pagi...", img: "https://images.unsplash.com/photo-1504280390367-361c6d9f38f4?q=80&w=600&auto=format&fit=crop" }
+        ];
+        newsContainer.innerHTML = newsData.slice(0, 3).map(news => `
+            <a href="news.html" class="news-card-lux reveal-stagger">
+                <div class="news-img-wrap"><img src="${news.img}" alt="${news.title}"></div>
+                <div class="news-content-lux">
+                    <span class="news-tag-lux">${news.tag}</span>
+                    <h3 class="news-title-lux">${news.title}</h3>
+                    <p class="news-excerpt-lux">${news.excerpt}</p>
+                    <span class="news-read-lux">Baca Selengkapnya →</span>
+                </div>
+            </a>
+        `).join('');
+    }
+
     // Custom Cursor (Auto-inject ke semua halaman)
     let cursorDot = document.getElementById('cursorDot');
     let cursorOutline = document.getElementById('cursorOutline');
@@ -213,7 +236,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Reveal on Scroll
+    // Reveal on Scroll (Must be initialized AFTER news items are injected)
     const revealElements = document.querySelectorAll('.reveal, .reveal-stagger');
     if (revealElements.length > 0) {
         const observer = new IntersectionObserver((entries) => {
@@ -252,55 +275,6 @@ document.addEventListener('DOMContentLoaded', function() {
     // Set Year
     const yearSpan = document.getElementById('currentYear');
     if (yearSpan) yearSpan.textContent = new Date().getFullYear();
-
-    // Dynamic News Loader
-    const newsContainer = document.getElementById('newsContainer');
-    if (newsContainer) {
-        newsContainer.style.display = 'contents';
-        const newsData = [
-            {
-                tag: "Kegiatan Santri",
-                title: "Penyerahan Resmi Santri Baru Angkatan Pertama",
-                excerpt: "Senin, 13 Juli 2026 - Kegiatan penyerahan dan penerimaan santri baru dilaksanakan secara khidmat...",
-                img: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?q=80&w=600&auto=format&fit=crop"
-            },
-            {
-                tag: "Orientasi",
-                title: "FORTASI: Forum Orientasi dan Taaruf Santri",
-                excerpt: "14-16 Juli 2026 - Kegiatan orientasi selama 3 hari untuk mengenalkan budaya pesantren, kurikulum,...",
-                img: "https://images.unsplash.com/photo-1577896851231-70ef18881754?q=80&w=600&auto=format&fit=crop"
-            },
-            {
-                tag: "Event Nasional",
-                title: "Partisipasi Santri dalam Peringatan Hari Anak Nasional",
-                excerpt: "Rabu, 22 Juli 2026 - Siswa kelas 7 mengikuti rangkaian HAN 2026 di Kompleks Candi Prambanan. Beberapa santri...",
-                img: "https://images.unsplash.com/photo-1509062522246-3755977927d7?q=80&w=600&auto=format&fit=crop"
-            },
-            {
-                tag: "Pengembangan Guru",
-                title: "Bimbingan Teknis Kurikulum Satuan Pendidikan (KSP)",
-                excerpt: "Rabu, 29 Juli 2026 - Guru dan tenaga kependidikan mengikuti bimbingan teknis penyusunan dan evaluasi...",
-                img: "https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=600&auto=format&fit=crop"
-            },
-            {
-                tag: "Boarding Experience",
-                title: "Albadar Camp (ABC) Perdana",
-                excerpt: "15-16 Agustus 2026 - Kegiatan malam bina iman dan taqwa (MABIT) bulanan dari Sabtu siang hingga Ahad pagi...",
-                img: "https://images.unsplash.com/photo-1504280390367-361c6d9f38f4?q=80&w=600&auto=format&fit=crop"
-            }
-        ];
-        newsContainer.innerHTML = newsData.slice(0, 3).map(news => `
-            <a href="news.html" class="news-card-lux reveal-stagger">
-                <div class="news-img-wrap"><img src="${news.img}" alt="${news.title}" loading="lazy" onerror="this.onerror=null;this.src='assets/img/placeholder.svg';"></div>
-                <div class="news-content-lux">
-                    <span class="news-tag-lux">${news.tag}</span>
-                    <h3 class="news-title-lux">${news.title}</h3>
-                    <p class="news-excerpt-lux">${news.excerpt}</p>
-                    <span class="news-read-lux">Baca Selengkapnya →</span>
-                </div>
-            </a>
-        `).join('');
-    }
 
     // Lightbox
     const lightbox = document.getElementById('lightbox');
