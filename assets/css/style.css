@@ -1130,6 +1130,9 @@ p {
     animation: marquee 40s linear infinite;
     align-items: center;
     will-change: transform;
+    transform: translateZ(0);
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
 }
 
 .marquee-item {
@@ -1146,6 +1149,8 @@ p {
     filter: grayscale(100%);
     opacity: 0.6;
     transition: all 0.3s ease;
+    -webkit-user-drag: none;
+    user-select: none;
 }
 
 .marquee-item:hover img {
@@ -2355,6 +2360,12 @@ body.menu-open .menu-bar {
     .partners-marquee-wrap {
         flex: 1 1 100%;
         width: 100%;
+    }
+    .marquee-track {
+        gap: 2.5rem;
+    }
+    .marquee-item img {
+        height: 40px;
     }
 
     /* Disable custom desktop cursor on mobile */
