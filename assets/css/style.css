@@ -257,7 +257,8 @@ p {
     transition: var(--transition);
 }
 
-.site-header.scrolled .logo {
+.site-header.scrolled .logo,
+.site-header.scrolled .logo-text {
     color: var(--color-primary);
 }
 
@@ -268,12 +269,45 @@ p {
     transition: var(--transition);
 }
 
-.logo-text-img {
-    height: 50px;
-    width: auto;
+.logo-text {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    line-height: 1.1;
     margin-left: 0.75rem;
-    object-fit: contain;
+    color: #fff;
     transition: var(--transition);
+}
+
+.logo-sub {
+    font-size: 0.55rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-weight: 500;
+    opacity: 0.9;
+    text-align: left;
+    color: currentColor;
+    font-family: var(--font-body);
+}
+
+.logo-main {
+    font-size: 1.1rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    text-align: left;
+    font-family: var(--font-heading);
+    color: inherit;
+}
+
+.logo-loc {
+    font-size: 0.7rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-weight: 500;
+    text-align: left;
+    color: var(--lux-gold);
+    font-family: var(--font-body);
 }
 
 .main-nav {
@@ -2466,9 +2500,24 @@ body.menu-open .menu-bar {
         height: 40px;
     }
 
-    .logo-text-img {
-        height: 35px;
+    .logo-text {
         margin-left: 0.5rem;
+        margin-right: 0;
+    }
+
+    .logo-sub {
+        font-size: 0.45rem;
+        letter-spacing: 1px;
+    }
+
+    .logo-main {
+        font-size: 0.9rem;
+        letter-spacing: 0.5px;
+    }
+
+    .logo-loc {
+        font-size: 0.6rem;
+        letter-spacing: 1px;
     }
 
     .section-header-lux {
