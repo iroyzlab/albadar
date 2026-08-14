@@ -1125,10 +1125,11 @@ p {
 
 .marquee-track {
     display: flex;
-    gap: 4rem;
+    gap: 5rem;
     width: max-content;
-    animation: marquee 25s linear infinite;
+    animation: marquee 40s linear infinite;
     align-items: center;
+    will-change: transform;
 }
 
 .marquee-item {
@@ -1141,6 +1142,7 @@ p {
 .marquee-item img {
     height: 50px;
     width: auto;
+    object-fit: contain;
     filter: grayscale(100%);
     opacity: 0.6;
     transition: all 0.3s ease;
