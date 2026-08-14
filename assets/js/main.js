@@ -182,27 +182,53 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Dynamic News Loader (Must run BEFORE Reveal on Scroll and Custom Cursor)
+    // Dynamic News Loader (Rotating 3-column Grid)
     const newsContainer = document.getElementById('newsContainer');
     if (newsContainer) {
-        const newsData = [
+        const allNews = [
             { tag: "Boarding Experience", title: "Albadar Camp (ABC) Perdana", excerpt: "15-16 Agustus 2026 - Kegiatan malam bina iman dan taqwa (MABIT) bulanan dari Sabtu siang hingga Ahad pagi...", img: "https://images.unsplash.com/photo-1504280390367-361c6d9f38f4?q=80&w=600&auto=format&fit=crop" },
             { tag: "Pengembangan Guru", title: "Bimbingan Teknis Kurikulum Satuan Pendidikan (KSP)", excerpt: "Rabu, 29 Juli 2026 - Guru dan tenaga kependidikan mengikuti bimbingan teknis penyusunan dan evaluasi...", img: "https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=600&auto=format&fit=crop" },
             { tag: "Event Nasional", title: "Partisipasi Santri dalam Peringatan Hari Anak Nasional", excerpt: "Rabu, 22 Juli 2026 - Siswa kelas 7 mengikuti rangkaian HAN 2026 di Kompleks Candi Prambanan. Beberapa santri...", img: "https://images.unsplash.com/photo-1509062522246-3755977927d7?q=80&w=600&auto=format&fit=crop" },
             { tag: "Orientasi", title: "FORTASI: Forum Orientasi dan Taaruf Santri", excerpt: "14-16 Juli 2026 - Kegiatan orientasi selama 3 hari untuk mengenalkan budaya pesantren, kurikulum,...", img: "https://images.unsplash.com/photo-1577896851231-70ef18881754?q=80&w=600&auto=format&fit=crop" },
             { tag: "Kegiatan Santri", title: "Penyerahan Resmi Santri Baru Angkatan Pertama", excerpt: "Senin, 13 Juli 2026 - Kegiatan penyerahan dan penerimaan santri baru dilaksanakan secara khidmat...", img: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?q=80&w=600&auto=format&fit=crop" }
         ];
-        newsContainer.innerHTML = newsData.slice(0, 3).map(news => `
-            <a href="news.html" class="news-card-lux reveal-stagger">
-                <div class="news-img-wrap"><img src="${news.img}" alt="${news.title}"></div>
-                <div class="news-content-lux">
-                    <span class="news-tag-lux">${news.tag}</span>
-                    <h3 class="news-title-lux">${news.title}</h3>
-                    <p class="news-excerpt-lux">${news.excerpt}</p>
-                    <span class="news-read-lux">Baca Selengkapnya →</span>
-                </div>
-            </a>
-        `).join('');
+        
+        let newsOffset = 0;
+
+        function renderNews() {
+            // Add fading class to fade out
+            newsContainer.classList.add('fading');
+
+            // Wait 500ms for fade out, then change content and fade in
+            setTimeout(() => {
+                let html = '';
+                for (let i = 0; i < 3; i++) {
+                    const news = allNews[(newsOffset + i) % allNews.length];
+                    html += `
+                        <a href="news.html" class="news-card-lux">
+                            <div class="news-img-wrap"><img src="${news.img}" alt="${news.title}"></div>
+                            <div class="news-content-lux">
+                                <span class="news-tag-lux">${news.tag}</span>
+                                <h3 class="news-title-lux">${news.title}</h3>
+                                <p class="news-excerpt-lux">${news.excerpt}</p>
+                                <span class="news-read-lux">Baca Selengkapnya →</span>
+                            </div>
+                        </a>
+                    `;
+                }
+                newsContainer.innerHTML = html;
+                newsContainer.classList.remove('fading'); // Fade back in
+            }, 500);
+        }
+
+        // Initial render
+        renderNews();
+
+        // Rotate every 3 seconds
+        setInterval(() => {
+            newsOffset++;
+            renderNews();
+        }, 3000);
     }
 
     // Custom Cursor (Auto-inject ke semua halaman)

@@ -978,6 +978,14 @@ p {
     align-items: center;
 }
 
+#newsContainer {
+    transition: opacity 0.5s ease-in-out;
+}
+
+#newsContainer.fading {
+    opacity: 0;
+}
+
 .news-grid-lux, .news-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
