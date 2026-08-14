@@ -265,34 +265,26 @@ p {
 .logo-text {
     display: flex;
     flex-direction: column;
-    width: 100%;
-    min-width: 175px;
-    line-height: 1.15;
+    align-items: flex-start;
+    text-align: left;
+    line-height: 1.1;
     margin-right: 3rem;
     color: #fff;
     transition: var(--transition);
 }
 
 .logo-sub {
-    display: block;
-    width: 100%;
-    text-align: justify;
-    text-align-last: justify;
     font-size: 0.55rem;
-    letter-spacing: 1px;
+    letter-spacing: 1.5px;
     text-transform: uppercase;
     color: currentColor;
-    opacity: 0.85;
+    opacity: 0.8;
     font-weight: 500;
     font-family: var(--font-body);
 }
 
 .logo-main {
-    display: block;
-    width: 100%;
-    text-align: justify;
-    text-align-last: justify;
-    font-size: 1.05rem;
+    font-size: 1.1rem;
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.5px;
@@ -301,12 +293,8 @@ p {
 }
 
 .logo-loc {
-    display: block;
-    width: 100%;
-    text-align: justify;
-    text-align-last: justify;
-    font-size: 0.68rem;
-    letter-spacing: 7px;
+    font-size: 0.7rem;
+    letter-spacing: 1px;
     text-transform: uppercase;
     color: var(--lux-gold);
     font-weight: 500;
@@ -2510,23 +2498,22 @@ body.menu-open .menu-bar {
     }
 
     .logo-text {
-        min-width: 140px;
         margin-right: 0;
     }
 
     .logo-sub {
         font-size: 0.45rem;
-        letter-spacing: 0.5px;
+        letter-spacing: 1px;
     }
 
     .logo-main {
-        font-size: 0.88rem;
-        letter-spacing: 0.2px;
+        font-size: 0.9rem;
+        letter-spacing: 0.5px;
     }
 
     .logo-loc {
-        font-size: 0.58rem;
-        letter-spacing: 5px;
+        font-size: 0.6rem;
+        letter-spacing: 1px;
     }
 
     .section-header-lux {
