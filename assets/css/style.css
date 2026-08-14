@@ -265,6 +265,8 @@ p {
 .logo-text {
     display: flex;
     flex-direction: column;
+    align-items: center;
+    text-align: center;
     line-height: 1.1;
     margin-right: 3rem;
     color: #fff;
@@ -272,6 +274,8 @@ p {
 }
 
 .logo-sub {
+    display: block;
+    width: 100%;
     font-size: 0.55rem;
     letter-spacing: 1.5px;
     text-transform: uppercase;
@@ -282,6 +286,8 @@ p {
 }
 
 .logo-main {
+    display: block;
+    width: 100%;
     font-size: 1.1rem;
     font-weight: 700;
     text-transform: uppercase;
@@ -291,6 +297,8 @@ p {
 }
 
 .logo-loc {
+    display: block;
+    width: 100%;
     font-size: 0.7rem;
     letter-spacing: 2px;
     text-transform: uppercase;
