@@ -978,12 +978,8 @@ p {
     align-items: center;
 }
 
-#newsContainer {
+#newsCard1, #newsCard2, #newsCard3 {
     transition: opacity 0.5s ease-in-out;
-}
-
-#newsContainer.fading {
-    opacity: 0;
 }
 
 .news-grid-lux, .news-grid {
