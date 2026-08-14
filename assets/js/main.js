@@ -182,7 +182,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Dynamic News Loader (Individual Staggered Fade)
+    // Dynamic News Loader (Sequential Staggered Fade)
     const allNews = [
         { tag: "Boarding Experience", title: "Albadar Camp (ABC) Perdana", excerpt: "15-16 Agustus 2026 - Kegiatan malam bina iman dan taqwa (MABIT) bulanan dari Sabtu siang hingga Ahad pagi...", img: "https://images.unsplash.com/photo-1504280390367-361c6d9f38f4?q=80&w=600&auto=format&fit=crop" },
         { tag: "Pengembangan Guru", title: "Bimbingan Teknis Kurikulum Satuan Pendidikan (KSP)", excerpt: "Rabu, 29 Juli 2026 - Guru dan tenaga kependidikan mengikuti bimbingan teknis penyusunan dan evaluasi...", img: "https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=600&auto=format&fit=crop" },
@@ -190,8 +190,6 @@ document.addEventListener('DOMContentLoaded', function() {
         { tag: "Orientasi", title: "FORTASI: Forum Orientasi dan Taaruf Santri", excerpt: "14-16 Juli 2026 - Kegiatan orientasi selama 3 hari untuk mengenalkan budaya pesantren, kurikulum,...", img: "https://images.unsplash.com/photo-1577896851231-70ef18881754?q=80&w=600&auto=format&fit=crop" },
         { tag: "Kegiatan Santri", title: "Penyerahan Resmi Santri Baru Angkatan Pertama", excerpt: "Senin, 13 Juli 2026 - Kegiatan penyerahan dan penerimaan santri baru dilaksanakan secara khidmat...", img: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?q=80&w=600&auto=format&fit=crop" }
     ];
-
-    let newsOffset = 0;
 
     function updateNewsCard(cardId, newsItem) {
         const card = document.getElementById(cardId);
@@ -225,23 +223,18 @@ document.addEventListener('DOMContentLoaded', function() {
         updateNewsCard('newsCard1', allNews[0]);
         updateNewsCard('newsCard2', allNews[1]);
         updateNewsCard('newsCard3', allNews[2]);
-        newsOffset = 3;
+        
+        let currentCard = 1; // Start with Card 1
+        let newsOffset = 3; // Start from the 4th item (since 1,2,3 are loaded initially)
 
-        // Auto-rotate every 3 seconds, 1 card at a time
+        // Auto-rotate: each card updates sequentially every 5 seconds
         setInterval(() => {
-            updateNewsCard('newsCard1', allNews[newsOffset % allNews.length]);
+            const cardId = 'newsCard' + currentCard;
+            updateNewsCard(cardId, allNews[newsOffset % allNews.length]);
+            
             newsOffset++;
-
-            setTimeout(() => {
-                updateNewsCard('newsCard2', allNews[newsOffset % allNews.length]);
-                newsOffset++;
-            }, 1000); // Card 2 changes 1 second later
-
-            setTimeout(() => {
-                updateNewsCard('newsCard3', allNews[newsOffset % allNews.length]);
-                newsOffset++;
-            }, 2000); // Card 3 changes 2 seconds later
-        }, 3000); // Cycle starts every 3 seconds
+            currentCard = (currentCard % 3) + 1; // Loop: 1 -> 2 -> 3 -> 1
+        }, 5000); // 5 seconds interval
     }
 
     // Custom Cursor (Auto-inject ke semua halaman)
