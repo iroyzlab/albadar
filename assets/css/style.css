@@ -1172,16 +1172,14 @@ p {
     height: 50px;
     width: auto;
     object-fit: contain;
-    filter: grayscale(100%);
-    opacity: 0.6;
-    transition: all 0.3s ease;
+    opacity: 1;
+    transition: transform 0.3s ease;
     -webkit-user-drag: none;
     user-select: none;
 }
 
 .marquee-item:hover img {
-    filter: grayscale(0%);
-    opacity: 1;
+    transform: scale(1.1);
 }
 
 .marquee-container:hover .marquee-track {
