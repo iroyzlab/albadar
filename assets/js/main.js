@@ -157,7 +157,7 @@ document.addEventListener('DOMContentLoaded', function() {
             } else {
                 const emptyMsg = document.createElement('div');
                 emptyMsg.className = 'search-suggestion-empty';
-                emptyMsg.textContent = 'Tidak ada hasil di situs ini. Tekan Enter untuk cari di Google.';
+                emptyMsg.textContent = 'Maaf, topik tidak ditemukan. Coba kata kunci lain.';
                 searchResultsContainer.appendChild(emptyMsg);
             }
 
