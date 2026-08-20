@@ -54,7 +54,7 @@
             align-items: center;
             max-width: 1000px;
             margin: 0 auto;
-            background: linear-gradient(135deg, #11366E 0%, #04473A 100%);
+            background: linear-gradient(135deg, var(--color-secondary) 0%, var(--color-primary) 100%);
             border: 1px solid rgba(212, 181, 130, 0.4);
             border-radius: 16px;
             padding: 1rem 2rem;
@@ -88,7 +88,7 @@
         .stat-icon {
             width: 24px;
             height: 24px;
-            color: #D4B582;
+            color: var(--lux-gold);
             margin: 0;
             flex-shrink: 0;
         }
@@ -163,16 +163,16 @@
             box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
         }
         .pilar-card.green-top {
-            border-top: 4px solid #04473A;
+            border-top: 4px solid var(--color-primary);
         }
         .pilar-card.blue-top {
-            border-top: 4px solid #11366E;
+            border-top: 4px solid var(--color-secondary);
         }
         .pilar-card.gold-top {
-            border-top: 4px solid #D4B582;
+            border-top: 4px solid var(--lux-gold);
         }
         .pilar-card.dark-top {
-            border-top: 4px solid #050505;
+            border-top: 4px solid var(--lux-dark);
         }
         .pilar-icon {
             font-size: 2.2rem;
@@ -188,7 +188,7 @@
         }
         .pilar-desc {
             font-size: 0.95rem;
-            color: #555555;
+            color: var(--color-text-muted);
             line-height: 1.6;
             margin: 0;
         }
@@ -201,7 +201,7 @@
         .editorial-desc p {
             font-size: 1.1rem;
             line-height: 1.8;
-            color: #555;
+            color: var(--color-text-muted);
             margin-bottom: 1.5rem;
         }
         .editorial-desc p:last-child {
@@ -221,9 +221,9 @@
             border-radius: 20px;
             margin-bottom: 0.75rem;
         }
-        .tag-gold { background: rgba(212, 181, 130, 0.15); color: #B38E46; }
-        .tag-green { background: rgba(4, 71, 58, 0.1); color: #04473A; }
-        .tag-blue { background: rgba(17, 54, 110, 0.1); color: #11366E; }
+        .tag-gold { background: rgba(212, 181, 130, 0.15); color: var(--lux-gold); }
+        .tag-green { background: rgba(4, 71, 58, 0.1); color: var(--color-primary); }
+        .tag-blue { background: rgba(17, 54, 110, 0.1); color: var(--color-secondary); }
 
         /* Premium Advantage Cards (Keunggulan Sekolah) */
         .premium-advantage {
@@ -245,32 +245,32 @@
         .premium-advantage .card-icon {
             font-size: 2rem;
             margin-bottom: 1rem;
-            color: #D4B582;
+            color: var(--lux-gold);
             line-height: 1;
         }
         .premium-advantage h3 {
             font-size: 1.1rem;
             margin-bottom: 0.5rem;
-            color: #11366E;
+            color: var(--color-secondary);
             font-family: var(--font-heading);
             font-weight: 700;
         }
         .premium-advantage p {
             font-size: 0.85rem;
-            color: #666;
+            color: var(--color-text-muted);
             line-height: 1.5;
             margin: 0;
         }
 
         /* Pillars Section (1-Row Horizontal Layout) */
-        .pillars-section { background-color: #11366E; padding: 6rem 0; }
+        .pillars-section { background-color: var(--color-secondary); padding: 6rem 0; }
         .pillars-grid { display: flex; gap: 1rem; justify-content: space-between; align-items: stretch; }
         .pillar-card { flex: 1; min-width: 0; background: rgba(255,255,255,0.05); border: 1px solid rgba(212, 181, 130, 0.2); border-radius: 12px; padding: 1.5rem 1rem; text-align: center; color: #fff; display: flex; flex-direction: column; align-items: center; transition: all 0.3s ease; }
         .pillar-card:hover { background: rgba(212, 181, 130, 0.1); box-shadow: 0 0 25px rgba(212, 181, 130, 0.3); border-color: rgba(212, 181, 130, 0.5); }
-        .pillar-icon-circle { width: 50px; height: 50px; border: 2px solid #D4B582; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-bottom: 1rem; color: #D4B582; transition: transform 0.3s ease; }
+        .pillar-icon-circle { width: 50px; height: 50px; border: 2px solid var(--lux-gold); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-bottom: 1rem; color: var(--lux-gold); transition: transform 0.3s ease; }
         .pillar-card:hover .pillar-icon-circle { transform: rotate(15deg); }
         .pillar-icon-circle svg { width: 24px; height: 24px; }
-        .pillar-card h3 { color: #D4B582; font-size: 0.9rem; margin-bottom: 0.5rem; }
+        .pillar-card h3 { color: var(--lux-gold); font-size: 0.9rem; margin-bottom: 0.5rem; }
         .pillar-card p { font-size: 0.7rem; color: rgba(255,255,255,0.7); line-height: 1.4; margin: 0; }
         @media (max-width: 1024px) { .pillars-grid { flex-wrap: wrap; } .pillar-card { flex: 0 0 30%; margin-bottom: 1rem; } }
         @media (max-width: 768px) { .pillar-card { flex: 0 0 45%; } }
@@ -278,7 +278,7 @@
 
         /* Rounded CTA Box */
         .cta-rounded-box {
-            background: linear-gradient(135deg, #04473A 0%, #11366E 100%);
+            background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
             border-radius: 24px;
             padding: 6rem 2rem;
             text-align: center;
@@ -501,7 +501,7 @@
         <section class="section pillars-section">
             <div class="container">
                 <div class="section-header-lux center reveal" style="margin-bottom: 3rem;">
-                    <span class="eyebrow-lux" style="color: #D4B582;">Program Unggulan</span>
+                    <span class="eyebrow-lux" style="color: var(--lux-gold);">Program Unggulan</span>
                     <h2 class="section-title-lux" style="color: #ffffff;">Pilar Pendidikan Al Badar</h2>
                 </div>
                 <div class="pillars-grid reveal">
@@ -570,21 +570,21 @@
                         <span class="card-tag tag-gold">OPI</span>
                         <div class="card-icon">🏅</div>
                         <h3 style="font-family: var(--font-heading); font-size: 1.25rem; font-weight: 700; color: var(--lux-dark); margin-bottom: 0.5rem;">Olimpiade Pelajar Indonesia</h3>
-                        <p style="font-size: 0.95rem; color: #555555; line-height: 1.6; margin: 0;">Meraih medali Perak dan Perunggu pada ajang olimpiade tingkat nasional.</p>
+                        <p style="font-size: 0.95rem; color: var(--color-text-muted); line-height: 1.6; margin: 0;">Meraih medali Perak dan Perunggu pada ajang olimpiade tingkat nasional.</p>
                     </div>
                     <!-- Card 2 -->
                     <div class="feature-card reveal-stagger">
                         <span class="card-tag tag-green">Kompas</span>
                         <div class="card-icon">🥇</div>
                         <h3 style="font-family: var(--font-heading); font-size: 1.25rem; font-weight: 700; color: var(--lux-dark); margin-bottom: 0.5rem;">Kompetisi Pelajar Ambis</h3>
-                        <p style="font-size: 0.95rem; color: #555555; line-height: 1.6; margin: 0;">Mengharumkan nama sekolah dengan raihan medali Emas, Perak, dan Perunggu.</p>
+                        <p style="font-size: 0.95rem; color: var(--color-text-muted); line-height: 1.6; margin: 0;">Mengharumkan nama sekolah dengan raihan medali Emas, Perak, dan Perunggu.</p>
                     </div>
                     <!-- Card 3 -->
                     <div class="feature-card reveal-stagger">
                         <span class="card-tag tag-blue">Mendatang</span>
                         <div class="card-icon">☪️</div>
                         <h3 style="font-family: var(--font-heading); font-size: 1.25rem; font-weight: 700; color: var(--lux-dark); margin-bottom: 0.5rem;">Olimnus Islamic</h3>
-                        <p style="font-size: 0.95rem; color: #555555; line-height: 1.6; margin: 0;">Bersiap menghadapi kompetisi diniyah tingkat nasional dalam waktu dekat.</p>
+                        <p style="font-size: 0.95rem; color: var(--color-text-muted); line-height: 1.6; margin: 0;">Bersiap menghadapi kompetisi diniyah tingkat nasional dalam waktu dekat.</p>
                     </div>
                 </div>
                 <div class="text-center reveal" style="margin-top: 2.5rem;">
@@ -642,7 +642,7 @@
                     <div class="partners-text">
                         <span class="eyebrow-lux">Afiliasi &amp; Mitra</span>
                         <h2 class="section-title-lux" style="font-size: 1.5rem; line-height: 1.2; margin-bottom: 0.5rem;">Bagian dari Ekosistem PPM MBS Yogyakarta</h2>
-                        <p class="section-subtitle" style="font-size: 0.85rem; color: #666; margin: 0;">Bersinergi dengan berbagai institusi pendidikan, dakwah, dan bisnis untuk mendukung kemandirian santri.</p>
+                        <p class="section-subtitle" style="font-size: 0.85rem; color: var(--color-text-muted); margin: 0;">Bersinergi dengan berbagai institusi pendidikan, dakwah, dan bisnis untuk mendukung kemandirian santri.</p>
                     </div>
                     <div class="partners-marquee-wrap">
                         <div class="marquee-container">
