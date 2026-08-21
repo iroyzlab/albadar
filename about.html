@@ -70,9 +70,13 @@
         /* Page Hero Institutional Styling */
         .page-hero.bg-emerald {
             background: linear-gradient(145deg, #022a22 0%, var(--color-primary) 100%);
-            padding: 8.5rem 1.5rem 2rem;
+            min-height: 70vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 8rem 0 4rem;
             position: relative;
-            overflow: hidden;
             border-bottom: 1px solid rgba(212, 181, 130, 0.2);
         }
         .page-hero.bg-emerald::before {
@@ -514,18 +518,15 @@
     <main>
         <!-- A. PAGE HERO (Dark Institutional) -->
         <section class="page-hero bg-emerald">
-            <div class="container text-center">
-                <span class="eyebrow-lux reveal-stagger" style="color: var(--lux-gold);">Tentang Kami</span>
-                <h1 class="page-title reveal-stagger">Mengenal Lebih Dekat <span class="text-gold">Al Badar</span></h1>
-                <p class="page-subtitle reveal-stagger">Sebuah lembaga pendidikan Islam fullday berbasis pesantren yang berkomitmen membentuk generasi Rabbani yang cerdas dan berakhlak Qur'ani.</p>
-            </div>
-            <div class="scroll-indicator">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><polyline points="19 12 12 19 5 12"></polyline></svg>
+            <div class="container">
+                <span class="eyebrow-lux" style="color: var(--lux-gold);">Tentang Kami</span>
+                <h1 class="page-title">Mengenal Lebih Dekat Al Badar</h1>
+                <p class="page-subtitle">Sebuah lembaga pendidikan Islam fullday berbasis pesantren yang berkomitmen membentuk generasi Rabbani yang cerdas dan berakhlak Qur'ani.</p>
             </div>
         </section>
 
         <!-- B. SEJARAH & LOKASI (Editorial Layout) -->
-        <section class="section editorial-intro section-angled-top section-angled-bottom">
+        <section class="section editorial-intro">
             <div class="container">
                 <div class="editorial-grid">
                     <div class="editorial-text reveal">
