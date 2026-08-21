@@ -863,6 +863,47 @@ p {
     font-weight: 300;
 }
 
+/* === ANGLED SECTION DIVIDERS & VISUAL HOOKS === */
+.section-angled-top {
+    clip-path: polygon(0 5%, 100% 0, 100% 100%, 0% 100%);
+    margin-top: -40px;
+    padding-top: 80px;
+}
+
+.section-angled-bottom {
+    clip-path: polygon(0 0, 100% 0, 100% 95%, 0% 100%);
+    padding-bottom: 80px;
+    margin-bottom: -40px;
+}
+
+/* Scroll Down Indicator */
+.scroll-indicator {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: var(--lux-gold);
+    animation: bounce 2s infinite;
+    z-index: 10;
+}
+
+.scroll-indicator svg {
+    width: 24px;
+    height: 24px;
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateX(-50%) translateY(0);
+    }
+    40% {
+        transform: translateX(-50%) translateY(-10px);
+    }
+    60% {
+        transform: translateX(-50%) translateY(-5px);
+    }
+}
+
 /* === 404 ERROR PAGE === */
 .error-page {
     min-height: 80vh;
