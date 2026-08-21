@@ -26,11 +26,6 @@
         <priority>0.6</priority>
     </url>
     <url>
-        <loc>https://iroyzlab.github.io/albadar/boarding.html</loc>
-        <lastmod>2026-08-11</lastmod>
-        <priority>0.6</priority>
-    </url>
-    <url>
         <loc>https://iroyzlab.github.io/albadar/contact.html</loc>
         <lastmod>2026-08-11</lastmod>
         <priority>0.6</priority>
@@ -48,11 +43,6 @@
     </url>
     <url>
         <loc>https://iroyzlab.github.io/albadar/news.html</loc>
-        <lastmod>2026-08-11</lastmod>
-        <priority>0.6</priority>
-    </url>
-    <url>
-        <loc>https://iroyzlab.github.io/albadar/non-boarding.html</loc>
         <lastmod>2026-08-11</lastmod>
         <priority>0.6</priority>
     </url>

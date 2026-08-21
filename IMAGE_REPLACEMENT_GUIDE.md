@@ -20,16 +20,7 @@
   - **URL Sampel**: `https://images.unsplash.com/photo-1541339907198-e08756dedf3f?q=80&w=800&auto=format&fit=crop`
   - **Rekomendasi Jalur Simpan**: `assets/img/profil/lingkungan-sekolah.jpg`
 
-### 2. `boarding.html` (1 Media)
-- [ ] **Fasilitas Asrama dan Lingkungan Pesantren Santri Boarding School SMP MBS Al Badar Prambanan**
-  - **Tipe**: Gambar
-  - **Deskripsi/Alt**: `Fasilitas Asrama dan Lingkungan Pesantren Santri Boarding School SMP MBS Al Badar Prambanan`
-  - **URL Sampel**: `https://images.unsplash.com/photo-1555854877-bab0e564b8d5?q=80&w=800&auto=format&fit=crop`
-  - **Rekomendasi Jalur Simpan**: `assets/img/program/asrama-santri.jpg`
-
-
-
-### 14. `gallery.html` (8 Media)
+### 3. `gallery.html` (8 Media)
 - [ ] **Diskusi dan Pembelajaran Interaktif Siswa SMP MBS Al Badar**
   - **Tipe**: Gambar
   - **Deskripsi/Alt**: `Diskusi dan Pembelajaran Interaktif Siswa SMP MBS Al Badar`
@@ -116,12 +107,6 @@
   - **URL Sampel**: `https://images.unsplash.com/photo-1606761568499-6d2451b23c66?q=80&w=600&auto=format&fit=crop`
   - **Rekomendasi Jalur Simpan**: `assets/img/berita/tahfidz-intensif.jpg`
 
-### 17. `non-boarding.html` (1 Media)
-- [ ] **Kegiatan Siswa Belajar di Kelas Program Full Day SMP MBS Al Badar Prambanan**
-  - **Tipe**: Gambar
-  - **Deskripsi/Alt**: `Kegiatan Siswa Belajar di Kelas Program Full Day SMP MBS Al Badar Prambanan`
-  - **URL Sampel**: `https://images.unsplash.com/photo-1503676260728-1c00da094a0b?q=80&w=800&auto=format&fit=crop`
-  - **Rekomendasi Jalur Simpan**: `assets/img/program/fullday-kelas.jpg`
 
 ### 18. `programs.html` (2 Media)
 - [ ] **Fasilitas dan Lingkungan Asrama Program Boarding School SMP MBS Al Badar**

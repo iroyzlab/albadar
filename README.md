@@ -4,9 +4,7 @@ This repository contains the complete source code for the SMP MBS Al Badar Pramb
 Structure
 index.html: Homepage
 about.html: About Us page
-programs.html: Programs overview
-boarding.html: Boarding School program details
-non-boarding.html: Non-Boarding program details
+programs.html: Programs and curriculum details (Boarding & Full Day)
 student-life.html: Student life and facilities
 achievements.html: School achievements
 gallery.html: Photo gallery

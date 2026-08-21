@@ -44,8 +44,8 @@ Dokumentasi ini memuat panduan struktur, filosofi, palet warna, dan aturan penge
 
 ## 4. Struktur Repository & Halaman Web
 
-- **Total 14 Halaman HTML**:
-  - Halaman Utama & Profil: `index.html`, `about.html`, `programs.html`, `boarding.html`, `non-boarding.html`, `student-life.html`, `achievements.html`, `gallery.html`, `news.html`, `faq.html`, `ppdb.html`, `contact.html`, `privacy-policy.html`, `404.html`
+- **Total 12 Halaman HTML**:
+  - Halaman Utama & Profil: `index.html`, `about.html`, `programs.html`, `student-life.html`, `achievements.html`, `gallery.html`, `news.html`, `faq.html`, `ppdb.html`, `contact.html`, `privacy-policy.html`, `404.html`
 - **Aset Utama**:
   - `assets/css/style.css`: File Master CSS
   - `assets/js/main.js`: Logika JavaScript utama (Navigasi mobile, header scrolled state, current year)

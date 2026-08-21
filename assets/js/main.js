@@ -76,8 +76,8 @@ document.addEventListener('DOMContentLoaded', function() {
     const siteSearchIndex = [
         { keywords: 'mbs tentang, profil, sejarah, visi, misi, tentang mbs', title: 'Tentang MBS Al Badar', url: 'about.html' },
         { keywords: 'mbs program, kurikulum, akademik, mata pelajaran, program mbs', title: 'Program & Kurikulum MBS', url: 'programs.html' },
-        { keywords: 'mbs boarding, asrama, santri, boarding mbs', title: 'Program Boarding MBS', url: 'boarding.html' },
-        { keywords: 'mbs fullday, harian, non boarding, fullday mbs', title: 'Program Full Day MBS', url: 'non-boarding.html' },
+        { keywords: 'mbs boarding, asrama, santri, boarding mbs', title: 'Program Boarding MBS', url: 'programs.html#boarding' },
+        { keywords: 'mbs fullday, harian, non boarding, fullday mbs', title: 'Program Full Day MBS', url: 'programs.html#fullday' },
         { keywords: 'mbs ppdb, pendaftaran, psb, daftar mbs, ppdb mbs', title: 'Panduan PPDB MBS', url: 'ppdb.html' },
         { keywords: 'mbs kegiatan, siswa, ekstrakurikuler, fasilitas, kehidupan mbs', title: 'Kehidupan Siswa MBS', url: 'student-life.html' },
         { keywords: 'mbs berita, kabar, pengumuman, info mbs', title: 'Berita & Info MBS', url: 'news.html' },

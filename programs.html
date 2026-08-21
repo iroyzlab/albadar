@@ -39,85 +39,54 @@
         .main-nav { margin-left: auto; }
         .logo { margin-right: 3rem; }
 
-        .curriculum-cat-card {
-            background: #ffffff;
-            border-radius: 16px;
-            padding: 2.25rem 1.75rem;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            display: flex;
-            flex-direction: column;
-            height: 100%;
-        }
-        .curriculum-cat-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.09);
-        }
-        .curriculum-cat-card.green-top {
-            border-top: 4px solid var(--color-primary);
-        }
-        .curriculum-cat-card.blue-top {
-            border-top: 4px solid var(--color-secondary);
-        }
-        .curriculum-cat-card.gold-top {
-            border-top: 4px solid var(--lux-gold);
-        }
-        .curriculum-card-header {
-            display: flex;
-            align-items: center;
-            gap: 0.85rem;
-            margin-bottom: 1.25rem;
-            padding-bottom: 1rem;
-            border-bottom: 1px solid var(--color-border);
-        }
-        .curriculum-card-icon {
-            font-size: 2.2rem;
-            line-height: 1;
-        }
-        .curriculum-card-title {
-            font-family: var(--font-heading);
-            font-size: 1.35rem;
-            font-weight: 700;
-            color: var(--lux-dark);
-            margin: 0;
-        }
-        .curriculum-subject-list {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-        .curriculum-subject-list li {
+        /* Page Hero Institutional */
+        .page-hero.bg-emerald {
+            background: linear-gradient(145deg, #022a22 0%, var(--color-primary) 100%);
+            padding: 10rem 1.5rem 6rem;
             position: relative;
-            padding-left: 1.5rem;
-            margin-bottom: 0.75rem;
-            font-size: 0.95rem;
-            color: var(--color-text);
-            line-height: 1.5;
+            overflow: hidden;
+            border-bottom: 1px solid rgba(212, 181, 130, 0.2);
         }
-        .curriculum-subject-list li:last-child {
-            margin-bottom: 0;
-        }
-        .curriculum-subject-list li::before {
-            content: "✓";
+        .page-hero.bg-emerald::before {
+            content: '';
             position: absolute;
-            left: 0;
-            top: 0;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: radial-gradient(circle at 50% 30%, rgba(212, 181, 130, 0.15) 0%, transparent 70%);
+            pointer-events: none;
+        }
+        .page-hero .page-title {
+            font-family: var(--font-heading);
+            font-size: clamp(2.2rem, 5vw, 3.5rem);
+            font-weight: 600;
+            letter-spacing: -0.02em;
+            color: #ffffff;
+            line-height: 1.15;
+            margin-bottom: 1.25rem;
+        }
+        .page-hero .page-title .text-gold {
             color: var(--lux-gold);
-            font-weight: 700;
-            font-size: 0.9rem;
+        }
+        .page-hero .page-subtitle {
+            font-size: clamp(1.05rem, 2vw, 1.25rem);
+            line-height: 1.7;
+            max-width: 820px;
+            margin: 0 auto;
+            color: rgba(255, 255, 255, 0.88);
+            font-weight: 300;
         }
 
-        /* Side-by-side Program Comparison */
+        /* Program Compare Cards */
         .program-compare-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
             gap: 2rem;
             align-items: stretch;
+            margin-top: 3rem;
         }
         .compare-card {
             background: #ffffff;
             border-radius: 20px;
-            padding: 2.5rem 2rem;
+            padding: 2.75rem 2.25rem;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
             display: flex;
             flex-direction: column;
@@ -128,37 +97,37 @@
         }
         .compare-card:hover {
             transform: translateY(-6px);
-            box-shadow: 0 18px 40px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 20px 45px rgba(0, 0, 0, 0.1);
         }
         .compare-card.card-gold {
             border: 2px solid var(--lux-gold);
-            background: linear-gradient(180deg, #ffffff 0%, var(--lux-bg) 100%);
+            background: linear-gradient(180deg, #ffffff 0%, #FAF8F5 100%);
         }
         .compare-card.card-blue {
             border: 2px solid var(--color-secondary);
-            background: linear-gradient(180deg, #ffffff 0%, var(--lux-bg) 100%);
-        }
-        .compare-badge {
-            position: absolute;
-            top: -14px;
-            right: 24px;
-            background: var(--lux-gold);
-            color: var(--lux-dark);
-            font-size: 0.75rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.08em;
-            padding: 0.35rem 1rem;
-            border-radius: 20px;
-            box-shadow: 0 4px 10px rgba(212, 181, 130, 0.4);
+            background: linear-gradient(180deg, #ffffff 0%, #F5F8FC 100%);
         }
         .compare-header {
+            margin-bottom: 1.25rem;
+        }
+        .compare-icon-box {
+            width: 56px;
+            height: 56px;
+            border-radius: 14px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
             margin-bottom: 1rem;
         }
-        .compare-icon {
-            font-size: 2.5rem;
-            margin-bottom: 0.5rem;
-            display: inline-block;
+        .card-gold .compare-icon-box {
+            background: rgba(212, 181, 130, 0.18);
+            color: #6B5220;
+            border: 1px solid rgba(212, 181, 130, 0.4);
+        }
+        .card-blue .compare-icon-box {
+            background: rgba(17, 54, 110, 0.12);
+            color: var(--color-secondary);
+            border: 1px solid rgba(17, 54, 110, 0.25);
         }
         .compare-title {
             font-family: var(--font-heading);
@@ -180,16 +149,16 @@
         .compare-features {
             list-style: none;
             padding: 0;
-            margin: 1.5rem 0 2rem 0;
+            margin: 1.75rem 0 2.25rem 0;
             flex-grow: 1;
         }
         .compare-features li {
             position: relative;
             padding-left: 1.75rem;
-            margin-bottom: 0.9rem;
+            margin-bottom: 1rem;
             font-size: 0.98rem;
             color: var(--color-text);
-            line-height: 1.5;
+            line-height: 1.55;
         }
         .compare-features li::before {
             content: "✓";
@@ -225,10 +194,178 @@
             width: 100%;
             text-align: center;
         }
+
+        /* Feature Cards for Daily/Weekly details */
+        .cards-grid.grid-4 {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+            margin-top: 2.5rem;
+        }
+        .cards-grid.grid-3 {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+            margin-top: 2.5rem;
+        }
+        .cards-grid.grid-2 {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.75rem;
+            margin-top: 2.5rem;
+        }
+        .feature-card {
+            background: #ffffff;
+            border: 1px solid rgba(0, 0, 0, 0.06);
+            border-radius: 16px;
+            padding: 2rem 1.75rem;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+            transition: all 0.35s cubic-bezier(0.25, 1, 0.5, 1);
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+        .feature-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+            border-color: rgba(212, 181, 130, 0.5);
+        }
+        .feature-card .card-icon-wrap {
+            width: 54px;
+            height: 54px;
+            border-radius: 14px;
+            background: rgba(212, 181, 130, 0.15);
+            border: 1px solid rgba(212, 181, 130, 0.3);
+            color: #6B5220;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.25rem;
+            transition: all 0.3s ease;
+        }
+        .feature-card:hover .card-icon-wrap {
+            transform: scale(1.08);
+            background: var(--lux-gold);
+            color: #04473a;
+            border-color: var(--lux-gold);
+        }
+        .feature-card .card-icon-wrap svg {
+            width: 26px;
+            height: 26px;
+        }
+        .feature-card h3 {
+            font-family: var(--font-heading);
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--lux-dark);
+            margin-bottom: 0.5rem;
+        }
+        .feature-card p {
+            font-size: 0.92rem;
+            color: var(--color-text-muted);
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        /* Curriculum Cards */
+        .curriculum-cat-card {
+            background: #ffffff;
+            border-radius: 16px;
+            padding: 2.25rem 2rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            border: 1px solid rgba(0, 0, 0, 0.06);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+        .curriculum-cat-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.09);
+        }
+        .curriculum-cat-card.green-top {
+            border-top: 4px solid var(--color-primary);
+        }
+        .curriculum-cat-card.gold-top {
+            border-top: 4px solid var(--lux-gold);
+        }
+        .curriculum-card-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.25rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid var(--color-border);
+        }
+        .curriculum-card-header .card-icon-wrap {
+            margin-bottom: 0;
+        }
+        .curriculum-card-title {
+            font-family: var(--font-heading);
+            font-size: 1.35rem;
+            font-weight: 700;
+            color: var(--lux-dark);
+            margin: 0;
+        }
+        .curriculum-subject-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .curriculum-subject-list li {
+            position: relative;
+            padding-left: 1.5rem;
+            margin-bottom: 0.75rem;
+            font-size: 0.95rem;
+            color: var(--color-text);
+            line-height: 1.5;
+        }
+        .curriculum-subject-list li:last-child {
+            margin-bottom: 0;
+        }
+        .curriculum-subject-list li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            top: 0;
+            color: var(--lux-gold);
+            font-weight: 700;
+            font-size: 0.9rem;
+        }
+
+        /* Section Intro Summary Box */
+        .program-detail-intro {
+            background: rgba(212, 181, 130, 0.08);
+            border-left: 4px solid var(--lux-gold);
+            border-radius: 0 14px 14px 0;
+            padding: 1.25rem 1.75rem;
+            margin: 1.5rem auto 2.5rem;
+            max-width: 860px;
+        }
+        .program-detail-intro p {
+            margin: 0;
+            font-size: 1.05rem;
+            line-height: 1.7;
+            color: var(--color-text);
+        }
+
+        @media (max-width: 1024px) {
+            .cards-grid.grid-4 {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .cards-grid.grid-3 {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
         @media (max-width: 768px) {
             .program-compare-grid {
                 grid-template-columns: 1fr;
                 gap: 1.5rem;
+            }
+            .cards-grid.grid-4,
+            .cards-grid.grid-3,
+            .cards-grid.grid-2 {
+                grid-template-columns: 1fr;
             }
             .compare-card {
                 padding: 2rem 1.5rem;
@@ -293,17 +430,17 @@
     </header>
 
     <main>
-        <!-- PAGE HERO LUX -->
+        <!-- A. PAGE HERO (Dark Institutional) -->
         <section class="page-hero bg-emerald">
             <div class="container text-center">
-                <span class="eyebrow eyebrow-light reveal">Program Pendidikan</span>
-                <h1 class="page-title reveal">Kurikulum Pesantren &amp; Nasional</h1>
-                <p class="page-subtitle reveal">Mengintegrasikan akademik unggul, ISMUBA, Tahfidz (Target 15 Juz Boarding / 4 Juz Full Day), KKA (Koding &amp; AI), STEM, dan Adab Digital dengan pemisahan kelas putra dan putri (57 Jam Pelajaran/minggu, Senin–Sabtu).</p>
+                <span class="eyebrow-lux reveal-stagger" style="color: var(--lux-gold);">Program Pendidikan</span>
+                <h1 class="page-title reveal-stagger">Kurikulum Pesantren &amp; <span class="text-gold">Nasional</span></h1>
+                <p class="page-subtitle reveal-stagger">Mengintegrasikan keunggulan akademik nasional, ISMUBA, Tahfidz (Target 15 Juz Boarding / 4 Juz Full Day), KKA (Koding &amp; AI), STEM, dan Adab Digital dengan sistem pemisahan kelas putra dan putri (57 Jam Pelajaran/minggu, Senin–Sabtu).</p>
             </div>
         </section>
 
-        <!-- PILIHAN PROGRAM (Side-by-side Premium Comparison) -->
-        <section class="section">
+        <!-- B. PILIHAN JALUR STUDI (Side-by-side Premium Comparison) -->
+        <section class="section" id="pilihan-program">
             <div class="container">
                 <div class="section-header-lux center reveal">
                     <span class="eyebrow-lux">Pilihan Jalur Studi</span>
@@ -311,60 +448,236 @@
                 </div>
                 <div class="program-compare-grid reveal">
                     <!-- Card 1: SMP Boarding (Kuning/Emas Theme) -->
-                    <div class="compare-card card-gold reveal">
+                    <div class="compare-card card-gold reveal" id="boarding">
                         <div class="compare-header">
-                            <span class="compare-icon"><svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v3"></path><path d="M12 5c-3.5 0-6 2.5-6 6v10h12V11c0-3.5-2.5-6-6-6Z"></path><path d="M9 21v-4a3 3 0 0 1 6 0v4"></path><path d="M4 11h2v10H4z"></path><path d="M18 11h2v10h-2z"></path></svg></span>
+                            <div class="compare-icon-box">
+                                <svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v3"></path><path d="M12 5c-3.5 0-6 2.5-6 6v10h12V11c0-3.5-2.5-6-6-6Z"></path><path d="M9 21v-4a3 3 0 0 1 6 0v4"></path><path d="M4 11h2v10H4z"></path><path d="M18 11h2v10h-2z"></path></svg>
+                            </div>
                             <h3 class="compare-title">SMP Boarding School</h3>
                             <p class="compare-tagline">"Kurikulum Pesantren &amp; Karakter 24 Jam"</p>
                         </div>
                         <ul class="compare-features">
-                            <li>Kurikulum Diniyah (Pesantren) &amp; Nasional</li>
-                            <li>Pemisahan Kelas Putra dan Putri</li>
-                            <li>Target Tahfidz 15 Juz</li>
-                            <li>Zero Personal Smartphone &amp; Chromebook Sekolah</li>
+                            <li>Kurikulum Diniyah (Pesantren) &amp; Terpadu Nasional (Diknas)</li>
+                            <li>Pemisahan Asrama &amp; Kelas Putra dan Putri 100%</li>
+                            <li>Target Tahfidz 15 Juz dengan Musyrif/ah Bersanad</li>
+                            <li>Zero Personal Smartphone &amp; Chromebook Sekolah Terproteksi</li>
+                            <li>Pembinaan Ibadah, Qiyamul Lail, &amp; Study Club 24 Jam</li>
                         </ul>
-                        <a href="ppdb.html" class="btn-lux btn-gold-lux">Daftar Boarding</a>
+                        <div style="display: flex; gap: 0.75rem; flex-direction: column;">
+                            <a href="#detail-boarding" class="btn-lux btn-gold-lux">Detail Kegiatan Boarding ↓</a>
+                            <a href="ppdb.html" class="btn btn-outline" style="text-align: center;">Daftar Boarding</a>
+                        </div>
                     </div>
 
                     <!-- Card 2: SMP Full Day (Biru MBS Theme) -->
-                    <div class="compare-card card-blue reveal">
+                    <div class="compare-card card-blue reveal" id="fullday">
                         <div class="compare-header">
-                            <span class="compare-icon"><svg viewBox="0 0 24 24" width="36" height="36" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"></path><path d="M6 12v5c3 3 9 3 12 0v-5"></path></svg></span>
+                            <div class="compare-icon-box">
+                                <svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"></path><path d="M6 12v5c3 3 9 3 12 0v-5"></path></svg>
+                            </div>
                             <h3 class="compare-title">SMP Full Day School</h3>
-                            <p class="compare-tagline">"Kurikulum Pesantren &amp; Sinergi Orang Tua"</p>
+                            <p class="compare-tagline">"Kurikulum Pesantren &amp; Sinergi Keluarga"</p>
                         </div>
                         <ul class="compare-features">
-                            <li>Kurikulum Diniyah (Pesantren) &amp; Nasional</li>
-                            <li>Pulang Lebih Awal untuk Sholat Ashar &amp; Dzikir</li>
-                            <li>Target Tahfidz 4 Juz</li>
-                            <li>Zero Personal Smartphone &amp; Chromebook Sekolah</li>
+                            <li>Kurikulum Diniyah (Pesantren) &amp; Terpadu Nasional (Diknas)</li>
+                            <li>Pemisahan Kelas Putra dan Putri Teratur</li>
+                            <li>Pulang Lebih Awal untuk Sholat Ashar &amp; Dzikir di Rumah</li>
+                            <li>Target Tahfidz 4 Juz Terstruktur</li>
+                            <li>Zero Personal Smartphone di Lingkungan Sekolah</li>
                         </ul>
-                        <a href="ppdb.html" class="compare-btn-blue">Daftar Full Day</a>
+                        <div style="display: flex; gap: 0.75rem; flex-direction: column;">
+                            <a href="#detail-fullday" class="compare-btn-blue">Detail Kegiatan Full Day ↓</a>
+                            <a href="ppdb.html" class="btn btn-outline" style="text-align: center;">Daftar Full Day</a>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- STRUKTUR KURIKULUM OPERASIONAL -->
+        <!-- C. DETAIL KEGIATAN BOARDING SCHOOL (Asrama 24 Jam) -->
+        <section class="section bg-sand" id="detail-boarding">
+            <div class="container">
+                <div class="section-header-lux center reveal">
+                    <span class="eyebrow-lux">Pembinaan 24 Jam</span>
+                    <h2 class="section-title-lux">Aktivitas &amp; Program Boarding School</h2>
+                </div>
+                <div class="program-detail-intro reveal text-center">
+                    <p>Di SMP MBS Al Badar, asrama bukan sekadar tempat tinggal, melainkan <strong>laboratorium kehidupan 24 jam</strong> di mana santri belajar manajemen waktu, adab mandiri, empati sosial, dan pembiasaan ibadah istiqomah dengan asrama putra-putri terpisah penuh.</p>
+                </div>
+
+                <!-- 4 Core Harian Boarding -->
+                <div class="cards-grid grid-4 reveal">
+                    <div class="feature-card reveal-stagger">
+                        <div class="card-icon-wrap">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v3"></path><path d="M12 5c-3.5 0-6 2.5-6 6v10h12V11c0-3.5-2.5-6-6-6Z"></path><path d="M9 21v-4a3 3 0 0 1 6 0v4"></path></svg>
+                        </div>
+                        <h3>Ibadah &amp; Qiyamul Lail</h3>
+                        <p>Qiyamul Lail rutin, sholat fardhu 5 waktu berjamaah di masjid, dzikir pagi-petang (al-ma'tsurat), dan sholat dhuha.</p>
+                    </div>
+
+                    <div class="feature-card reveal-stagger">
+                        <div class="card-icon-wrap">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
+                        </div>
+                        <h3>Tahfidz 15 Juz</h3>
+                        <p>Setoran dan bimbingan akselerasi hafalan Al-Qur'an intensif dengan musyrif/ah bersanad di waktu ba'da Subuh &amp; Maghrib.</p>
+                    </div>
+
+                    <div class="feature-card reveal-stagger">
+                        <div class="card-icon-wrap">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="m4.93 4.93 4.24 4.24m5.66 0 4.24-4.24m0 14.14-4.24-4.24m-5.66 0-4.24 4.24"></path></svg>
+                        </div>
+                        <h3>Kebugaran &amp; Kemandirian</h3>
+                        <p>Olahraga jasmani sore, kepanduan HW, beladiri Tapak Suci, serta pembiasaan kebersihan asrama (Zero Waste).</p>
+                    </div>
+
+                    <div class="feature-card reveal-stagger">
+                        <div class="card-icon-wrap">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path></svg>
+                        </div>
+                        <h3>Study Club Malam</h3>
+                        <p>Pendampingan belajar mandiri malam, tutorial materi pelajaran, dan pengayaan akademik dengan pendampingan musyrif.</p>
+                    </div>
+                </div>
+
+                <!-- Program Periodik Boarding -->
+                <div style="margin-top: 3.5rem;">
+                    <div class="section-header-lux center reveal">
+                        <span class="eyebrow-lux">Agenda Periodik</span>
+                        <h3 class="section-title-lux" style="font-size: 1.6rem;">Program Mingguan &amp; Bulanan Boarding</h3>
+                    </div>
+                    <div class="cards-grid grid-3 reveal">
+                        <div class="feature-card reveal-stagger">
+                            <div class="card-icon-wrap">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z"></path><path d="M19 10v2a7 7 0 0 1-14 0v-2"></path><line x1="12" y1="19" x2="12" y2="22"></line></svg>
+                            </div>
+                            <h3>Muhadhoroh Tiga Bahasa</h3>
+                            <p>Pelatihan public speaking, pidato Bahasa Arab, Inggris, dan Indonesia untuk mencetak dai dan calon pemimpin bangsa.</p>
+                        </div>
+
+                        <div class="feature-card reveal-stagger">
+                            <div class="card-icon-wrap">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+                            </div>
+                            <h3>Muhadatsah Harian</h3>
+                            <p>Praktik percakapan aktif bahasa Arab dan Inggris harian di asrama untuk membiasakan literasi komunikasi internasional.</p>
+                        </div>
+
+                        <div class="feature-card reveal-stagger">
+                            <div class="card-icon-wrap">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path></svg>
+                            </div>
+                            <h3>Tadarus &amp; Kajian Kitab</h3>
+                            <p>Pendalaman turats keislaman, tadarus Al-Qur'an tematik, serta pembekalan adab dan akhlak santri akhir pekan.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- D. DETAIL KEGIATAN FULL DAY SCHOOL (Non-Boarding) -->
+        <section class="section" id="detail-fullday">
+            <div class="container">
+                <div class="section-header-lux center reveal">
+                    <span class="eyebrow-lux">Sinergi Sekolah &amp; Rumah</span>
+                    <h2 class="section-title-lux">Aktivitas &amp; Program Full Day School</h2>
+                </div>
+                <div class="program-detail-intro reveal text-center">
+                    <p>Program Full Day diselenggarakan <strong>6 hari (Senin–Sabtu) dengan total 57 Jam Pelajaran</strong>. Siswa pulang lebih awal untuk Sholat Ashar &amp; Dzikir di rumah bersama keluarga, dengan opsi melanjutkan kegiatan ekstrakurikuler pilihan.</p>
+                </div>
+
+                <!-- 4 Core Harian Full Day -->
+                <div class="cards-grid grid-4 reveal">
+                    <div class="feature-card reveal-stagger">
+                        <div class="card-icon-wrap">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v3"></path><path d="M12 5c-3.5 0-6 2.5-6 6v10h12V11c0-3.5-2.5-6-6-6Z"></path><path d="M9 21v-4a3 3 0 0 1 6 0v4"></path></svg>
+                        </div>
+                        <h3>Penyambutan 5S &amp; Ibadah</h3>
+                        <p>Penyambutan ramah 5S pagi hari, sholat dhuha, tadarus Al-Qur'an harian, dan sholat dzuhur berjamaah di masjid.</p>
+                    </div>
+
+                    <div class="feature-card reveal-stagger">
+                        <div class="card-icon-wrap">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
+                        </div>
+                        <h3>KBM Terpadu &amp; Tahfidz 4 Juz</h3>
+                        <p>Integrasi kurikulum Diknas, Diniyah, KKA, STEM, serta bimbingan tahfidz terstruktur dengan target 4 Juz.</p>
+                    </div>
+
+                    <div class="feature-card reveal-stagger">
+                        <div class="card-icon-wrap">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"></rect><line x1="2" y1="20" x2="22" y2="20"></line></svg>
+                        </div>
+                        <h3>Projek Mandiri &amp; P5</h3>
+                        <p>Projek Penguatan Profil Pelajar Pancasila, pembelajaran koding di kelas berbasis Chromebook, dan adab digital.</p>
+                    </div>
+
+                    <div class="feature-card reveal-stagger">
+                        <div class="card-icon-wrap">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"></polygon></svg>
+                        </div>
+                        <h3>Kepulangan &amp; Ekstrakurikuler</h3>
+                        <p>Pulang lebih awal untuk Sholat Ashar &amp; Dzikir di rumah, dengan fleksibilitas melanjutkan ekstrakurikuler pilihan.</p>
+                    </div>
+                </div>
+
+                <!-- Program Periodik Full Day -->
+                <div style="margin-top: 3.5rem;">
+                    <div class="section-header-lux center reveal">
+                        <span class="eyebrow-lux">Agenda Periodik</span>
+                        <h3 class="section-title-lux" style="font-size: 1.6rem;">Program Mingguan &amp; Bulanan Full Day</h3>
+                    </div>
+                    <div class="cards-grid grid-3 reveal">
+                        <div class="feature-card reveal-stagger">
+                            <div class="card-icon-wrap">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z"></path><path d="M19 10v2a7 7 0 0 1-14 0v-2"></path><line x1="12" y1="19" x2="12" y2="22"></line></svg>
+                            </div>
+                            <h3>Muhadhoroh &amp; Kepanduan</h3>
+                            <p>Pelatihan public speaking di kelas, kepanduan Hizbul Wathan (HW), dan beladiri Tapak Suci mingguan.</p>
+                        </div>
+
+                        <div class="feature-card reveal-stagger">
+                            <div class="card-icon-wrap">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+                            </div>
+                            <h3>Bahasa Arab &amp; Inggris Terapan</h3>
+                            <p>Pengenalan percakapan tematik bahasa asing untuk memperkaya kosakata dan wawasan global santri.</p>
+                        </div>
+
+                        <div class="feature-card reveal-stagger">
+                            <div class="card-icon-wrap">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                            </div>
+                            <h3>Sinergi Parenting &amp; Mutaba'ah</h3>
+                            <p>Pemantauan buku mutaba'ah ibadah harian santri di rumah bekerja sama erat dengan orang tua.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- E. STRUKTUR KURIKULUM OPERASIONAL -->
         <section class="section bg-sand">
             <div class="container">
                 <div class="section-header-lux center reveal">
                     <span class="eyebrow-lux">Sistem Pembelajaran</span>
-                    <h2 class="section-title-lux">Struktur Kurikulum Operasional</h2>
+                    <h2 class="section-title-lux">Struktur Kurikulum Terpadu</h2>
                 </div>
                 <div class="cards-grid grid-2 reveal">
                     <!-- Card 1: Kurikulum Diniyah (Pesantren & Al-Islam) -->
                     <div class="curriculum-cat-card green-top reveal-stagger">
                         <div class="curriculum-card-header">
-                            <span class="curriculum-card-icon"><svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v3"></path><path d="M12 5c-3.5 0-6 2.5-6 6v10h12V11c0-3.5-2.5-6-6-6Z"></path><path d="M9 21v-4a3 3 0 0 1 6 0v4"></path><path d="M4 11h2v10H4z"></path><path d="M18 11h2v10h-2z"></path></svg></span>
-                            <h3 class="curriculum-card-title">Kurikulum Diniyah</h3>
+                            <div class="card-icon-wrap">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v3"></path><path d="M12 5c-3.5 0-6 2.5-6 6v10h12V11c0-3.5-2.5-6-6-6Z"></path><path d="M9 21v-4a3 3 0 0 1 6 0v4"></path></svg>
+                            </div>
+                            <h3 class="curriculum-card-title">Kurikulum Diniyah (Pesantren)</h3>
                         </div>
                         <ul class="curriculum-subject-list">
-                            <li>Tauhid / Aqidah</li>
-                            <li>Fiqih &amp; Fiqih Informasi (Adab Digital)</li>
-                            <li>Al-Qur'an Hadits</li>
+                            <li>Tauhid / Aqidah Islamiyah</li>
+                            <li>Fiqih Ibadah &amp; Fiqih Informasi (Cyber-Akhlaq)</li>
+                            <li>Al-Qur'an Hadits &amp; Pembiasaan Sunnah</li>
                             <li>Tahfidz Al-Qur'an (Target 15 Juz Boarding / 4 Juz Full Day)</li>
-                            <li>Bahasa Arab</li>
+                            <li>Bahasa Arab &amp; Nahwu Shorof Terapan</li>
                             <li>Kemuhammadiyahan (ISMUBA)</li>
                         </ul>
                     </div>
@@ -372,16 +685,18 @@
                     <!-- Card 2: Kurikulum Terpadu Nasional (Diknas) -->
                     <div class="curriculum-cat-card gold-top reveal-stagger">
                         <div class="curriculum-card-header">
-                            <span class="curriculum-card-icon"><svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path></svg></span>
-                            <h3 class="curriculum-card-title">Kurikulum Terpadu Nasional (Diknas)</h3>
+                            <div class="card-icon-wrap">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path></svg>
+                            </div>
+                            <h3 class="curriculum-card-title">Kurikulum Nasional (Diknas)</h3>
                         </div>
                         <ul class="curriculum-subject-list">
                             <li>Matematika</li>
-                            <li>Ilmu Pengetahuan Alam (IPA) &amp; STEM</li>
+                            <li>Ilmu Pengetahuan Alam (IPA) &amp; Eksperimen Ilmiah</li>
                             <li>Ilmu Pengetahuan Sosial (IPS)</li>
-                            <li>Bahasa Indonesia</li>
-                            <li>Bahasa Inggris</li>
-                            <li>Pendidikan Pancasila</li>
+                            <li>Bahasa Indonesia &amp; Literasi Menulis</li>
+                            <li>Bahasa Inggris Global &amp; Conversation</li>
+                            <li>Pendidikan Pancasila &amp; Kewarganegaraan</li>
                             <li>Koding &amp; Kecerdasan Artifisial (KKA)</li>
                         </ul>
                     </div>
@@ -389,82 +704,69 @@
             </div>
         </section>
 
-        <!-- MATA PELAJARAN KHAS -->
+        <!-- F. MATA PELAJARAN KHAS AL BADAR -->
         <section class="section">
             <div class="container">
                 <div class="section-header-lux center reveal">
                     <span class="eyebrow-lux">Keunggulan Akademik</span>
-                    <h2 class="section-title-lux">Mata Pelajaran Khas</h2>
+                    <h2 class="section-title-lux">Mata Pelajaran Khas Unggulan</h2>
                 </div>
                 <div class="cards-grid grid-3 reveal">
-                    <div class="feature-card reveal">
-                        <div class="card-icon"><svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg></div>
+                    <div class="feature-card reveal-stagger">
+                        <div class="card-icon-wrap">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
+                        </div>
                         <h3>ISMUBA &amp; Bahasa Arab</h3>
-                        <p>Pendalaman Al-Qur'an Hadits, Akidah Akhlak, Fikih, dan Bahasa Arab aktif untuk komunikasi global &amp; pemahaman agama.</p>
+                        <p>Pendalaman Al-Qur'an Hadits, Akidah Akhlak, Fikih, dan Bahasa Arab aktif untuk komunikasi global &amp; pemahaman turats keislaman.</p>
                     </div>
-                    <div class="feature-card reveal">
-                        <div class="card-icon"><svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg></div>
+
+                    <div class="feature-card reveal-stagger">
+                        <div class="card-icon-wrap">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+                        </div>
                         <h3>Koding &amp; AI (KKA)</h3>
                         <p>Literasi digital, computational thinking, dan pengenalan Kecerdasan Artifisial untuk mempersiapkan murid menjadi inovator.</p>
                     </div>
-                    <div class="feature-card reveal">
-                        <div class="card-icon"><svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3h6v4l5 12a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1L9 7V3z"></path><path d="M7 15h10"></path></svg></div>
+
+                    <div class="feature-card reveal-stagger">
+                        <div class="card-icon-wrap">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3h6v4l5 12a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1L9 7V3z"></path><path d="M7 15h10"></path></svg>
+                        </div>
                         <h3>STEM / STEAM</h3>
                         <p>Pembelajaran Sains, Teknologi, Rekayasa, dan Matematika berbasis proyek untuk melatih penalaran kritis dan kreativitas.</p>
-                    </div>
-                </div>
-
-                <!-- PROGRAM MINGGUAN / BULANAN -->
-                <div style="margin-top: 3.5rem;">
-                    <div class="section-header-lux center reveal">
-                        <span class="eyebrow-lux">Pengembangan Karakter</span>
-                        <h2 class="section-title-lux">Program Mingguan/Bulanan</h2>
-                    </div>
-                    <div class="cards-grid grid-3 reveal">
-                        <div class="feature-card reveal">
-                            <div class="card-icon"><svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z"></path><path d="M19 10v2a7 7 0 0 1-14 0v-2"></path><line x1="12" y1="19" x2="12" y2="22"></line></svg></div>
-                            <h3>Muhadhoroh</h3>
-                            <p>Latihan public speaking, pidato tiga bahasa, dan pelatihan dakwah kepemimpinan santri.</p>
-                        </div>
-                        <div class="feature-card reveal">
-                            <div class="card-icon"><svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg></div>
-                            <h3>Muhadatsah</h3>
-                            <p>Praktik percakapan dan komunikasi aktif Bahasa Arab harian &amp; mingguan.</p>
-                        </div>
-                        <div class="feature-card reveal">
-                            <div class="card-icon"><svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path></svg></div>
-                            <h3>Tadarus &amp; Kajisah</h3>
-                            <p>Pendalaman tilawah Al-Qur'an dan kajian keislaman sabtu-minggu penanaman adab.</p>
-                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- ADAB DIGITAL / ZERO SMARTPHONE (Luxury Dark) -->
+        <!-- G. ADAB DIGITAL / ZERO SMARTPHONE (Luxury Dark) -->
         <section class="section bg-lux-dark text-light">
             <div class="container text-center">
                 <div class="section-header-lux center reveal">
                     <span class="eyebrow-lux text-light">Adab Digital</span>
-                    <h2 class="section-title-lux text-light">Fiqih Informasi (Adab Digital) &amp; Zero Personal Smartphone</h2>
+                    <h2 class="section-title-lux text-light">Fiqih Informasi &amp; Zero Personal Smartphone</h2>
                 </div>
                 <p class="reveal" style="max-width: 800px; margin: 0 auto 3rem auto; opacity: 0.9; font-size: 1.1rem; line-height: 1.7;">Sebagai institusi yang mengusung nilai <em>Tafaqquh fi al-Dīn</em>, digitalisasi pembelajaran tidak dimaknai sekadar memindahkan buku ke layar, melainkan sebagai alat akselerasi kognitif yang tunduk pada kerangka Adab.</p>
                 <div class="steps-grid-lux reveal">
-                    <div class="step-card-lux reveal">
+                    <div class="step-card-lux reveal-stagger">
                         <span class="step-num-lux">01</span>
                         <h3 style="color: #fff;">Zero Personal Smartphone</h3>
-                        <p>Siswa dilarang membawa HP (gawai pribadi). Digitalisasi 100% menggunakan Chromebook sekolah dan Lab Komputer.</p>
+                        <p>Siswa dilarang membawa HP gawai pribadi. Digitalisasi 100% menggunakan Chromebook sekolah dan Lab Komputer.</p>
                     </div>
-                    <div class="step-card-lux reveal">
+                    <div class="step-card-lux reveal-stagger">
                         <span class="step-num-lux">02</span>
-                        <h3 style="color: #fff;">DNS Filtering</h3>
-                        <p>Akses internet terpusat dan diblokir otomatis untuk situs negatif, pornografi, dan judi.</p>
+                        <h3 style="color: #fff;">DNS Filtering Terpusat</h3>
+                        <p>Akses internet terproteksi dan diblokir otomatis untuk konten negatif, pornografi, gaming, dan judi daring.</p>
                     </div>
-                    <div class="step-card-lux reveal">
+                    <div class="step-card-lux reveal-stagger">
                         <span class="step-num-lux">03</span>
-                        <h3 style="color: #fff;">Fiqih Informasi (Adab Digital)</h3>
-                        <p>Pembekalan Cyber-Akhlaq, Tabayyun Digital, etika bermedia, serta proteksi DNS Filtering.</p>
+                        <h3 style="color: #fff;">Fiqih Informasi &amp; Cyber-Akhlaq</h3>
+                        <p>Pembekalan Cyber-Akhlaq, prinsip Tabayyun Digital, dan etika bermedia digital berlandaskan nilai-nilai Islam.</p>
                     </div>
+                </div>
+                <div class="hero-cta-group reveal" style="justify-content: center; margin-top: 3rem;">
+                    <a href="ppdb.html" class="btn-lux btn-gold-lux">Daftar PPDB Online</a>
+                    <a href="https://wa.me/6285729348915" class="btn-lux btn-ghost-lux" target="_blank" rel="noopener">Konsultasi Program</a>
                 </div>
             </div>
         </section>
@@ -496,8 +798,8 @@
                 <h4>Tautan Cepat</h4>
                 <ul>
                     <li><a href="ppdb.html">PPDB Online</a></li>
-                    <li><a href="boarding.html">Boarding School</a></li>
-                    <li><a href="non-boarding.html">Full Day School</a></li>
+                    <li><a href="programs.html#boarding">Boarding School</a></li>
+                    <li><a href="programs.html#fullday">Full Day School</a></li>
                     <li><a href="faq.html">FAQ</a></li>
                 </ul>
             </div>
