@@ -44,9 +44,8 @@ Dokumentasi ini memuat panduan struktur, filosofi, palet warna, dan aturan penge
 
 ## 4. Struktur Repository & Halaman Web
 
-- **Total 25 Halaman HTML**:
-  - Beranda & Profil: `index.html`, `about.html`, `programs.html`, `boarding.html`, `non-boarding.html`, `student-life.html`, `achievements.html`, `gallery.html`, `news.html`, `faq.html`, `ppdb.html`, `contact.html`, `privacy-policy.html`, `404.html`
-  - 11 Halaman Ekstrakurikuler: `ekstra-arabic-club.html`, `ekstra-coding-ai.html`, `ekstra-english-club.html`, `ekstra-futsal.html`, `ekstra-hizbul-wathan.html`, `ekstra-jurnalistik.html`, `ekstra-sinematografi.html`, `ekstra-stem.html`, `ekstra-tahfidz.html`, `ekstra-tapak-suci.html`, `ekstra-tenis-meja.html`
+- **Total 14 Halaman HTML**:
+  - Halaman Utama & Profil: `index.html`, `about.html`, `programs.html`, `boarding.html`, `non-boarding.html`, `student-life.html`, `achievements.html`, `gallery.html`, `news.html`, `faq.html`, `ppdb.html`, `contact.html`, `privacy-policy.html`, `404.html`
 - **Aset Utama**:
   - `assets/css/style.css`: File Master CSS
   - `assets/js/main.js`: Logika JavaScript utama (Navigasi mobile, header scrolled state, current year)

@@ -21,6 +21,305 @@
     <style>
         .main-nav { margin-left: auto; }
         .logo { margin-right: 3rem; }
+
+        /* Page Hero Institutional */
+        .page-hero.bg-emerald {
+            background: linear-gradient(145deg, #022a22 0%, var(--color-primary) 100%);
+            padding: 10rem 1.5rem 6rem;
+            position: relative;
+            overflow: hidden;
+            border-bottom: 1px solid rgba(212, 181, 130, 0.2);
+        }
+        .page-hero.bg-emerald::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: radial-gradient(circle at 50% 30%, rgba(212, 181, 130, 0.15) 0%, transparent 70%);
+            pointer-events: none;
+        }
+        .page-hero .page-title {
+            font-family: var(--font-heading);
+            font-size: clamp(2.2rem, 5vw, 3.5rem);
+            font-weight: 600;
+            letter-spacing: -0.02em;
+            color: #ffffff;
+            line-height: 1.15;
+            margin-bottom: 1.25rem;
+        }
+        .page-hero .page-title .text-gold {
+            color: var(--lux-gold);
+        }
+        .page-hero .page-subtitle {
+            font-size: clamp(1.05rem, 2vw, 1.25rem);
+            line-height: 1.7;
+            max-width: 780px;
+            margin: 0 auto;
+            color: rgba(255, 255, 255, 0.88);
+            font-weight: 300;
+        }
+
+        /* Bento Grid Facilities Lux */
+        .bento-facilities-section {
+            background: linear-gradient(180deg, #050505 0%, #0c1412 100%);
+            padding: 7rem 0;
+        }
+        .bento-grid-lux {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-auto-rows: minmax(260px, auto);
+            gap: 1.5rem;
+            margin-top: 3rem;
+        }
+        .bento-card-lux-dark {
+            background: linear-gradient(145deg, #0d1e19 0%, #04473a 100%);
+            border: 1px solid rgba(212, 181, 130, 0.25);
+            border-radius: 20px;
+            padding: 2.25rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            color: #ffffff;
+        }
+        .bento-card-lux-dark:hover {
+            transform: translateY(-6px);
+            border-color: var(--lux-gold);
+            box-shadow: 0 20px 45px rgba(0, 0, 0, 0.35), 0 0 30px rgba(212, 181, 130, 0.2);
+        }
+        .bento-card-lux-dark.blue-card {
+            background: linear-gradient(145deg, #0d2142 0%, var(--color-secondary) 100%);
+        }
+        .bento-card-lux-dark.dark-card {
+            background: linear-gradient(145deg, #18201d 0%, #0a110f 100%);
+        }
+        .bento-card-lux-dark.large {
+            grid-column: span 2;
+            grid-row: span 2;
+            background: linear-gradient(145deg, #03362c 0%, #011d17 100%);
+        }
+        .bento-card-lux-dark .bento-icon {
+            font-size: 2rem;
+            color: var(--lux-gold);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 54px;
+            height: 54px;
+            border-radius: 14px;
+            background: rgba(212, 181, 130, 0.12);
+            border: 1px solid rgba(212, 181, 130, 0.25);
+            margin-bottom: 1.25rem;
+            transition: transform 0.3s ease;
+        }
+        .bento-card-lux-dark:hover .bento-icon {
+            transform: scale(1.08) rotate(5deg);
+            border-color: var(--lux-gold);
+            background: rgba(212, 181, 130, 0.2);
+        }
+        .bento-card-lux-dark h3 {
+            font-family: var(--font-heading);
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 0.75rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+        }
+        .bento-card-lux-dark p {
+            font-size: 0.95rem;
+            color: rgba(255, 255, 255, 0.85);
+            line-height: 1.65;
+            margin: 0;
+        }
+        .card-status-badge {
+            display: inline-block;
+            font-size: 0.7rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            padding: 0.2rem 0.6rem;
+            border-radius: 20px;
+            margin-bottom: 1rem;
+        }
+        .status-ready {
+            background: rgba(212, 181, 130, 0.15);
+            color: var(--lux-gold);
+            border: 1px solid rgba(212, 181, 130, 0.3);
+        }
+        .status-process {
+            background: rgba(255, 193, 7, 0.15);
+            color: #ffc107;
+            border: 1px solid rgba(255, 193, 7, 0.35);
+        }
+
+        /* Ekstrakurikuler Clean Grid */
+        .ekstra-section {
+            background-color: var(--lux-bg-sand, #F0F4F8);
+            padding: 7rem 0;
+        }
+        .cards-grid.grid-3 {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+            margin-top: 3rem;
+        }
+        .feature-card {
+            background: #ffffff;
+            border: 1px solid rgba(0, 0, 0, 0.06);
+            border-radius: 16px;
+            padding: 2rem 1.75rem;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+            transition: all 0.35s cubic-bezier(0.25, 1, 0.5, 1);
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+        .feature-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+            border-color: rgba(212, 181, 130, 0.5);
+        }
+        .feature-card .card-icon-wrap {
+            width: 56px;
+            height: 56px;
+            border-radius: 14px;
+            background: rgba(212, 181, 130, 0.15);
+            border: 1px solid rgba(212, 181, 130, 0.3);
+            color: #6B5220;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.25rem;
+            transition: all 0.3s ease;
+        }
+        .feature-card:hover .card-icon-wrap {
+            transform: scale(1.08);
+            background: var(--lux-gold);
+            color: #04473a;
+            border-color: var(--lux-gold);
+        }
+        .feature-card .card-icon-wrap svg {
+            width: 26px;
+            height: 26px;
+        }
+        .card-tag {
+            display: inline-block;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            align-self: flex-start;
+            margin-bottom: 0.85rem;
+        }
+        .tag-gold {
+            background: rgba(212, 181, 130, 0.2);
+            color: #6B5220;
+            border: 1px solid rgba(212, 181, 130, 0.4);
+            font-weight: 700;
+        }
+        .tag-green { background: rgba(4, 71, 58, 0.1); color: var(--color-primary); }
+        .tag-blue { background: rgba(17, 54, 110, 0.1); color: var(--color-secondary); }
+        .feature-card h3 {
+            font-family: var(--font-heading);
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--lux-dark);
+            margin-bottom: 0.5rem;
+        }
+        .feature-card p {
+            font-size: 0.92rem;
+            color: var(--color-text-muted);
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        /* Editorial Pembiasaan & Karakter */
+        .editorial-intro {
+            padding: 7rem 0;
+            background: var(--lux-bg);
+        }
+        .editorial-grid {
+            display: grid;
+            grid-template-columns: 1.15fr 1fr;
+            gap: 4.5rem;
+            align-items: start;
+        }
+        .karakter-card-list {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+        .karakter-item {
+            background: #ffffff;
+            border-radius: 16px;
+            padding: 1.75rem 1.5rem;
+            border: 1px solid rgba(0, 0, 0, 0.06);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+            border-left: 4px solid var(--color-primary);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .karakter-item:hover {
+            transform: translateX(5px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.06);
+        }
+        .karakter-item.gold-left {
+            border-left-color: var(--lux-gold);
+        }
+        .karakter-item.blue-left {
+            border-left-color: var(--color-secondary);
+        }
+        .karakter-item h4 {
+            font-family: var(--font-heading);
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: var(--lux-dark);
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .karakter-item p {
+            font-size: 0.92rem;
+            line-height: 1.65;
+            color: var(--color-text-muted);
+            margin: 0;
+        }
+
+        /* Responsive Layout Tweaks */
+        @media (max-width: 1024px) {
+            .editorial-grid {
+                grid-template-columns: 1fr;
+                gap: 2.5rem;
+            }
+            .bento-grid-lux {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .bento-card-lux-dark.large {
+                grid-column: span 2;
+                grid-row: span 1;
+            }
+            .cards-grid.grid-3 {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        @media (max-width: 768px) {
+            .bento-grid-lux {
+                grid-template-columns: 1fr;
+            }
+            .bento-card-lux-dark.large {
+                grid-column: span 1;
+            }
+            .cards-grid.grid-3 {
+                grid-template-columns: 1fr;
+            }
+        }
     </style>
 </head>
 <body>
@@ -80,87 +379,258 @@
     </header>
 
     <main>
-        <!-- PAGE HERO LUX -->
+        <!-- A. PAGE HERO (Dark Institutional) -->
         <section class="page-hero bg-emerald">
             <div class="container text-center">
-                <span class="eyebrow eyebrow-light reveal">Kehidupan Siswa</span>
-                <h1 class="page-title reveal">Belajar, Bertumbuh, Berprestasi</h1>
-                <p class="page-subtitle reveal">Tidak hanya belajar di kelas, siswa Al Badar adalah bagian dari fullday school berbasis pesantren yang aktif, religius, dan kreatif dengan pemisahan kelas putra dan putri.</p>
+                <span class="eyebrow-lux reveal-stagger" style="color: var(--lux-gold);">Student Life</span>
+                <h1 class="page-title reveal-stagger">Kehidupan Siswa <span class="text-gold">Al Badar</span></h1>
+                <p class="page-subtitle reveal-stagger">Tidak hanya belajar di kelas, siswa Al Badar adalah bagian dari komunitas santri yang aktif, religius, berprestasi, dan kreatif dalam lingkungan asri pesantren dengan sistem pemisahan kelas putra dan putri.</p>
             </div>
         </section>
 
-        <!-- FASILITAS PENDUKUNG (Bento Grid Lux) -->
-        <section class="section bento-section-lux">
+        <!-- B. FASILITAS PENDUKUNG (Bento Grid Lux) -->
+        <section class="section bento-facilities-section bg-lux-dark text-light">
             <div class="container">
                 <div class="section-header-lux center reveal">
-                    <span class="eyebrow-lux">Fasilitas Pendukung</span>
-                    <h2 class="section-title-lux">Lingkungan Pembelajaran Modern & Kondusif</h2>
+                    <span class="eyebrow-lux" style="color: var(--lux-gold);">Sarana &amp; Prasarana</span>
+                    <h2 class="section-title-lux" style="color: #ffffff;">Fasilitas Pendukung Modern</h2>
                 </div>
-                <div class="bento-grid-lux">
-                    <!-- Perpustakaan (Large Card) -->
-                    <div class="bento-card-lux large reveal">
+                <div class="bento-grid-lux reveal">
+                    <!-- 1. Masjid Sekolah (Large Card) -->
+                    <div class="bento-card-lux bento-card-lux-dark large reveal">
                         <div class="bento-content">
-                            <div class="bento-icon"><svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path></svg></div>
-                            <h3>Perpustakaan &amp; Taman Baca <small style="font-size: 0.85rem; font-weight: normal; opacity: 0.9;">(Dalam proses/usaha)</small></h3>
-                            <p>Ruang baca dan koleksi literasi keislaman &amp; umum untuk mendukung wawasan siswa (Fasilitas gedung perpustakaan saat ini dalam proses/usaha pengembangan).</p>
-                        </div>
-                        <img src="https://images.unsplash.com/photo-1581056771107-24ca5f033842?q=80&w=600&auto=format&fit=crop" alt="Fasilitas Perpustakaan dan Taman Baca SMP MBS Al Badar" class="bento-bg-img" loading="lazy" onerror="this.onerror=null;this.src='assets/img/placeholder.svg';">
-                    </div>
-                    <!-- Masjid Sekolah (Blue Card) -->
-                    <div class="bento-card-lux blue reveal">
-                        <div class="bento-content">
-                            <div class="bento-icon"><svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v3"></path><path d="M12 5c-3.5 0-6 2.5-6 6v10h12V11c0-3.5-2.5-6-6-6Z"></path><path d="M9 21v-4a3 3 0 0 1 6 0v4"></path><path d="M4 11h2v10H4z"></path><path d="M18 11h2v10h-2z"></path></svg></div>
-                            <h3>Masjid Sekolah</h3>
-                            <p>Pusat ibadah harian, Sleman Religi, kajian sore, dan pembiasaan sholat berjamaah tepat waktu bagi seluruh santri.</p>
+                            <span class="card-status-badge status-ready">Tersedia</span>
+                            <div class="bento-icon">
+                                <svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v3"></path><path d="M12 5c-3.5 0-6 2.5-6 6v10h12V11c0-3.5-2.5-6-6-6Z"></path><path d="M9 21v-4a3 3 0 0 1 6 0v4"></path><path d="M4 11h2v10H4z"></path><path d="M18 11h2v10h-2z"></path></svg>
+                            </div>
+                            <h3>Masjid Sekolah &amp; Pusat Ibadah</h3>
+                            <p>Pusat ibadah harian, program Sleman Religi, kajian sore, tahsin-tahfidz, dan pembiasaan sholat 5 waktu berjamaah tepat waktu bagi seluruh santri putra dan putri.</p>
                         </div>
                     </div>
-                    <!-- Lab Komputer (Wide Card) -->
-                    <div class="bento-card-lux wide reveal">
+
+                    <!-- 2. Kelas Full AC & Smart TV -->
+                    <div class="bento-card-lux bento-card-lux-dark blue-card reveal">
                         <div class="bento-content">
-                            <div class="bento-icon"><svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="2" y1="20" x2="22" y2="20"></line></svg></div>
-                            <h3>Lab Komputer <small style="font-size: 0.85rem; font-weight: normal; opacity: 0.9;">(Dalam proses/usaha)</small> &amp; Chromebook</h3>
-                            <p>Fasilitas Chromebook sekolah untuk pembelajaran KKA (Koding &amp; AI) berbasis Adab Digital, Fiqih Informasi (Adab Digital), dan Zero Personal Smartphone. Fasilitas Lab Komputer fisik saat ini dalam proses/usaha pengembangan.</p>
-                        </div>
-                    </div>
-                    <!-- Kelas Full AC & Smart TV -->
-                    <div class="bento-card-lux reveal">
-                        <div class="bento-content">
-                            <div class="bento-icon"><svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="15" rx="2"></rect><polyline points="17 2 12 7 7 2"></polyline></svg></div>
+                            <span class="card-status-badge status-ready">Tersedia</span>
+                            <div class="bento-icon">
+                                <svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="15" rx="2"></rect><polyline points="17 2 12 7 7 2"></polyline></svg>
+                            </div>
                             <h3>Kelas Full AC &amp; Smart TV</h3>
-                            <p>Ruang kelas modern ber-AC penuh dan dilengkapi Smart TV interaktif untuk mendukung KBM multimedia yang kondusif.</p>
+                            <p>Ruang kelas modern berpendingin udara penuh dan dilengkapi Smart TV interaktif untuk mendukung KBM multimedia yang kondusif.</p>
                         </div>
                     </div>
-                    <!-- Antar Jemput Sekolah (AJS) -->
-                    <div class="bento-card-lux blue reveal">
+
+                    <!-- 3. Lapangan Olahraga -->
+                    <div class="bento-card-lux bento-card-lux-dark dark-card reveal">
                         <div class="bento-content">
-                            <div class="bento-icon"><svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M8 6v6"></path><path d="M15 6v6"></path><path d="M2 12h19.6"></path><path d="M18 18h3s.5-1.7.8-2.8c.1-.4.2-.8.2-1.2 0-.6-.2-1.1-.5-1.5-.7-.8-2-1.5-3.5-1.5H4c-1.1 0-2 .9-2 2v7h2"></path><circle cx="7" cy="18" r="2"></circle><path d="M9 18h6"></path><circle cx="17" cy="18" r="2"></circle></svg></div>
+                            <span class="card-status-badge status-ready">Tersedia</span>
+                            <div class="bento-icon">
+                                <svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="m4.93 4.93 4.24 4.24"></path><path d="m14.83 9.17 4.24-4.24"></path><path d="m14.83 14.83 4.24 4.24"></path><path d="m9.17 14.83-4.24 4.24"></path></svg>
+                            </div>
+                            <h3>Lapangan Olahraga Terbuka</h3>
+                            <p>Sarana kebugaran jasmani santri untuk futsal, kepanduan Hizbul Wathan (HW), beladiri Tapak Suci, serta aktivitas olahraga harian.</p>
+                        </div>
+                    </div>
+
+                    <!-- 4. Antar Jemput Sekolah (AJS) -->
+                    <div class="bento-card-lux bento-card-lux-dark blue-card reveal">
+                        <div class="bento-content">
+                            <span class="card-status-badge status-ready">Tersedia</span>
+                            <div class="bento-icon">
+                                <svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M8 6v6"></path><path d="M15 6v6"></path><path d="M2 12h19.6"></path><path d="M18 18h3s.5-1.7.8-2.8c.1-.4.2-.8.2-1.2 0-.6-.2-1.1-.5-1.5-.7-.8-2-1.5-3.5-1.5H4c-1.1 0-2 .9-2 2v7h2"></path><circle cx="7" cy="18" r="2"></circle><path d="M9 18h6"></path><circle cx="17" cy="18" r="2"></circle></svg>
+                            </div>
                             <h3>Antar Jemput Sekolah (AJS)</h3>
-                            <p>Layanan armada Antar Jemput Sekolah (AJS) yang aman dan nyaman untuk kemudahan mobilitas santri program Full Day.</p>
+                            <p>Layanan armada transportasi sekolah yang aman, tertib, dan nyaman untuk kemudahan mobilitas harian santri program Full Day.</p>
+                        </div>
+                    </div>
+
+                    <!-- 5. Perpustakaan & Taman Baca (Dalam Proses) -->
+                    <div class="bento-card-lux bento-card-lux-dark reveal">
+                        <div class="bento-content">
+                            <span class="card-status-badge status-process">Dalam Proses</span>
+                            <div class="bento-icon">
+                                <svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path></svg>
+                            </div>
+                            <h3>Perpustakaan &amp; Taman Baca</h3>
+                            <p>Ruang baca dan koleksi literasi keislaman serta wawasan umum (Fasilitas gedung perpustakaan saat ini dalam proses &amp; usaha pengembangan berkelanjutan).</p>
+                        </div>
+                    </div>
+
+                    <!-- 6. Lab Komputer & Chromebook (Dalam Proses) -->
+                    <div class="bento-card-lux bento-card-lux-dark dark-card reveal">
+                        <div class="bento-content">
+                            <span class="card-status-badge status-process">Dalam Proses</span>
+                            <div class="bento-icon">
+                                <svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="2" y1="20" x2="22" y2="20"></line></svg>
+                            </div>
+                            <h3>Lab Komputer &amp; Chromebook</h3>
+                            <p>Fasilitas Chromebook sekolah untuk Koding &amp; AI (KKA) berbasis Adab Digital &amp; Zero Personal Smartphone (Fasilitas laboratorium fisik dalam proses pengembangan).</p>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- EKSTRAKURIKULER (Premium Tag Pills) -->
-        <section class="section bg-sand">
+        <!-- C. EKSTRAKURIKULER (Clean Grid - 11 Program) -->
+        <section class="section ekstra-section bg-sand">
             <div class="container">
                 <div class="section-header-lux center reveal">
-                    <span class="eyebrow-lux">Ekspresi & Bakat</span>
-                    <h2 class="section-title-lux">Pengembangan Karakter & Ekstrakurikuler</h2>
+                    <span class="eyebrow-lux">Bakat &amp; Minat</span>
+                    <h2 class="section-title-lux">11 Program Ekstrakurikuler</h2>
                 </div>
-                <div class="tags-grid reveal">
-                    <a href="ekstra-hizbul-wathan.html" class="tag-item">Hizbul Wathan <small>(Wajib)</small></a>
-                    <a href="ekstra-tapak-suci.html" class="tag-item">Tapak Suci <small>(Wajib)</small></a>
-                    <a href="ekstra-tenis-meja.html" class="tag-item">Tenis Meja</a>
-                    <a href="ekstra-stem.html" class="tag-item">STEM</a>
-                    <a href="ekstra-arabic-club.html" class="tag-item">Arabic Club</a>
-                    <a href="ekstra-english-club.html" class="tag-item">English Club</a>
-                    <a href="ekstra-jurnalistik.html" class="tag-item">Jurnalistik</a>
-                    <a href="ekstra-sinematografi.html" class="tag-item">Sinematografi</a>
-                    <a href="ekstra-tahfidz.html" class="tag-item">Tahfidz Club</a>
-                    <a href="ekstra-futsal.html" class="tag-item">Futsal</a>
-                    <a href="ekstra-coding-ai.html" class="tag-item">Coding & AI</a>
+                <div class="cards-grid grid-3 reveal">
+                    <!-- 1. Hizbul Wathan (Wajib) -->
+                    <div class="feature-card reveal-stagger">
+                        <span class="card-tag tag-gold">Wajib</span>
+                        <div class="card-icon-wrap">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                        </div>
+                        <h3>Hizbul Wathan (HW)</h3>
+                        <p>Kepanduan khas Muhammadiyah untuk melatih kemandirian, kepemimpinan lapangan, dan kecintaan pada alam.</p>
+                    </div>
+
+                    <!-- 2. Tapak Suci (Wajib) -->
+                    <div class="feature-card reveal-stagger">
+                        <span class="card-tag tag-gold">Wajib</span>
+                        <div class="card-icon-wrap">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+                        </div>
+                        <h3>Tapak Suci</h3>
+                        <p>Seni beladiri pencak silat Islami untuk membangun ketangguhan fisik, disiplin mental, dan keberanian santri.</p>
+                    </div>
+
+                    <!-- 3. Tahfidz Club -->
+                    <div class="feature-card reveal-stagger">
+                        <span class="card-tag tag-green">Qur'ani</span>
+                        <div class="card-icon-wrap">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
+                        </div>
+                        <h3>Tahfidz Club</h3>
+                        <p>Pendalaman dan akselerasi hafalan Al-Qur'an dengan bimbingan intensif musyrif dan musyrifah bersanad.</p>
+                    </div>
+
+                    <!-- 4. Coding & AI (KKA) -->
+                    <div class="feature-card reveal-stagger">
+                        <span class="card-tag tag-blue">Teknologi</span>
+                        <div class="card-icon-wrap">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+                        </div>
+                        <h3>Coding &amp; AI (KKA)</h3>
+                        <p>Eksplorasi literasi digital, logika pemrograman, dan penerapan kecerdasan buatan berbasis etika Islami.</p>
+                    </div>
+
+                    <!-- 5. Sains & STEM -->
+                    <div class="feature-card reveal-stagger">
+                        <span class="card-tag tag-blue">Akademik</span>
+                        <div class="card-icon-wrap">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3h6v4l5 12a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1L9 7V3z"></path><path d="M7 15h10"></path></svg>
+                        </div>
+                        <h3>Sains &amp; STEM</h3>
+                        <p>Pembelajaran sains eksperimental berbasis proyek untuk mengasah daya nalar kritis dan kreativitas ilmiah.</p>
+                    </div>
+
+                    <!-- 6. Arabic Club -->
+                    <div class="feature-card reveal-stagger">
+                        <span class="card-tag tag-green">Bahasa</span>
+                        <div class="card-icon-wrap">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="m5 8 6 6"></path><path d="m4 14 6-6 2-3"></path><path d="M2 5h12"></path><path d="M7 2h1"></path><path d="m22 22-5-10-5 10"></path><path d="M14 18h6"></path></svg>
+                        </div>
+                        <h3>Arabic Club</h3>
+                        <p>Pengasahan muhadatsah harian dan penguasaan kosakata bahasa Arab untuk memperdalam literasi turats.</p>
+                    </div>
+
+                    <!-- 7. English Club -->
+                    <div class="feature-card reveal-stagger">
+                        <span class="card-tag tag-green">Bahasa</span>
+                        <div class="card-icon-wrap">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+                        </div>
+                        <h3>English Club</h3>
+                        <p>Pengembangan kemampuan public speaking, dialog aktif, dan kecakapan komunikasi bahasa Inggris global.</p>
+                    </div>
+
+                    <!-- 8. Jurnalistik & Literasi -->
+                    <div class="feature-card reveal-stagger">
+                        <span class="card-tag tag-gold">Media</span>
+                        <div class="card-icon-wrap">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19l7-7 3 3-7 7-3-3z"></path><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"></path><path d="M2 2l7.586 7.586"></path><circle cx="11" cy="11" r="2"></circle></svg>
+                        </div>
+                        <h3>Jurnalistik &amp; Literasi</h3>
+                        <p>Pelatihan penulisan berita, kepenulisan kreatif, reportase majalah dinding, dan publikasi media sekolah.</p>
+                    </div>
+
+                    <!-- 9. Sinematografi & Multimedia -->
+                    <div class="feature-card reveal-stagger">
+                        <span class="card-tag tag-blue">Kreatif</span>
+                        <div class="card-icon-wrap">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="m22 8-6 4 6 4V8Z"></path><rect width="14" height="12" x="2" y="6" rx="2"></rect></svg>
+                        </div>
+                        <h3>Sinematografi</h3>
+                        <p>Eksplorasi teknik fotografi, produksi video kreatif, tata visual, dan penyuntingan konten dakwah digital.</p>
+                    </div>
+
+                    <!-- 10. Futsal -->
+                    <div class="feature-card reveal-stagger">
+                        <span class="card-tag tag-green">Olahraga</span>
+                        <div class="card-icon-wrap">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polygon points="12 6 15.5 8.5 14 12.5 10 12.5 8.5 8.5 12 6"></polygon></svg>
+                        </div>
+                        <h3>Futsal</h3>
+                        <p>Olahraga beregu untuk menjaga kebugaran jasmani, mengasah ketangkasan fisik, dan memupuk sportivitas.</p>
+                    </div>
+
+                    <!-- 11. Tenis Meja -->
+                    <div class="feature-card reveal-stagger">
+                        <span class="card-tag tag-green">Olahraga</span>
+                        <div class="card-icon-wrap">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><circle cx="12" cy="12" r="3"></circle></svg>
+                        </div>
+                        <h3>Tenis Meja</h3>
+                        <p>Pelatihan ketangkasan refleks, konsentrasi, dan koordinasi motorik santri dalam suasana olahraga yang sehat.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- D. PEMBIASAAN & KARAKTER (Editorial Layout) -->
+        <section class="section editorial-intro">
+            <div class="container">
+                <div class="editorial-grid">
+                    <div class="editorial-text reveal">
+                        <span class="eyebrow-lux">Budaya Pesantren</span>
+                        <h2 class="section-title-lux" style="font-size: clamp(2rem, 3.5vw, 2.75rem); line-height: 1.15; margin-bottom: 1.5rem;">Pembiasaan Adab &amp; Karakter Qur'ani</h2>
+                        <p style="font-size: 1.05rem; line-height: 1.8; color: var(--color-text-muted);">Di SMP MBS Al Badar Prambanan, pembentukan karakter tidak berhenti pada teori kelas semata, melainkan diwujudkan dalam rutinitas pembiasaan harian yang terintegrasi antara asrama, sekolah, dan masjid.</p>
+                    </div>
+                    <div class="editorial-desc reveal">
+                        <div class="karakter-card-list">
+                            <!-- 1. Sleman Religi -->
+                            <div class="karakter-item">
+                                <h4>
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: var(--color-primary);"><path d="M12 2v3"></path><path d="M12 5c-3.5 0-6 2.5-6 6v10h12V11c0-3.5-2.5-6-6-6Z"></path></svg>
+                                    Sleman Religi &amp; Ibadah Harian
+                                </h4>
+                                <p>Pelaksanaan sholat fardhu lima waktu berjamaah di masjid tepat waktu, dzikir pagi-petang (al-ma'tsurat), sholat dhuha, tadarus Al-Qur'an harian, dan pembinaan spiritual berkelanjutan.</p>
+                            </div>
+
+                            <!-- 2. PPC & 5S -->
+                            <div class="karakter-item gold-left">
+                                <h4>
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: var(--lux-gold);"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+                                    PPC (Program Pembiasaan Karakter) &amp; 5S
+                                </h4>
+                                <p>Penanaman budaya 5S (Senyum, Sapa, Salam, Sopan, Santun), kemandirian asrama, tanggung jawab kebersihan lingkungan (Zero Waste), adab makan islami, serta pembiasaan tata krama dengan pemisahan kelas putra-putri.</p>
+                            </div>
+
+                            <!-- 3. Adab Digital -->
+                            <div class="karakter-item blue-left">
+                                <h4>
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: var(--color-secondary);"><rect x="2" y="3" width="20" height="14" rx="2"></rect><line x1="2" y1="20" x2="22" y2="20"></line></svg>
+                                    Fiqih Informasi &amp; Adab Digital
+                                </h4>
+                                <p>Penerapan kebijakan Zero Personal Smartphone dengan pemanfaatan Chromebook sekolah yang terproteksi DNS Filtering, membekali santri etika bermedia digital (Cyber-Akhlaq) dan prinsip tabayyun.</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
