@@ -839,7 +839,7 @@ p {
 
 /* === PAGE HERO (SUBPAGES) === */
 .page-hero {
-    padding: 8.5rem 1.5rem 2rem;
+    padding: 10rem 0 6rem;
     background-color: var(--color-primary);
     text-align: center;
     color: #fff;
