@@ -66,6 +66,393 @@
     <style>
         .main-nav { margin-left: auto; }
         .logo { margin-right: 3rem; }
+
+        /* Page Hero Institutional Styling */
+        .page-hero.bg-emerald {
+            background: linear-gradient(145deg, #022a22 0%, var(--color-primary) 100%);
+            padding: 10rem 1.5rem 6rem;
+            position: relative;
+            overflow: hidden;
+            border-bottom: 1px solid rgba(212, 181, 130, 0.2);
+        }
+        .page-hero.bg-emerald::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: radial-gradient(circle at 50% 30%, rgba(212, 181, 130, 0.15) 0%, transparent 70%);
+            pointer-events: none;
+        }
+        .page-hero .page-title {
+            font-family: var(--font-heading);
+            font-size: clamp(2.2rem, 5vw, 3.5rem);
+            font-weight: 600;
+            letter-spacing: -0.02em;
+            color: #ffffff;
+            line-height: 1.15;
+            margin-bottom: 1.25rem;
+        }
+        .page-hero .page-title .text-gold {
+            color: var(--lux-gold);
+        }
+        .page-hero .page-subtitle {
+            font-size: clamp(1.05rem, 2vw, 1.25rem);
+            line-height: 1.7;
+            max-width: 780px;
+            margin: 0 auto;
+            color: rgba(255, 255, 255, 0.88);
+            font-weight: 300;
+        }
+
+        /* Editorial Intro & Image */
+        .editorial-intro {
+            padding: 7rem 0;
+            background: var(--lux-bg);
+        }
+        .editorial-grid {
+            display: grid;
+            grid-template-columns: 1.15fr 1fr;
+            gap: 4.5rem;
+            align-items: center;
+        }
+        .editorial-desc p {
+            font-size: 1.05rem;
+            line-height: 1.8;
+            color: var(--color-text-muted);
+            margin-bottom: 1.5rem;
+        }
+        .editorial-desc p:last-child {
+            margin-bottom: 0;
+        }
+        .editorial-image-box {
+            margin-top: 4rem;
+            border-radius: 20px;
+            overflow: hidden;
+            position: relative;
+            box-shadow: 0 20px 45px rgba(0, 0, 0, 0.08);
+            border: 1px solid rgba(0, 0, 0, 0.06);
+            background: var(--color-primary);
+        }
+        .editorial-image-box img {
+            width: 100%;
+            height: 440px;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.6s ease;
+        }
+        .editorial-image-box:hover img {
+            transform: scale(1.02);
+        }
+        .editorial-img-caption {
+            position: absolute;
+            bottom: 1.25rem;
+            left: 1.25rem;
+            background: rgba(5, 5, 5, 0.75);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            color: #ffffff;
+            padding: 0.6rem 1.2rem;
+            border-radius: 30px;
+            font-size: 0.85rem;
+            border: 1px solid rgba(212, 181, 130, 0.3);
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .editorial-img-caption .caption-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background-color: var(--lux-gold);
+            display: inline-block;
+        }
+
+        /* Manifesto Visi & Misi (Dark Luxury) */
+        .manifesto-section {
+            background: linear-gradient(180deg, #050505 0%, #0c1412 100%);
+            padding: 7rem 0;
+            position: relative;
+        }
+        .manifesto-grid {
+            display: grid;
+            grid-template-columns: 1.1fr 1fr;
+            gap: 4.5rem;
+            align-items: start;
+            margin-top: 3.5rem;
+        }
+        .manifesto-visi {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(212, 181, 130, 0.25);
+            border-radius: 20px;
+            padding: 3rem 2.5rem;
+            position: relative;
+            backdrop-filter: blur(8px);
+        }
+        .manifesto-tag {
+            display: inline-block;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--lux-gold);
+            background: rgba(212, 181, 130, 0.12);
+            border: 1px solid rgba(212, 181, 130, 0.25);
+            padding: 0.35rem 0.9rem;
+            border-radius: 20px;
+            margin-bottom: 1.5rem;
+        }
+        .manifesto-quote {
+            font-family: var(--font-heading);
+            font-size: clamp(1.35rem, 2.2vw, 1.8rem);
+            line-height: 1.45;
+            font-style: italic;
+            color: #ffffff;
+            margin: 0;
+            position: relative;
+        }
+        .manifesto-quote::before {
+            content: "“";
+            display: block;
+            font-family: var(--font-heading);
+            font-size: 4rem;
+            line-height: 1;
+            color: var(--lux-gold);
+            opacity: 0.6;
+            margin-bottom: -1rem;
+        }
+        .manifesto-misi {
+            display: flex;
+            flex-direction: column;
+        }
+        .luxury-misi-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .luxury-misi-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1.25rem;
+            padding: 1.15rem 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .luxury-misi-item:last-child {
+            border-bottom: none;
+        }
+        .misi-num {
+            font-family: var(--font-heading);
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--lux-gold);
+            background: rgba(212, 181, 130, 0.12);
+            border: 1px solid rgba(212, 181, 130, 0.25);
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            line-height: 1;
+        }
+        .misi-text {
+            font-size: 1rem;
+            line-height: 1.6;
+            color: rgba(255, 255, 255, 0.88);
+            margin: 0;
+        }
+        .misi-text em {
+            color: var(--lux-gold);
+            font-style: italic;
+        }
+
+        /* Bento Grid Luxury Dark Cards */
+        .bento-section-lux {
+            padding: 7rem 0;
+            background-color: var(--lux-bg);
+        }
+        .bento-grid-lux {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-auto-rows: minmax(260px, auto);
+            gap: 1.5rem;
+            margin-top: 3rem;
+        }
+        .bento-card-lux-dark {
+            background: linear-gradient(145deg, #0d1e19 0%, #04473a 100%);
+            border: 1px solid rgba(212, 181, 130, 0.3);
+            border-radius: 20px;
+            padding: 2.5rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+            color: #ffffff;
+        }
+        .bento-card-lux-dark:hover {
+            transform: translateY(-6px);
+            border-color: var(--lux-gold);
+            box-shadow: 0 20px 45px rgba(0, 0, 0, 0.25), 0 0 30px rgba(212, 181, 130, 0.2);
+        }
+        .bento-card-lux-dark.blue-card {
+            background: linear-gradient(145deg, #0d2142 0%, var(--color-secondary) 100%);
+        }
+        .bento-card-lux-dark.dark-card {
+            background: linear-gradient(145deg, #18201d 0%, #0a110f 100%);
+        }
+        .bento-card-lux-dark.large {
+            grid-column: span 2;
+            grid-row: span 2;
+            background: linear-gradient(145deg, #03362c 0%, #011d17 100%);
+        }
+        .bento-card-lux-dark.wide {
+            grid-column: span 3;
+            background: linear-gradient(145deg, #0c1a24 0%, #072535 100%);
+        }
+        .bento-card-lux-dark .bento-icon {
+            font-size: 2rem;
+            color: var(--lux-gold);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 56px;
+            height: 56px;
+            border-radius: 14px;
+            background: rgba(212, 181, 130, 0.12);
+            border: 1px solid rgba(212, 181, 130, 0.25);
+            margin-bottom: 1.25rem;
+            transition: transform 0.3s ease;
+        }
+        .bento-card-lux-dark:hover .bento-icon {
+            transform: scale(1.08) rotate(6deg);
+            border-color: var(--lux-gold);
+            background: rgba(212, 181, 130, 0.2);
+        }
+        .bento-card-lux-dark h3 {
+            font-family: var(--font-heading);
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 0.75rem;
+        }
+        .bento-card-lux-dark p {
+            font-size: 0.95rem;
+            color: rgba(255, 255, 255, 0.85);
+            line-height: 1.65;
+            margin: 0;
+        }
+        .bento-card-lux-dark p em {
+            color: var(--lux-gold);
+            font-style: italic;
+        }
+
+        /* Profil Lulusan Grid Overrides */
+        .profil-lulusan-section {
+            background-color: var(--lux-bg-sand, #F0F4F8);
+            padding: 7rem 0;
+        }
+        .cards-grid.grid-4 {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+            margin-top: 3rem;
+        }
+        .profile-card-lux {
+            background: #ffffff;
+            border: 1px solid rgba(0, 0, 0, 0.06);
+            border-radius: 16px;
+            padding: 2.25rem 1.5rem;
+            text-align: center;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+            transition: all 0.35s cubic-bezier(0.25, 1, 0.5, 1);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            height: 100%;
+        }
+        .profile-card-lux:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+            border-color: rgba(212, 181, 130, 0.5);
+        }
+        .profile-card-lux .profile-icon-lux {
+            width: 64px;
+            height: 64px;
+            border-radius: 50%;
+            background: rgba(212, 181, 130, 0.15);
+            border: 1px solid rgba(212, 181, 130, 0.3);
+            color: #6B5220;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.25rem;
+            transition: all 0.3s ease;
+        }
+        .profile-card-lux:hover .profile-icon-lux {
+            transform: scale(1.1);
+            background: var(--lux-gold);
+            color: #04473a;
+            border-color: var(--lux-gold);
+        }
+        .profile-card-lux .profile-icon-lux svg {
+            width: 28px;
+            height: 28px;
+        }
+        .profile-card-lux h3 {
+            font-family: var(--font-heading);
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: var(--lux-dark);
+            margin-bottom: 0.5rem;
+        }
+        .profile-card-lux p {
+            font-size: 0.9rem;
+            color: var(--color-text-muted);
+            line-height: 1.55;
+            margin: 0;
+        }
+
+        /* Responsive Layout Tweaks */
+        @media (max-width: 1024px) {
+            .editorial-grid {
+                grid-template-columns: 1fr;
+                gap: 2.5rem;
+            }
+            .manifesto-grid {
+                grid-template-columns: 1fr;
+                gap: 2.5rem;
+            }
+            .bento-grid-lux {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .bento-card-lux-dark.large {
+                grid-column: span 2;
+                grid-row: span 1;
+            }
+            .bento-card-lux-dark.wide {
+                grid-column: span 2;
+            }
+            .cards-grid.grid-4 {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        @media (max-width: 768px) {
+            .bento-grid-lux {
+                grid-template-columns: 1fr;
+            }
+            .bento-card-lux-dark.large,
+            .bento-card-lux-dark.wide {
+                grid-column: span 1;
+            }
+            .cards-grid.grid-4 {
+                grid-template-columns: 1fr;
+            }
+            .editorial-image-box img {
+                height: 280px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -125,61 +512,89 @@
     </header>
 
     <main>
-        <!-- PAGE HERO LUX -->
+        <!-- A. PAGE HERO (Dark Institutional) -->
         <section class="page-hero bg-emerald">
             <div class="container text-center">
-                <span class="eyebrow eyebrow-light reveal">Tentang Kami</span>
-                <h1 class="page-title reveal">Mengenal Lebih Dekat Al Badar</h1>
-                <p class="page-subtitle reveal">Sebuah lembaga pendidikan Islam fullday berbasis pesantren yang berkomitmen membentuk generasi Rabbani yang cerdas dan berakhlak Qur'ani.</p>
+                <span class="eyebrow-lux reveal-stagger" style="color: var(--lux-gold);">Tentang Kami</span>
+                <h1 class="page-title reveal-stagger">Mengenal Lebih Dekat <span class="text-gold">Al Badar</span></h1>
+                <p class="page-subtitle reveal-stagger">Sebuah lembaga pendidikan Islam fullday berbasis pesantren yang berkomitmen membentuk generasi Rabbani yang cerdas dan berakhlak Qur'ani.</p>
             </div>
         </section>
 
-        <!-- SEJARAH & LOKASI (Editorial Layout) -->
+        <!-- B. SEJARAH & LOKASI (Editorial Layout) -->
         <section class="section editorial-intro">
             <div class="container">
-                <div class="editorial-grid reveal">
+                <div class="editorial-grid">
                     <div class="editorial-text reveal">
-                        <span class="eyebrow-lux">Sejarah & Lokasi</span>
-                        <h2 class="editorial-title">Lingkungan Kondusif <br>untuk Tafaqquh Fiddin</h2>
+                        <span class="eyebrow-lux">Sejarah &amp; Lokasi</span>
+                        <h2 class="section-title-lux" style="font-size: clamp(2rem, 3.5vw, 2.75rem); line-height: 1.15; margin-bottom: 1.5rem;">Lingkungan Kondusif untuk <em>Tafaqquh Fiddin</em></h2>
                     </div>
                     <div class="editorial-desc reveal">
                         <p>Perjalanan sekolah dimulai sebagai PPM TahfizhMu Al Badar pada tahun 2019. Pada tahun 2026, sekolah berafiliasi resmi dengan Muhammadiyah Boarding School (MBS) menjadi SMP MBS Al Badar Prambanan dan menghadirkan program Full Day melengkapi program Boarding. Sekolah resmi menyelenggarakan kegiatan pendidikan dengan 16 Peserta Didik Kelas 7 (total 35 santri boarding/mukim) serta diampu oleh 22 Tenaga Pendidik &amp; Karyawan (GTK). Berlokasi di Jamusan, Bokoharjo, Prambanan, Kabupaten Sleman, sekolah ini hadir di lingkungan pedesaan yang asri, dikelilingi persawahan, sejuk, dan jauh dari kebisingan kota.</p>
                         <p>Dengan dua pilihan program (Boarding &amp; Full Day), kami menerapkan sistem pemisahan kelas putra dan putri. Dengan beban pembelajaran 57 jam pelajaran per minggu (Senin–Sabtu), sekolah memadukan akademik unggul, ISMUBA, Tahfidz (target 15 Juz Boarding / 4 Juz Full Day), Koding &amp; AI (KKA), STEM, dan pembiasaan Adab Digital serta Fiqih Informasi (Adab Digital).</p>
                     </div>
                 </div>
+
+                <!-- Large Institutional Image -->
+                <div class="editorial-image-box reveal">
+                    <img src="https://images.unsplash.com/photo-1541339907198-e08756dedf3f?q=80&amp;w=1200&amp;auto=format&amp;fit=crop" alt="Suasana Lingkungan Asri Kampus Pesantren SMP MBS Al Badar Prambanan Sleman" class="editorial-img" loading="lazy" onerror="this.onerror=null;this.src='assets/img/placeholder.svg';">
+                    <div class="editorial-img-caption">
+                        <span class="caption-dot"></span> Suasana Asri Kampus Pesantren SMP MBS Al Badar di Prambanan, Sleman
+                    </div>
+                </div>
             </div>
         </section>
 
-        <!-- VISI & MISI (Manifesto Style - Luxury Typography) -->
-        <section class="section bg-sand">
+        <!-- C. VISI & MISI (Dark Manifesto) -->
+        <section class="section manifesto-section bg-lux-dark text-light">
             <div class="container">
                 <div class="section-header-lux center reveal">
-                    <span class="eyebrow-lux">Dasar Kami</span>
-                    <h2 class="section-title-lux">Visi & Misi Al Badar</h2>
+                    <span class="eyebrow-lux" style="color: var(--lux-gold);">Dasar &amp; Haluan</span>
+                    <h2 class="section-title-lux" style="color: #ffffff;">Visi &amp; Misi Al Badar</h2>
                 </div>
-                <div class="editorial-grid reveal" style="align-items: flex-start;">
-                    <div class="editorial-text reveal">
-                        <span class="eyebrow-lux">Manifesto Visi</span>
-                        <h3 class="editorial-title" style="font-size: 2.2rem; line-height: 1.35; font-style: italic; color: var(--color-primary);">
+                <div class="manifesto-grid reveal">
+                    <!-- Manifesto Visi (Massive Elegant Quote) -->
+                    <div class="manifesto-visi">
+                        <span class="manifesto-tag">Visi Institusi</span>
+                        <blockquote class="manifesto-quote">
                             "Terwujudnya generasi rabbani yang cerdas, berdaya saing, dan berakhlak Qur’ani melalui pembinaan intensif di lingkungan pesantren."
-                        </h3>
+                        </blockquote>
                     </div>
-                    <div class="editorial-desc reveal">
-                        <span class="eyebrow-lux">Misi Utama</span>
-                        <ul class="check-list" style="margin-top: 1rem;">
-                            <li>Mengembangkan kemampuan menghafal Al-Qur'an dan <em>tafaqquh fiddin</em>.</li>
-                            <li>Membimbing murid mencintai Al-Qur'an dan mampu berdakwah secara bijak.</li>
-                            <li>Mendorong murid menjadi insan beriman dan berintelektual tinggi.</li>
-                            <li>Menanamkan nilai Islam melalui sinergi rumah, pesantren, masjid, & masyarakat.</li>
-                            <li>Membentuk murid aktif dalam pendidikan, dakwah, & kegiatan sosial.</li>
-                            <li>Mendidik murid menjadi pemimpin yang jujur, amanah, & visioner.</li>
+                    <!-- Manifesto Misi (Clean List with Gold Numbers) -->
+                    <div class="manifesto-misi">
+                        <span class="manifesto-tag">Misi Utama</span>
+                        <ul class="luxury-misi-list">
+                            <li class="luxury-misi-item">
+                                <span class="misi-num">01</span>
+                                <p class="misi-text">Mengembangkan kemampuan menghafal Al-Qur'an dan <em>tafaqquh fiddin</em>.</p>
+                            </li>
+                            <li class="luxury-misi-item">
+                                <span class="misi-num">02</span>
+                                <p class="misi-text">Membimbing murid mencintai Al-Qur'an dan mampu berdakwah secara bijak.</p>
+                            </li>
+                            <li class="luxury-misi-item">
+                                <span class="misi-num">03</span>
+                                <p class="misi-text">Mendorong murid menjadi insan beriman dan berintelektual tinggi.</p>
+                            </li>
+                            <li class="luxury-misi-item">
+                                <span class="misi-num">04</span>
+                                <p class="misi-text">Menanamkan nilai Islam melalui sinergi rumah, pesantren, masjid, &amp; masyarakat.</p>
+                            </li>
+                            <li class="luxury-misi-item">
+                                <span class="misi-num">05</span>
+                                <p class="misi-text">Membentuk murid aktif dalam pendidikan, dakwah, &amp; kegiatan sosial.</p>
+                            </li>
+                            <li class="luxury-misi-item">
+                                <span class="misi-num">06</span>
+                                <p class="misi-text">Mendidik murid menjadi pemimpin yang jujur, amanah, &amp; visioner.</p>
+                            </li>
                         </ul>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- KEUNGGULAN / NILAI UTAMA (Bento Grid Lux) -->
+        <!-- D. KEUNGGULAN / NILAI UTAMA (Bento Grid Lux) -->
         <section class="section bento-section-lux">
             <div class="container">
                 <div class="section-header-lux center reveal">
@@ -187,31 +602,42 @@
                     <h2 class="section-title-lux">Apa yang Membedakan Kami</h2>
                 </div>
                 <div class="bento-grid-lux reveal">
-                    <!-- Large Card (Hijau MBS) -->
-                    <div class="bento-card-lux large reveal">
+                    <!-- 1. Keseimbangan (Large Card - Hijau MBS) -->
+                    <div class="bento-card-lux bento-card-lux-dark large reveal">
                         <div class="bento-content">
-                            <div class="bento-icon"><svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="m16 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"></path><path d="m2 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"></path><path d="M7 21h10"></path><path d="M12 3v18"></path><path d="M3 7h2c2 0 5-1 7-2 2 1 5 2 7 2h2"></path></svg></div>
+                            <div class="bento-icon">
+                                <svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="m16 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"></path><path d="m2 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"></path><path d="M7 21h10"></path><path d="M12 3v18"></path><path d="M3 7h2c2 0 5-1 7-2 2 1 5 2 7 2h2"></path></svg>
+                            </div>
                             <h3>Keseimbangan Pendidikan</h3>
-                            <p>Konsep <em>rahmatan lil 'alamin</em>: Keseimbangan yang harmonis antara ilmu dunia & bekal akhirat, penguasaan teori & pengamalan, serta hak dan kewajiban sebagai hamba Allah.</p>
+                            <p>Konsep <em>rahmatan lil 'alamin</em>: Keseimbangan yang harmonis antara ilmu dunia &amp; bekal akhirat, penguasaan teori &amp; pengamalan, serta hak dan kewajiban sebagai hamba Allah.</p>
                         </div>
-                        <img src="https://images.unsplash.com/photo-1541339907198-e08756dedf3f?q=80&w=800&auto=format&fit=crop" alt="Suasana Lingkungan Asri Kampus Pesantren SMP MBS Al Badar Prambanan Sleman" class="bento-bg-img" loading="lazy" onerror="this.onerror=null;this.src='assets/img/placeholder.svg';">
                     </div>
-                    <!-- Card 2 (Putih) -->
-                    <div class="bento-card-lux reveal">
-                        <div class="bento-icon"><svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg></div>
-                        <h3>Penguatan Karakter</h3>
-                        <p>Pembiasaan sholat berjamaah tepat waktu, penerapan 5S (Senyum, Sapa, Salam, Sopan, Santun), dan kemandirian budaya pesantren.</p>
-                    </div>
-                    <!-- Card 3 (Biru MBS) -->
-                    <div class="bento-card-lux blue reveal">
-                        <div class="bento-icon"><svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg></div>
-                        <h3>Pengembangan Bahasa</h3>
-                        <p>Program bilingual aktif (Bahasa Arab & Inggris) harian untuk membuka jendela wawasan dunia global dan kedalaman literasi agama.</p>
-                    </div>
-                    <!-- Wide Card (Putih) -->
-                    <div class="bento-card-lux wide reveal">
+                    <!-- 2. Penguatan Karakter (Dark Card) -->
+                    <div class="bento-card-lux bento-card-lux-dark dark-card reveal">
                         <div class="bento-content">
-                            <div class="bento-icon"><svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg></div>
+                            <div class="bento-icon">
+                                <svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+                            </div>
+                            <h3>Penguatan Karakter</h3>
+                            <p>Pembiasaan sholat berjamaah tepat waktu, penerapan 5S (Senyum, Sapa, Salam, Sopan, Santun), dan kemandirian budaya pesantren.</p>
+                        </div>
+                    </div>
+                    <!-- 3. Pengembangan Bahasa (Biru MBS) -->
+                    <div class="bento-card-lux bento-card-lux-dark blue-card reveal">
+                        <div class="bento-content">
+                            <div class="bento-icon">
+                                <svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+                            </div>
+                            <h3>Pengembangan Bahasa</h3>
+                            <p>Program bilingual aktif (Bahasa Arab &amp; Inggris) harian untuk membuka jendela wawasan dunia global dan kedalaman literasi agama.</p>
+                        </div>
+                    </div>
+                    <!-- 4. Program Tahfidz Intensif (Wide Card) -->
+                    <div class="bento-card-lux bento-card-lux-dark wide reveal">
+                        <div class="bento-content">
+                            <div class="bento-icon">
+                                <svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
+                            </div>
                             <h3>Program Tahfidz Intensif</h3>
                             <p>Target hafalan 15 Juz (Boarding) dan 4 Juz (Full Day) dengan pendampingan intensif musyrif dan musyrifah berkualitas dalam sistem pemisahan kelas putra dan putri.</p>
                         </div>
@@ -220,51 +646,75 @@
             </div>
         </section>
 
-        <!-- PROFIL LULUSAN (8 Dimensi) -->
-        <section class="section bg-sand">
+        <!-- E. PROFIL LULUSAN (8 Dimensi - Clean Grid) -->
+        <section class="section profil-lulusan-section bg-sand">
             <div class="container">
                 <div class="section-header-lux center reveal">
                     <span class="eyebrow-lux">Profil Lulusan</span>
                     <h2 class="section-title-lux">8 Dimensi yang Kami Bangun</h2>
                 </div>
                 <div class="cards-grid grid-4 reveal">
-                    <div class="feature-card text-center reveal">
-                        <div class="card-icon"><svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg></div>
-                        <h3>Keimanan & Ketakwaan</h3>
+                    <!-- 1. Keimanan & Ketakwaan -->
+                    <div class="profile-card profile-card-lux reveal-stagger">
+                        <div class="profile-icon profile-icon-lux">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                        </div>
+                        <h3>Keimanan &amp; Ketakwaan</h3>
                         <p>Fondasi akidah dan spiritualitas yang kokoh dalam beribadah sehari-hari.</p>
                     </div>
-                    <div class="feature-card text-center reveal">
-                        <div class="card-icon"><svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"></path><line x1="4" y1="22" x2="4" y2="15"></line></svg></div>
+                    <!-- 2. Kewargaan -->
+                    <div class="profile-card profile-card-lux reveal-stagger">
+                        <div class="profile-icon profile-icon-lux">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"></path><line x1="4" y1="22" x2="4" y2="15"></line></svg>
+                        </div>
                         <h3>Kewargaan</h3>
                         <p>Cinta tanah air, beretika, dan berkontribusi aktif bagi kemaslahatan masyarakat.</p>
                     </div>
-                    <div class="feature-card text-center reveal">
-                        <div class="card-icon"><svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6"></path><path d="M10 22h4"></path><path d="M15.09 14c.18-.98.65-1.74 1.41-2.5A4.65 4.65 0 0 0 18 8 6 6 0 0 0 6 8c0 1 .23 2.23 1.5 3.5A4.61 4.61 0 0 1 8.91 14"></path></svg></div>
+                    <!-- 3. Kreativitas -->
+                    <div class="profile-card profile-card-lux reveal-stagger">
+                        <div class="profile-icon profile-icon-lux">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6"></path><path d="M10 22h4"></path><path d="M15.09 14c.18-.98.65-1.74 1.41-2.5A4.65 4.65 0 0 0 18 8 6 6 0 0 0 6 8c0 1 .23 2.23 1.5 3.5A4.61 4.61 0 0 1 8.91 14"></path></svg>
+                        </div>
                         <h3>Kreativitas</h3>
                         <p>Mampu berpikir out-of-the-box dan menghasilkan solusi inovatif secara mandiri.</p>
                     </div>
-                    <div class="feature-card text-center reveal">
-                        <div class="card-icon"><svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="2"></rect><rect x="9" y="9" width="6" height="6"></rect><line x1="9" y1="1" x2="9" y2="4"></line><line x1="15" y1="1" x2="15" y2="4"></line><line x1="9" y1="20" x2="9" y2="23"></line><line x1="15" y1="20" x2="15" y2="23"></line><line x1="20" y1="9" x2="23" y2="9"></line><line x1="20" y1="14" x2="23" y2="14"></line><line x1="1" y1="9" x2="4" y2="9"></line><line x1="1" y1="14" x2="4" y2="14"></line></svg></div>
+                    <!-- 4. Penalaran Kritis -->
+                    <div class="profile-card profile-card-lux reveal-stagger">
+                        <div class="profile-icon profile-icon-lux">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="2"></rect><rect x="9" y="9" width="6" height="6"></rect><line x1="9" y1="1" x2="9" y2="4"></line><line x1="15" y1="1" x2="15" y2="4"></line><line x1="9" y1="20" x2="9" y2="23"></line><line x1="15" y1="20" x2="15" y2="23"></line><line x1="20" y1="9" x2="23" y2="9"></line><line x1="20" y1="14" x2="23" y2="14"></line><line x1="1" y1="9" x2="4" y2="9"></line><line x1="1" y1="14" x2="4" y2="14"></line></svg>
+                        </div>
                         <h3>Penalaran Kritis</h3>
                         <p>Mampu menganalisis masalah logis berbasis ilmu pengetahuan dan fikrah Islamiah.</p>
                     </div>
-                    <div class="feature-card text-center reveal">
-                        <div class="card-icon"><svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg></div>
+                    <!-- 5. Kolaborasi -->
+                    <div class="profile-card profile-card-lux reveal-stagger">
+                        <div class="profile-icon profile-icon-lux">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                        </div>
                         <h3>Kolaborasi</h3>
                         <p>Keterampilan bekerja sama dalam tim, empati tinggi, dan jiwa kepemimpinan.</p>
                     </div>
-                    <div class="feature-card text-center reveal">
-                        <div class="card-icon"><svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"></polygon></svg></div>
+                    <!-- 6. Kemandirian -->
+                    <div class="profile-card profile-card-lux reveal-stagger">
+                        <div class="profile-icon profile-icon-lux">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"></polygon></svg>
+                        </div>
                         <h3>Kemandirian</h3>
                         <p>Tangguh, disiplin mengelola waktu, dan bertanggung jawab atas tugas pribadi.</p>
                     </div>
-                    <div class="feature-card text-center reveal">
-                        <div class="card-icon"><svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"></path></svg></div>
+                    <!-- 7. Kesehatan -->
+                    <div class="profile-card profile-card-lux reveal-stagger">
+                        <div class="profile-icon profile-icon-lux">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"></path></svg>
+                        </div>
                         <h3>Kesehatan</h3>
                         <p>Menjaga kebugaran jasmani, jiwa yang sehat, serta gaya hidup bersih beradab.</p>
                     </div>
-                    <div class="feature-card text-center reveal">
-                        <div class="card-icon"><svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg></div>
+                    <!-- 8. Komunikasi -->
+                    <div class="profile-card profile-card-lux reveal-stagger">
+                        <div class="profile-icon profile-icon-lux">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+                        </div>
                         <h3>Komunikasi</h3>
                         <p>Keahlian menyampaikan gagasan secara santun, lugas, dan menguasai bahasa internasional.</p>
                     </div>
