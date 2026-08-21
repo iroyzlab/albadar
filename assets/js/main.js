@@ -45,27 +45,32 @@ document.addEventListener('DOMContentLoaded', function() {
 
     if (overlay) overlay.addEventListener('click', closeMenu);
 
-    // Mobile dropdown toggle handling
+    // Dropdown toggle handling (Desktop & Mobile)
     dropdownItems.forEach(item => {
         const toggleLink = item.querySelector(':scope > a');
         if (toggleLink) {
             toggleLink.addEventListener('click', function(e) {
-                if (window.innerWidth <= 1024) {
-                    e.preventDefault();
-                    const isOpen = item.classList.contains('open');
-                    dropdownItems.forEach(d => {
-                        if (d !== item) d.classList.remove('open');
-                    });
-                    item.classList.toggle('open');
-                }
+                e.preventDefault();
+                const isOpen = item.classList.contains('open');
+                dropdownItems.forEach(d => {
+                    if (d !== item) d.classList.remove('open');
+                });
+                item.classList.toggle('open', !isOpen);
             });
+        }
+    });
+
+    // Close dropdowns when clicking outside
+    document.addEventListener('click', function(e) {
+        if (!e.target.closest('.nav-item.dropdown')) {
+            dropdownItems.forEach(d => d.classList.remove('open'));
         }
     });
 
     // Close menu when clicking normal links or dropdown sub-links
     document.querySelectorAll('.nav-list a').forEach(link => {
         link.addEventListener('click', (e) => {
-            if (link.parentElement && link.parentElement.classList.contains('dropdown') && window.innerWidth <= 1024) {
+            if (link.parentElement && link.parentElement.classList.contains('dropdown')) {
                 return;
             }
             closeMenu();

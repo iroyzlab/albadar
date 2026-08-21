@@ -83,7 +83,11 @@ select:focus-visible {
 }
 
 .section {
-    padding: 8rem 0;
+    padding: 5rem 0;
+}
+
+.compact-section {
+    padding: 4rem 0 !important;
 }
 
 .bg-sand {
@@ -444,7 +448,8 @@ p {
     z-index: 1010;
 }
 
-.nav-item.dropdown:hover .dropdown-menu {
+.nav-item.dropdown:hover .dropdown-menu,
+.nav-item.dropdown.open .dropdown-menu {
     opacity: 1;
     visibility: visible;
     transform: translateY(0);
@@ -834,7 +839,7 @@ p {
 
 /* === PAGE HERO (SUBPAGES) === */
 .page-hero {
-    padding: 10rem 1.5rem 5rem;
+    padding: 8.5rem 1.5rem 2rem;
     background-color: var(--color-primary);
     text-align: center;
     color: #fff;
@@ -1054,7 +1059,7 @@ p {
 
 /* === NEWS & ANNOUNCEMENTS === */
 .news-section-lux {
-    padding: 8rem 0;
+    padding: 5rem 0;
     background: var(--lux-bg);
 }
 
@@ -1062,7 +1067,7 @@ p {
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
-    margin-bottom: 3rem;
+    margin-bottom: 2.5rem;
 }
 
 .section-header-lux.center {
