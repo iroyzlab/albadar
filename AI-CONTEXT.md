@@ -19,7 +19,7 @@ Dokumentasi arsitektur, filosofi desain, struktur file, dan pedoman konten resmi
 1. `index.html` — Beranda utama (Hero sinematik, Floating stats bar, Editorial intro, Pilar pendidikan, Prestasi, Berita dinamis dengan pattern Islami, Marquee afiliasi MBS, Alur PPDB, CTA).
 2. `about.html` — Profil sekolah, Sejarah (2019-2026), Visi & Misi, Nilai-nilai, Fasilitas, dan GTK.
 3. `programs.html` — Program Boarding (15 Juz) vs Full Day (4 Juz), 2 Struktur Kurikulum (Diniyah & Diknas), Keunggulan (Koding & AI, STEM, Bahasa).
-4. `student-life.html` — Kehidupan santri, Jadwal harian terpadu, Kegiatan periodik (Muhadhoroh, Muhadatsah, Kajisah), Ekstrakurikuler (HW, Tapak Suci, dll), Fasilitas.
+4. `student-life.html` — Kehidupan santri, Jadwal harian terpadu, Kegiatan periodik (Muhadhoroh, Muhadatsah, Kajian Tematik), Ekstrakurikuler (HW, Tapak Suci, dll), Fasilitas.
 5. `ppdb.html` — Informasi Penerimaan Peserta Didik Baru (PPDB 2027/2028), Sistem *2 Week Service*, Rincian biaya, Persyaratan, dan Portal PSB MBS.
 6. `news.html` — Portal berita resmi, agenda sekolah, dan pengumuman.
 7. `achievements.html` — Rekam jejak prestasi santri di bidang akademik, tahfidz, dan sains.

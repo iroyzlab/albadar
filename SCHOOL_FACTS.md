@@ -40,12 +40,12 @@ Dokumen ini adalah sumber kebenaran mutlak (*Single Source of Truth*) mengenai d
   1. **Ibadah Berjamaah & Dzikir**
   2. **Kegiatan Akademik & Tahfizh**
   3. **Olahraga & Kebersihan**
-  4. **Belajar Mandiri (Studi Independen)**
+  4. **Belajar Mandiri Malam** (Studi mandiri dengan musyrif/ah mendampingi/standby)
 - **Program Full Day**: Pulang setelah Sholat Ashar berjamaah & membaca Al-Ma'tsurat (Dzikir Sore) di sekolah, dengan opsi melanjutkan ekstrakurikuler.
 - **Program Mingguan/Bulanan (Periodik)**:
   1. **Muhadhoroh** (Latihan Public Speaking & Dakwah Tiga Bahasa)
-  2. **Muhadatsah** (Praktik Komunikasi Bahasa Arab Aktif)
-  3. **Tadarus & Kajisah** (Kajian keislaman & penanaman adab)
+  2. **Muhadatsah** (Praktik Komunikasi Bahasa Arab & Inggris Aktif)
+  3. **Tadarus & Kajian Tematik** (Kajian keislaman, tadarus Al-Qur'an tematik, & penanaman adab)
 
 ---
 
