@@ -163,6 +163,36 @@
             color: #6B5220;
             border: 1px solid rgba(212, 181, 130, 0.4);
         }
+        .feature-card .card-icon-wrap,
+        .card-icon-wrap {
+            width: 52px;
+            height: 52px;
+            border-radius: 14px;
+            background: rgba(212, 181, 130, 0.15);
+            border: 1px solid rgba(212, 181, 130, 0.3);
+            color: #6B5220;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.25rem;
+            flex-shrink: 0;
+            transition: all 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+        .feature-card:hover .card-icon-wrap {
+            transform: scale(1.1);
+            background: var(--lux-gold);
+            color: #04473a;
+            border-color: var(--lux-gold);
+            box-shadow: 0 0 20px rgba(212, 181, 130, 0.4);
+        }
+        .card-icon-wrap svg {
+            width: 26px;
+            height: 26px;
+            max-width: 26px;
+            max-height: 26px;
+            display: block;
+            transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+        }
         .ekstra-icon {
             width: 48px;
             height: 48px;
@@ -477,11 +507,11 @@
                                 <p>Bangun pagi, sholat tahajud berjamaah, sholat Subuh di masjid, dzikir Al-Ma'tsurat, dan halaqah setoran hafalan Al-Qur'an.</p>
                             </div>
 
-                            <!-- 2. KBM Terpadu & Sholat Berjamaah -->
+                            <!-- 2. KBM Terpadu -->
                             <div class="timeline-card gold-border reveal-stagger">
                                 <span class="timeline-time">07.00 – 15.00</span>
-                                <h4>KBM Terpadu &amp; Sholat Berjamaah</h4>
-                                <p>Pembelajaran akademik nasional, Diniyah, Koding &amp; AI (Chromebook), STEM, serta sholat Dhuha dan Dzuhur berjamaah dengan pemisahan kelas putra-putri.</p>
+                                <h4>KBM Terpadu</h4>
+                                <p>Pembelajaran kurikulum terpadu nasional, Diniyah, Koding &amp; AI (Chromebook), STEM, serta pembiasaan ibadah harian dengan pemisahan kelas putra-putri.</p>
                             </div>
 
                             <!-- 3. Olahraga, Ekstrakurikuler & Mandiri -->

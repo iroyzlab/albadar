@@ -1667,15 +1667,82 @@ p {
     box-shadow: 0 10px 25px rgba(0,0,0,0.1);
 }
 
+/* Card Icon Box & Luxury Hover */
+.card-icon-wrap {
+    width: 52px;
+    height: 52px;
+    border-radius: 14px;
+    background: rgba(212, 181, 130, 0.15);
+    border: 1px solid rgba(212, 181, 130, 0.3);
+    color: #6B5220;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.25rem;
+    flex-shrink: 0;
+    transition: all 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.card-icon-wrap svg {
+    width: 26px;
+    height: 26px;
+    max-width: 26px;
+    max-height: 26px;
+    display: block;
+    transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1), stroke 0.3s ease;
+}
+
+.feature-card:hover .card-icon-wrap,
+.pilar-card:hover .card-icon-wrap,
+.curriculum-cat-card:hover .card-icon-wrap {
+    transform: scale(1.1);
+    background: var(--lux-gold);
+    color: #04473a;
+    border-color: var(--lux-gold);
+    box-shadow: 0 0 20px rgba(212, 181, 130, 0.4);
+}
+
+.feature-card:hover .card-icon-wrap svg,
+.pilar-card:hover .card-icon-wrap svg,
+.curriculum-cat-card:hover .card-icon-wrap svg {
+    transform: scale(1.08);
+}
+
+/* Universal SVG max size safeguard for card icons */
+.feature-card svg,
+.bento-card-lux svg,
+.bento-card-lux-dark svg,
+.profile-card-lux svg,
+.curriculum-cat-card svg,
+.ekstra-compact-card svg {
+    max-width: 48px;
+    max-height: 48px;
+}
+
 .card-icon {
     font-size: 2.2rem;
     margin-bottom: 1rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.feature-card:hover .card-icon {
+    transform: scale(1.1);
+    color: var(--lux-gold);
 }
 
 .value-icon {
     font-size: 2.5rem;
     margin-bottom: 1rem;
     color: var(--color-secondary);
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.value-card:hover .value-icon {
+    transform: scale(1.1);
+    color: var(--lux-gold);
 }
 
 .check-list {

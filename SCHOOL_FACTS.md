@@ -41,7 +41,7 @@ Dokumen ini adalah sumber kebenaran mutlak (*Single Source of Truth*) mengenai d
   2. **Kegiatan Akademik & Tahfizh**
   3. **Olahraga & Kebersihan**
   4. **Belajar Mandiri (Studi Independen)**
-- **Program Full Day**: Pulang lebih awal untuk Sholat Ashar & Dzikir di rumah, dengan opsi melanjutkan ekstrakurikuler.
+- **Program Full Day**: Pulang setelah Sholat Ashar berjamaah & membaca Al-Ma'tsurat (Dzikir Sore) di sekolah, dengan opsi melanjutkan ekstrakurikuler.
 - **Program Mingguan/Bulanan (Periodik)**:
   1. **Muhadhoroh** (Latihan Public Speaking & Dakwah Tiga Bahasa)
   2. **Muhadatsah** (Praktik Komunikasi Bahasa Arab Aktif)
