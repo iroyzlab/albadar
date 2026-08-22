@@ -242,11 +242,13 @@ document.addEventListener('DOMContentLoaded', function() {
         }, 5000); // 5 seconds interval
     }
 
-    // Custom Cursor (Auto-inject ke semua halaman)
-    let cursorDot = document.getElementById('cursorDot');
-    let cursorOutline = document.getElementById('cursorOutline');
+    // Custom Cursor & Magnetic Effect (Desktop only with hover & fine pointer support)
+    const isDesktopPointer = window.matchMedia('(hover: hover) and (pointer: fine)').matches && window.innerWidth > 768;
     
-    if (window.innerWidth > 768) {
+    if (isDesktopPointer) {
+        let cursorDot = document.getElementById('cursorDot');
+        let cursorOutline = document.getElementById('cursorOutline');
+
         if (!cursorDot) {
             cursorDot = document.createElement('div');
             cursorDot.id = 'cursorDot';
@@ -260,16 +262,74 @@ document.addEventListener('DOMContentLoaded', function() {
             document.body.appendChild(cursorOutline);
         }
 
+        let mouseX = -100;
+        let mouseY = -100;
+        let outlineX = -100;
+        let outlineY = -100;
+
         window.addEventListener('mousemove', (e) => {
-            cursorDot.style.left = e.clientX + 'px';
-            cursorDot.style.top = e.clientY + 'px';
-            cursorOutline.style.left = e.clientX + 'px';
-            cursorOutline.style.top = e.clientY + 'px';
+            mouseX = e.clientX;
+            mouseY = e.clientY;
+
+            // Dot moves instantly without delay
+            cursorDot.style.left = `${mouseX}px`;
+            cursorDot.style.top = `${mouseY}px`;
+            cursorDot.classList.remove('cursor-hidden');
+            cursorOutline.classList.remove('cursor-hidden');
         });
 
-        document.querySelectorAll('a, button, .bento-card-lux, .tag-item, .news-card-lux, .faq-question, .step-card-lux, .facility-card').forEach(el => {
+        document.addEventListener('mouseleave', () => {
+            cursorDot.classList.add('cursor-hidden');
+            cursorOutline.classList.add('cursor-hidden');
+        });
+
+        document.addEventListener('mouseenter', () => {
+            cursorDot.classList.remove('cursor-hidden');
+            cursorOutline.classList.remove('cursor-hidden');
+        });
+
+        // Smooth trailing animation loop using rAF and Linear Interpolation (lerp)
+        const renderCursor = () => {
+            const ease = 0.15; // Smooth trailing factor
+            outlineX += (mouseX - outlineX) * ease;
+            outlineY += (mouseY - outlineY) * ease;
+
+            cursorOutline.style.left = `${outlineX}px`;
+            cursorOutline.style.top = `${outlineY}px`;
+
+            requestAnimationFrame(renderCursor);
+        };
+        requestAnimationFrame(renderCursor);
+
+        // Interactive elements hover state (outline scales down & increases opacity)
+        const interactiveElements = document.querySelectorAll('a, button, .lux-img-zoom, .nav-link, .bento-card-lux, .tag-item, .news-card-lux, .faq-question, .step-card-lux, .facility-card, .magnetic-btn');
+        interactiveElements.forEach(el => {
             el.addEventListener('mouseenter', () => cursorOutline.classList.add('hovered'));
             el.addEventListener('mouseleave', () => cursorOutline.classList.remove('hovered'));
+        });
+
+        // Magnetic Effect on interactive CTA buttons
+        const magneticButtons = document.querySelectorAll('.magnetic-btn, .btn-gold-lux, .btn-primary-lux, a.nav-cta');
+        magneticButtons.forEach((btn) => {
+            const maxDisplacement = 15; // Max 15px magnetic attraction
+
+            btn.addEventListener('mousemove', (e) => {
+                const rect = btn.getBoundingClientRect();
+                const btnCenterX = rect.left + rect.width / 2;
+                const btnCenterY = rect.top + rect.height / 2;
+
+                const deltaX = (e.clientX - btnCenterX) / (rect.width / 2);
+                const deltaY = (e.clientY - btnCenterY) / (rect.height / 2);
+
+                const moveX = Math.max(Math.min(deltaX * maxDisplacement, maxDisplacement), -maxDisplacement);
+                const moveY = Math.max(Math.min(deltaY * maxDisplacement, maxDisplacement), -maxDisplacement);
+
+                btn.style.transform = `translate3d(${moveX.toFixed(1)}px, ${moveY.toFixed(1)}px, 0)`;
+            });
+
+            btn.addEventListener('mouseleave', () => {
+                btn.style.transform = 'translate3d(0px, 0px, 0)';
+            });
         });
     }
 
@@ -290,6 +350,58 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         }, { threshold: 0.15 });
         revealElements.forEach(el => observer.observe(el));
+    }
+
+    // Text Reveal Observer (Luxury Masked Line Animation)
+    const textRevealElements = document.querySelectorAll('.text-reveal-wrap, .text-reveal');
+    if (textRevealElements.length > 0) {
+        const textRevealObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.15 });
+        textRevealElements.forEach(el => textRevealObserver.observe(el));
+    }
+
+    // Parallax Geometric Pattern (Islamic Rub el Hizb)
+    const parallaxPatterns = document.querySelectorAll('.parallax-pattern');
+    if (parallaxPatterns.length > 0) {
+        let isTicking = false;
+
+        const updateParallax = () => {
+            const windowHeight = window.innerHeight;
+            parallaxPatterns.forEach((pattern) => {
+                const parent = pattern.closest('.has-parallax-pattern') || pattern.parentElement;
+                if (parent) {
+                    const rect = parent.getBoundingClientRect();
+                    // Process only when section is visible in or near viewport
+                    if (rect.top < windowHeight && rect.bottom > 0) {
+                        const speed = parseFloat(pattern.getAttribute('data-parallax-speed')) || 0.15;
+                        // Smooth, subtle translation relative to section position
+                        const offset = (windowHeight - rect.top) * speed;
+                        pattern.style.transform = `translate3d(0, ${offset.toFixed(1)}px, 0)`;
+                    }
+                } else {
+                    const scrollY = window.pageYOffset || document.documentElement.scrollTop;
+                    const offset = scrollY * 0.15;
+                    pattern.style.transform = `translate3d(0, ${offset.toFixed(1)}px, 0)`;
+                }
+            });
+            isTicking = false;
+        };
+
+        window.addEventListener('scroll', () => {
+            if (!isTicking) {
+                window.requestAnimationFrame(updateParallax);
+                isTicking = true;
+            }
+        }, { passive: true });
+
+        // Initial positioning on load
+        updateParallax();
     }
 
     // FAQ Accordion
