@@ -1,65 +1,100 @@
-# AI Context & Design System Guidelines
+# AI Context & Technical Guidelines: SMP MBS Al Badar Prambanan
 
-Dokumentasi ini memuat panduan struktur, filosofi, palet warna, dan aturan pengembangan untuk repository **SMP MBS Al Badar Prambanan**.
-
----
-
-## 1. Identitas & Filosofi Sekolah
-
-- **Nama Resmi**: SMP Muhammadiyah Boarding School (MBS) Al Badar Prambanan
-- **Tagline / Visi Utama**: *"Generasi Rabbani, Cerdas & Berakhlak Qur'ani"*
-- **Visi**: *"Terwujudnya generasi rabbani yang cerdas, berdaya saing, dan berakhlak Qur’ani melalui pembinaan intensif di lingkungan pesantren."*
-- **Lokasi**: Jamusan, Jirak, Bokoharjo, Kec. Prambanan, Kabupaten Sleman, DIY 55572
-- **Domain Web Resmi (GitHub Pages)**: `https://iroyzlab.github.io/albadar/`
-- **Fokus Kurikulum**: Integrasi pendidikan akademik nasional, pembentukan karakter Islam, Tahfidz Al-Qur'an (target 15 Juz Boarding / 4 Juz Full Day), penguasaan bahasa internasional (Arab & Inggris), serta penguasaan teknologi masa depan (Coding & AI, STEM).
+Dokumentasi arsitektur, filosofi desain, struktur file, dan pedoman konten resmi untuk pengembangan website **SMP MBS Al Badar Prambanan**.
 
 ---
 
-## 2. Sistem Palet Warna Khas MBS
+## 1. Project Overview & Tech Stack
 
-| Warna | Hex Code | Variabel CSS | Penggunaan |
-| :--- | :--- | :--- | :--- |
-| **Hijau Muhammadiyah Tua** | `#04473A` | `--color-primary` | Warna utama identitas sekolah, header scrolled logo, button primary hover, hero background, footer background |
-| **Biru Muhammadiyah Tua** | `#11366E` | `--color-secondary` | Warna aksen sekunder, sub-elemen mewah, button hover states |
-| **Emas Terang (Lux Gold)** | `#D4B582` | `--lux-gold` | Aksen emas di atas **latar belakang GELAP** (`.page-hero`, `.bg-emerald`, `.bg-lux-dark`, `:focus-visible` outline) |
-| **Emas Kontras WCAG AA** | `#6B5220` | Digunakan di `.eyebrow` | Teks aksen sub-header di atas **latar belakang TERANG** (Putih `#FAFBFC` / Sand `#F0F4F8`) untuk memenuhi kontras WCAG AA (> 4.5:1) |
-| **Hitam Gelap Luxury** | `#050505` | `--lux-dark` | Heading utama (`h1`, `h2`, `h3`), teks gelap |
-| **Putih Clean Premium** | `#FAFBFC` | `--lux-bg` | Latar belakang halaman utama |
-| **Sand Light** | `#F0F4F8` | `.bg-sand` | Latar belakang alternatif antar section |
+- **Platform**: Static Web (HTML5 Semantic, Pure Vanilla CSS3, Vanilla JavaScript ES6+) di-hosting via **GitHub Pages**.
+- **URL Produksi**: `https://iroyzlab.github.io/albadar/`
+- **Future Readiness**: Terstruktur modular dan siap untuk migrasi masa depan ke Headless CMS atau Fullstack Backend framework (seperti Laravel atau Next.js).
+- **Design Philosophy**: **Premium, Luxury, Institutional, Islamic**. Menghadirkan citra pesantren modern yang berwibawa, elegan, tertib, dan berstandar internasional.
 
 ---
 
-## 3. Tipografi & Aksesibilitas (A11y)
+## 2. File Structure & Core Assets (Current)
 
-- **Font Heading**: `'Fraunces'`, serif
-- **Font Body**: `'Inter'`, sans-serif
-- **Fokus Navigasi Keyboard**: Seluruh elemen interaktif (`a`, `button`, `input`, `textarea`, `select`) memiliki garis outline `:focus-visible`:
-  ```css
-  outline: 2px solid #D4B582;
-  outline-offset: 2px;
-  ```
-- **Kontras Teks**: Seluruh elemen `.eyebrow` pada latar terang wajib menggunakan `#6B5220`. Untuk latar gelap, gunakan class `.eyebrow-light`.
+### A. Active HTML Pages (Total 12 Files)
+1. `index.html` — Beranda utama (Hero sinematik, Floating stats bar, Editorial intro, Pilar pendidikan, Prestasi, Berita dinamis dengan pattern Islami, Marquee afiliasi MBS, Alur PPDB, CTA).
+2. `about.html` — Profil sekolah, Sejarah (2019-2026), Visi & Misi, Nilai-nilai, Fasilitas, dan GTK.
+3. `programs.html` — Program Boarding (15 Juz) vs Full Day (4 Juz), 2 Struktur Kurikulum (Diniyah & Diknas), Keunggulan (Koding & AI, STEM, Bahasa).
+4. `student-life.html` — Kehidupan santri, Jadwal harian terpadu, Kegiatan periodik (Muhadhoroh, Muhadatsah, Kajisah), Ekstrakurikuler (HW, Tapak Suci, dll), Fasilitas.
+5. `ppdb.html` — Informasi Penerimaan Peserta Didik Baru (PPDB 2027/2028), Sistem *2 Week Service*, Rincian biaya, Persyaratan, dan Portal PSB MBS.
+6. `news.html` — Portal berita resmi, agenda sekolah, dan pengumuman.
+7. `achievements.html` — Rekam jejak prestasi santri di bidang akademik, tahfidz, dan sains.
+8. `faq.html` — Tanya jawab interaktif seputar boarding, kurikulum, biaya, dan kebijakan sekolah.
+9. `contact.html` — Informasi kontak, lokasi Jamusan Bokoharjo Prambanan, peta Google Maps, dan form narahubung.
+10. `privacy-policy.html` — Kebijakan privasi & perlindungan data santri/wali santri.
+11. `404.html` — Halaman penanganan error 404 berdesain luxury institusional.
+12. `gallery.html` — Galeri dokumentasi aktivitas (*unlisted / utility page*).
+
+### B. Core Documentation & Assets
+- `SCHOOL_FACTS.md` — **Single Source of Truth (SSOT)** mutlak untuk seluruh data, fakta, target tahfidz, jumlah GTK/santri, dan kebijakan sekolah.
+- `assets/css/style.css` — Master stylesheet tersentralisasi: CSS Custom Properties (`:root`), modular layout, responsive breakpoints, dan komponen UI luxury.
+- `assets/js/main.js` — Logika interaksi Vanilla JS: Dynamic news loader (auto-rotation 5s), Search bar autocomplete & Google Site Search, Mega menu & mobile drawer dropdown, Reveal on scroll (`IntersectionObserver`), Custom cursor desktop, FAQ accordion, dan Lightbox modal.
+- `assets/img/` — Aset gambar, logo resmi berformat SVG/PNG, dan web icon.
+- `sitemap.xml` & `robots.txt` — Pengaturan indexing mesin pencari (SEO).
 
 ---
 
-## 4. Struktur Repository & Halaman Web
+## 3. Design System & UI/UX Guidelines
 
-- **Total 12 Halaman HTML**:
-  - Halaman Utama & Profil: `index.html`, `about.html`, `programs.html`, `student-life.html`, `achievements.html`, `gallery.html`, `news.html`, `faq.html`, `ppdb.html`, `contact.html`, `privacy-policy.html`, `404.html`
-- **Aset Utama**:
-  - `assets/css/style.css`: File Master CSS
-  - `assets/js/main.js`: Logika JavaScript utama (Navigasi mobile, header scrolled state, current year)
-  - `sitemap.xml` & `robots.txt`: Pengaturan SEO & Indexing
+### A. Palet Warna (CSS Variables di `:root`)
+| Variabel CSS | Hex Code | Deskripsi & Penggunaan |
+| :--- | :--- | :--- |
+| `--color-primary` | `#04473A` | **Hijau Muhammadiyah Tua** — Warna identitas utama, header, button primary, hero subpage |
+| `--color-secondary` | `#11366E` | **Biru Muhammadiyah Tua** — Aksen sekunder mewah, pilar section, tag, sub-elemen |
+| `--lux-gold` | `#D4B582` | **Emas Mewah (Lux Gold)** — Border aksen, eyebrow title, icon highlight, hover glow |
+| `--lux-bg` | `#F8F8F8` | **Warm Ivory / Sand** — Latar belakang halaman bersih dan section kartu |
+| `--lux-dark` | `#050505` | **Hitam Luxury** — Heading teks (`h1`, `h2`, `h3`) dan stats bar kontras |
+| `--color-text-muted` | `#555555` | **Muted Slate** — Deskripsi teks dan paragraf body |
+
+### B. Tipografi
+- **Headings (`h1` - `h4`, Title)**: `'Fraunces'`, serif (klasik, megah, institusional).
+- **Body & UI Elements**: `'Inter'`, sans-serif (bersih, modern, highly legible).
+
+### C. UI Components & Layout Standard
+- **Dark Page Hero (Subpages)**: `min-height: 70vh` dengan latar belakang `--color-primary`, border-bottom emas tipis, dan tipografi terpusat.
+- **Bento Grid Lux & Feature Cards**: Card berdesain clean `#ffffff` dengan border radius `16px`, subtle border `rgba(0,0,0,0.05)`, dan soft box shadow.
+- **News Section Pattern**: Background geometric pattern Islami (Rub el Hizb 8-pointed star) dengan overlay `rgba(248, 248, 248, 0.92)` untuk kontras dan keterbacaan tinggi.
+- **Horizontal Timeline**: Step alur dengan dashed border separator elegan.
+- **Iconography**: Selalu gunakan **SVG Icons** bernuansa luxury (stroke width 1.5 - 2px, warna emas/navy). **Dilarang menggunakan emoji kasual** di dalam komponen kartu resmi.
+- **Section Spacing**: Konsisten `5rem 0` (desktop) dan `3.5rem 0` / `.compact-section` `4rem 0` untuk kerapatan visual yang proporsional.
+
+### D. Navigasi & Interaktivitas
+- **Header & CSS Logo**: Header sticky dengan transisi background saat di-scroll (`.scrolled`). Logo teks CSS 3-baris rapi: *SEKOLAH MENENGAH PERTAMA* / *MBS AL BADAR* / *PRAMBANAN*.
+- **Dropdown Logic**: Berfungsi ganda: buka saat hover (desktop) dan toggle klik dengan `preventDefault` pada trigger link utama.
+- **Expandable Search Bar**: Input pencarian overlay dengan live autocomplete suggestions berbasis kata kunci serta opsi pencarian Google fallback.
+- **Reveal on Scroll**: Animasi fade & slide up menggunakan `IntersectionObserver` (`.reveal`, `.reveal-stagger`).
+- **Dynamic News Loader**: Rotasi kartu berita otomatis setiap 5 detik dengan transisi fade berurutan.
 
 ---
 
-## 5. Prinsip Pengembangan AI / Developer
+## 4. Key Content Rules (Rujukan Wajib dari SCHOOL_FACTS.md)
 
-1. **Non-Destruktif**: Menambahkan fitur atau membenahi bug **tanpa mengubah desain dasar**, tata letak visual, atau skema warna yang sudah disepakati.
-2. **Standard SEO & A11y**:
-   - Meta description konsisten (130-160 karakter) menyertakan *"Prambanan, Sleman, Yogyakarta"*.
-   - Open Graph tags lengkap pada setiap `<head>`.
-   - JSON-LD Schema.org `EducationalOrganization` pada `index.html`, `about.html`, `contact.html`, `ppdb.html`.
-3. **Pengelolaan Git**:
-   - Gunakan branch fitur/fix yang jelas (`fix/...` atau `feature/...`).
-   - Tunjukkan diff sebelum meng-commit jika diminta user.
+1. **Sejarah & Afiliasi**:
+   - Berdiri tahun **2019** sebagai **PPM TahfizhMu Al Badar**.
+   - Tahun **2026** berafiliasi resmi dengan **MBS (Muhammadiyah Boarding School) Yogyakarta** dan bertransformasi menjadi **SMP MBS Al Badar Prambanan**.
+2. **2 Program Pendidikan**:
+   - **Boarding (Mukim)**: Target Tahfidz **15 Juz** (3 Tahun).
+   - **Full Day (Non-Boarding)**: Target Tahfidz **4 Juz** (3 Tahun).
+   - *(PENTING: Tidak ada target 5 Juz; seluruh referensi lama telah dihapus).*
+3. **2 Struktur Kurikulum Utama**:
+   - **Kurikulum Diniyah**: Aqidah/Tauhid, Fiqih, Qur'an Hadits, Tahfidz, Bahasa Arab aktif, ISMUBA, dan Fiqih Informasi.
+   - **Kurikulum Terpadu Nasional (Diknas)**: Kurikulum Merdeka (Matematika, IPA, IPS, Bahasa Indonesia, Bahasa Inggris, Pendidikan Pancasila, Koding & AI / KKA, STEM).
+4. **Kebijakan Digital (Adab Digital)**:
+   - **Zero Personal Smartphone**: Santri dilarang membawa smartphone/HP pribadi ke lingkungan sekolah/asrama.
+   - **Fiqih Informasi & Chromebook**: Pembelajaran digital terfasilitasi melalui perangkat Chromebook sekolah dengan pengawasan DNS Filtering dan penanaman Cyber-Akhlaq.
+5. **PPDB & Sistem Pendaftaran**:
+   - Pendaftaran dibuka untuk TA **2027/2028**.
+   - Menggunakan sistem **2 Week Service** (proses seleksi & penerimaan langsung tanpa menunggu gelombang penutupan).
+   - Portal resmi PSB: `https://psb.mbs.sch.id`.
+
+---
+
+## 5. Developer & AI Assistant Working Guidelines
+
+- **Non-Destructive Modifications**: Setiap perubahan CSS atau HTML wajib mempertahankan struktur responsif dan konsistensi token desain `:root`.
+- **Content Integrity**: Dilarang mengarang atau mengubah angka target tahfidz, jumlah GTK, atau data legalitas di luar apa yang tercantum pada `SCHOOL_FACTS.md`.
+- **Accessibility & Performance**: Pertahankan atribut ARIA (`aria-expanded`, `aria-label`), alt text pada gambar (`<img>`), serta validitas markup semantik.
