@@ -45,24 +45,30 @@ document.addEventListener('DOMContentLoaded', function() {
 
     if (overlay) overlay.addEventListener('click', closeMenu);
 
-    // Dropdown toggle handling (Desktop & Mobile)
+    // Dropdown handling:
+    // - Desktop: Pure instant hover (CSS driven). Click on main trigger link calls preventDefault() with no toggle.
+    // - Mobile: Tap on main trigger link toggles accordion (.open class) within drawer menu.
     dropdownItems.forEach(item => {
         const toggleLink = item.querySelector(':scope > a');
         if (toggleLink) {
             toggleLink.addEventListener('click', function(e) {
-                e.preventDefault();
-                const isOpen = item.classList.contains('open');
-                dropdownItems.forEach(d => {
-                    if (d !== item) d.classList.remove('open');
-                });
-                item.classList.toggle('open', !isOpen);
+                e.preventDefault(); // Prevent navigating to href (about.html, student-life.html, news.html)
+                
+                // Only perform accordion toggle on mobile / drawer navigation
+                if (window.innerWidth <= 768) {
+                    const isOpen = item.classList.contains('open');
+                    dropdownItems.forEach(d => {
+                        if (d !== item) d.classList.remove('open');
+                    });
+                    item.classList.toggle('open', !isOpen);
+                }
             });
         }
     });
 
-    // Close dropdowns when clicking outside
+    // Close mobile dropdowns when clicking outside
     document.addEventListener('click', function(e) {
-        if (!e.target.closest('.nav-item.dropdown')) {
+        if (!e.target.closest('.nav-item.dropdown') && window.innerWidth <= 768) {
             dropdownItems.forEach(d => d.classList.remove('open'));
         }
     });

@@ -442,7 +442,7 @@ p {
     border-bottom: 1.5px solid currentColor;
     transform: rotate(45deg) translateY(-2px);
     margin-left: 5px;
-    transition: transform 0.3s ease;
+    transition: transform 0.2s ease;
     vertical-align: middle;
 }
 
@@ -453,27 +453,52 @@ p {
 
 .dropdown-menu {
     position: absolute;
-    top: 100%;
+    top: calc(100% + 4px);
     left: 0;
     background: #ffffff;
-    min-width: 200px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    min-width: 210px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
     border-radius: 8px;
     opacity: 0;
     visibility: hidden;
-    transform: translateY(10px);
-    transition: all 0.3s ease;
+    transform: translateY(4px);
+    transition: opacity 0.15s ease, transform 0.15s ease, visibility 0.15s ease;
     list-style: none;
     padding: 0.5rem 0;
     margin: 0;
     z-index: 1010;
+    border: 1px solid rgba(0, 0, 0, 0.06);
+    pointer-events: none;
 }
 
-.nav-item.dropdown:hover .dropdown-menu,
-.nav-item.dropdown.open .dropdown-menu {
+/* Invisible bridge to prevent mouse leaving hover area while moving into submenu */
+.dropdown-menu::before {
+    content: '';
+    position: absolute;
+    top: -12px;
+    left: 0;
+    right: 0;
+    height: 12px;
+    background: transparent;
+}
+
+.nav-item.dropdown:hover .dropdown-menu {
     opacity: 1;
     visibility: visible;
     transform: translateY(0);
+    pointer-events: auto;
+}
+
+.nav-item.dropdown:hover > a {
+    color: var(--lux-gold);
+}
+
+.site-header.scrolled .nav-item.dropdown:hover > a {
+    color: var(--color-primary);
+}
+
+.nav-item.dropdown:hover > a::after {
+    width: 100%;
 }
 
 .dropdown-menu li {
@@ -2611,7 +2636,12 @@ body.menu-open .menu-bar {
         padding-left: 0.5rem;
         border-radius: 8px;
         min-width: auto;
+        border: none;
+        pointer-events: auto;
         transition: max-height 0.3s ease, opacity 0.3s ease, padding 0.3s ease;
+    }
+    .nav-item.dropdown .dropdown-menu::before {
+        display: none;
     }
     .nav-item.dropdown.open .dropdown-menu {
         opacity: 1;
