@@ -22,6 +22,17 @@
     padding: 0;
 }
 
+/* Selection Highlight Color */
+::selection {
+    background: var(--lux-gold);
+    color: var(--lux-dark);
+}
+
+::-moz-selection {
+    background: var(--lux-gold);
+    color: var(--lux-dark);
+}
+
 /* Custom Cursor: Hide default cursor only on hover & fine pointer desktop devices */
 @media (hover: hover) and (pointer: fine) {
     * { cursor: none !important; }
@@ -29,6 +40,7 @@
 
 html {
     scroll-behavior: smooth;
+    scroll-padding-top: 90px;
     overflow-x: hidden;
     width: 100%;
 }
@@ -130,6 +142,10 @@ h1, h2, h3, h4 {
     margin-bottom: 1rem;
 }
 
+h1, h2 {
+    letter-spacing: -0.02em;
+}
+
 p {
     margin-bottom: 1rem;
     color: var(--color-text-muted);
@@ -141,34 +157,24 @@ p {
     margin-bottom: 2rem;
 }
 
-.eyebrow {
-    display: inline-block;
-    font-size: 0.875rem;
-    font-weight: 500;
+.eyebrow,
+.eyebrow-lux,
+.section-eyebrow,
+.subtitle-lux {
     text-transform: uppercase;
-    letter-spacing: 1px;
+    letter-spacing: 0.15em;
+    font-size: 0.8rem;
+    font-weight: 600;
     color: var(--lux-gold);
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.75rem;
+    display: inline-block;
 }
 
 .eyebrow-light,
 .page-hero .eyebrow,
 .ppdb-hero .eyebrow,
 .bg-emerald .eyebrow,
-.bg-lux-dark .eyebrow {
-    color: var(--lux-gold);
-}
-
-.eyebrow-lux {
-    display: inline-block;
-    font-size: 0.875rem;
-    font-weight: 500;
-    text-transform: uppercase;
-    letter-spacing: 3px;
-    color: var(--color-secondary);
-    margin-bottom: 1rem;
-}
-
+.bg-lux-dark .eyebrow,
 .bg-emerald .eyebrow-lux,
 .bg-lux-dark .eyebrow-lux {
     color: var(--lux-gold);
@@ -176,6 +182,7 @@ p {
 
 .section-title {
     margin-bottom: 2rem;
+    letter-spacing: -0.02em;
 }
 
 .section-title-lux {
