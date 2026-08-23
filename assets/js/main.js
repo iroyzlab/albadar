@@ -248,6 +248,156 @@ document.addEventListener('DOMContentLoaded', function() {
         }, 5000); // 5 seconds interval
     }
 
+    // ==========================================================================
+    // Scalable News Portal Logic (news.html)
+    // ==========================================================================
+    const newsGridContainer = document.getElementById('news-grid-container');
+    const newsFilterButtons = document.querySelectorAll('.news-filter-btn');
+
+    if (newsGridContainer) {
+        let cachedNewsData = [];
+
+        // Comprehensive Fallback dataset for offline / local file:// protocol
+        const fallbackNewsData = [
+            {
+                id: "penyerahan-santri-baru",
+                title: "Penyerahan Resmi Santri Baru Angkatan Pertama",
+                date: "13 Juli 2026",
+                category: "Kegiatan",
+                excerpt: "Kegiatan penyerahan dan penerimaan santri baru angkatan pertama dilaksanakan secara khidmat di lingkungan kampus SMP MBS Al Badar Prambanan.",
+                image: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?q=80&w=600&auto=format&fit=crop"
+            },
+            {
+                id: "fortasi-taaruf-santri",
+                title: "FORTASI: Forum Orientasi dan Taaruf Santri",
+                date: "16 Juli 2026",
+                category: "Kegiatan",
+                excerpt: "Forum Orientasi dan Taaruf Santri (FORTASI) berlangsung selama 3 hari mengenalkan budaya pesantren, kurikulum ISMUBA, Koding & AI, serta pembiasaan adab digital.",
+                image: "https://images.unsplash.com/photo-1577896851231-70ef18881754?q=80&w=600&auto=format&fit=crop"
+            },
+            {
+                id: "hari-anak-nasional-prambanan",
+                title: "Partisipasi Santri dalam Peringatan Hari Anak Nasional di Candi Prambanan",
+                date: "22 Juli 2026",
+                category: "Prestasi",
+                excerpt: "Siswa kelas 7 SMP MBS Al Badar ikut serta dalam peringatan Hari Anak Nasional (HAN) 2026 di Kompleks Candi Prambanan dan meraih sejumlah penghargaan apresiasi.",
+                image: "https://images.unsplash.com/photo-1509062522246-3755977927d7?q=80&w=600&auto=format&fit=crop"
+            },
+            {
+                id: "bimtek-ksp-guru",
+                title: "Bimbingan Teknis Kurikulum Satuan Pendidikan (KSP)",
+                date: "29 Juli 2026",
+                category: "Pengumuman",
+                excerpt: "Guru dan tenaga kependidikan mengikuti bimbingan teknis penyusunan KSP untuk memastikan kualitas pembelajaran yang terstandarisasi dan optimal.",
+                image: "https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=600&auto=format&fit=crop"
+            },
+            {
+                id: "albadar-camp-perdana",
+                title: "Albadar Camp (ABC) Perdana: MABIT & Penguatan Karakter Mandiri",
+                date: "16 Agustus 2026",
+                category: "Kegiatan",
+                excerpt: "Kegiatan malam bina iman dan taqwa (MABIT) bulanan dari Sabtu siang hingga Ahad pagi untuk memperkuat ibadah, qiyamul lail, dan kebersamaan santri.",
+                image: "https://images.unsplash.com/photo-1504280390367-361c6d9f38f4?q=80&w=600&auto=format&fit=crop"
+            },
+            {
+                id: "muhadhoroh-tiga-bahasa",
+                title: "Pekan Muhadhoroh Akbar: Santri Tampilkan Kemampuan Dakwah Tiga Bahasa",
+                date: "28 Agustus 2026",
+                category: "Kegiatan",
+                excerpt: "Santriwan dan santriwati menampilkan orasi dakwah dalam bahasa Arab, Inggris, dan Indonesia sebagai unjuk kemampuan public speaking internasional.",
+                image: "https://images.unsplash.com/photo-1475721027785-f74eccf877e2?q=80&w=600&auto=format&fit=crop"
+            },
+            {
+                id: "prestasi-tahfidz-musabaqah",
+                title: "Santri SMP MBS Al Badar Raih Juara MHQ Tingkat Kabupaten",
+                date: "05 September 2026",
+                category: "Prestasi",
+                excerpt: "Prestasi gemilang diraih santri dalam ajang Musabaqah Hifdzil Qur'an (MHQ) berkat ketekunan murojaah dan bimbingan musyrif bersanad.",
+                image: "https://images.unsplash.com/photo-1584697964190-705b89368d83?q=80&w=600&auto=format&fit=crop"
+            },
+            {
+                id: "ppdb-gelombang-pertama",
+                title: "Pembukaan Pendaftaran PPDB TA 2027/2028 Sistem 2 Week Service",
+                date: "15 September 2026",
+                category: "Pengumuman",
+                excerpt: "SMP MBS Al Badar resmi membuka pendaftaran santri baru untuk program Boarding dan Full Day School dengan sistem layanan verifikasi cepat 2 Week Service.",
+                image: "https://images.unsplash.com/photo-1427504494785-3a9ca7044f45?q=80&w=600&auto=format&fit=crop"
+            },
+            {
+                id: "prestasi-koding-robotik",
+                title: "Tim Koding & Robotik Santri Raih Medali Kompetisi STEM Nasional",
+                date: "02 Oktober 2026",
+                category: "Prestasi",
+                excerpt: "Integrasi kurikulum Koding & Kecerdasan Artifisial (KKA) berhasil mengantarkan santri meraih medali pada kejuaraan inovasi teknologi tingkat SMP.",
+                image: "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?q=80&w=600&auto=format&fit=crop"
+            }
+        ];
+
+        function renderNewsCards(data, category) {
+            const filterCat = category || 'all';
+            const filtered = (filterCat === 'all')
+                ? data
+                : data.filter(function(item) {
+                    return item.category && item.category.toLowerCase() === filterCat.toLowerCase();
+                });
+
+            if (!filtered || filtered.length === 0) {
+                newsGridContainer.innerHTML = '<div style="grid-column: 1 / -1; text-align: center; padding: 4rem 1rem;"><p style="font-size: 1.1rem; color: var(--color-text-muted);">Belum ada berita untuk kategori ini.</p></div>';
+                return;
+            }
+
+            newsGridContainer.innerHTML = filtered.map(function(item) {
+                return '<article class="news-card-lux reveal-stagger lux-img-zoom">' +
+                    '<div class="news-img-wrap">' +
+                        '<img src="' + item.image + '" alt="' + item.title + '" loading="lazy" onerror="this.onerror=null;this.src=\'assets/img/placeholder.svg\';">' +
+                    '</div>' +
+                    '<div class="news-content-lux">' +
+                        '<div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">' +
+                            '<span class="news-tag-lux">' + item.category + '</span>' +
+                            '<span class="news-date" style="color: var(--color-text-muted); font-size: 0.75rem; font-weight: 500;">' + item.date + '</span>' +
+                        '</div>' +
+                        '<h3 class="news-title-lux">' + item.title + '</h3>' +
+                        '<p class="news-excerpt-lux">' + item.excerpt + '</p>' +
+                    '</div>' +
+                '</article>';
+            }).join('');
+
+            // Activate animation on dynamically rendered cards
+            const articles = newsGridContainer.querySelectorAll('.reveal-stagger');
+            articles.forEach(function(article, index) {
+                setTimeout(function() {
+                    article.classList.add('active');
+                }, index * 80);
+            });
+        }
+
+        // Fetch news data from JSON with local fallback
+        fetch('assets/data/news.json')
+            .then(function(response) {
+                if (!response.ok) throw new Error('HTTP status ' + response.status);
+                return response.json();
+            })
+            .then(function(data) {
+                cachedNewsData = data;
+                renderNewsCards(cachedNewsData, 'all');
+            })
+            .catch(function(err) {
+                console.warn('News JSON fetch error (using fallback data):', err);
+                cachedNewsData = fallbackNewsData;
+                renderNewsCards(cachedNewsData, 'all');
+            });
+
+        // Filter button click listener
+        newsFilterButtons.forEach(function(btn) {
+            btn.addEventListener('click', function() {
+                newsFilterButtons.forEach(function(b) { b.classList.remove('active'); });
+                this.classList.add('active');
+                const selectedCategory = this.getAttribute('data-category') || 'all';
+                renderNewsCards(cachedNewsData, selectedCategory);
+            });
+        });
+    }
+
     // Custom Cursor & Magnetic Effect (Desktop only with hover & fine pointer support)
     const isDesktopPointer = window.matchMedia('(hover: hover) and (pointer: fine)').matches && window.innerWidth > 768;
     
