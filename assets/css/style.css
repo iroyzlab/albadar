@@ -3159,13 +3159,23 @@ body.menu-open .menu-bar {
         right: 16px !important;
         width: 50px !important;
         height: 50px !important;
-        z-index: 999 !important;
+        z-index: 998 !important;
         box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+        transition: bottom 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease !important;
+    }
+
+    body.sticky-cta-active .wa-float-btn {
+        bottom: 78px !important;
     }
 
     .wa-float-btn svg {
         width: 26px !important;
         height: 26px !important;
+    }
+
+    /* Mobile Body bottom padding to ensure sticky bar does not cover content */
+    body {
+        padding-bottom: 70px;
     }
 }
 
@@ -3368,3 +3378,122 @@ body.menu-open .menu-bar {
         color: var(--color-secondary) !important;
     }
 }
+
+/* ==========================================================================
+   MOBILE STICKY CTA BAR (VANILLA JS & CSS)
+   ========================================================================== */
+.mobile-sticky-cta {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 999;
+    background: var(--lux-dark);
+    padding: 0.75rem 1rem;
+    box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.15);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    transform: translateY(100%);
+    transition: transform 0.4s ease;
+    border-top: 1px solid rgba(212, 181, 130, 0.3);
+    box-sizing: border-box;
+}
+
+.mobile-sticky-cta.is-visible {
+    transform: translateY(0);
+}
+
+.mobile-sticky-cta-content {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    text-align: left;
+}
+
+.mobile-sticky-cta-badge {
+    font-size: 0.65rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: var(--lux-gold);
+    line-height: 1;
+}
+
+.mobile-sticky-cta-title {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #ffffff;
+    line-height: 1.2;
+    font-family: var(--font-heading);
+}
+
+.mobile-sticky-cta .btn-lux,
+.mobile-sticky-cta .mobile-sticky-cta-btn {
+    padding: 0.55rem 1rem !important;
+    font-size: 0.8rem !important;
+    white-space: nowrap !important;
+    flex-shrink: 0;
+    width: auto !important;
+    display: inline-flex !important;
+    align-items: center;
+    gap: 0.35rem;
+    border-radius: 8px;
+    text-decoration: none;
+}
+
+@media (min-width: 769px) {
+    .mobile-sticky-cta {
+        display: none !important;
+    }
+}
+
+/* ==========================================================================
+   IOS AUTO-ZOOM FIX (16PX ON MOBILE INPUTS)
+   ========================================================================== */
+@media (max-width: 768px) {
+    input,
+    textarea,
+    select,
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"],
+    input[type="search"],
+    input[type="password"],
+    input[type="number"],
+    .form-input-lux,
+    .form-select-lux,
+    .form-textarea-lux,
+    .search-form input,
+    .search-form-overlay input {
+        font-size: 16px !important;
+    }
+}
+
+/* ==========================================================================
+   TACTILE FEEDBACK (TOUCH & CLICK ACTIVE STATES)
+   ========================================================================== */
+.btn-lux:active,
+.btn:active,
+.btn-gold-lux:active,
+.btn-primary-lux:active,
+.btn-outline-lux:active,
+.btn-submit-lux:active,
+.nav-link:active,
+.nav-list a:active,
+.dropdown-menu a:active,
+.feature-card:active,
+.bento-card-lux:active,
+.news-card-lux:active,
+.step-card-lux:active,
+.facility-card:active,
+.value-card:active,
+.news-filter-btn:active,
+.faq-question:active,
+.menu-toggle:active,
+.mobile-sticky-cta-btn:active {
+    transform: scale(0.96) !important;
+    transition: transform 0.1s ease !important;
+}
+

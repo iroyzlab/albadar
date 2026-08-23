@@ -678,4 +678,83 @@ document.addEventListener('DOMContentLoaded', function() {
             window.open('https://wa.me/6285729348915?text=' + encodeURIComponent(waText), '_blank');
         });
     }
+
+    // ==========================================================================
+    // Mobile Sticky CTA Bar (Vanilla JS Injection & Scroll Logic)
+    // ==========================================================================
+    const initMobileStickyCTA = () => {
+        // Prevent duplicate creation
+        if (document.querySelector('.mobile-sticky-cta')) return;
+
+        const stickyCta = document.createElement('div');
+        stickyCta.className = 'mobile-sticky-cta';
+        stickyCta.id = 'mobileStickyCta';
+        stickyCta.setAttribute('aria-label', 'Informasi PPDB Mobile');
+        stickyCta.innerHTML = `
+            <div class="mobile-sticky-cta-content">
+                <span class="mobile-sticky-cta-badge">PPDB 2027/2028</span>
+                <span class="mobile-sticky-cta-title">Pendaftaran Dibuka</span>
+            </div>
+            <a href="https://psb.mbs.sch.id" target="_blank" rel="noopener noreferrer" class="btn-lux btn-gold-lux mobile-sticky-cta-btn">
+                <span>Daftar Sekarang</span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+            </a>
+        `;
+        document.body.appendChild(stickyCta);
+
+        const heroSection = document.querySelector('.hero-lux, .page-hero, .ppdb-hero, .hero, header + section, header + main');
+        const footer = document.querySelector('.site-footer, .site-footer-lux, footer');
+
+        let isFooterIntersecting = false;
+        let isScrolledPastHero = false;
+
+        const updateStickyVisibility = () => {
+            if (window.innerWidth > 768) {
+                stickyCta.classList.remove('is-visible');
+                document.body.classList.remove('sticky-cta-active');
+                return;
+            }
+
+            if (isScrolledPastHero && !isFooterIntersecting) {
+                stickyCta.classList.add('is-visible');
+                document.body.classList.add('sticky-cta-active');
+            } else {
+                stickyCta.classList.remove('is-visible');
+                document.body.classList.remove('sticky-cta-active');
+            }
+        };
+
+        const handleScroll = () => {
+            const heroHeight = heroSection ? heroSection.offsetHeight : 300;
+            const threshold = Math.max(heroHeight * 0.5, 200);
+
+            isScrolledPastHero = window.scrollY > threshold;
+            updateStickyVisibility();
+        };
+
+        window.addEventListener('scroll', handleScroll, { passive: true });
+        window.addEventListener('resize', handleScroll, { passive: true });
+
+        // Use IntersectionObserver on footer to hide Sticky CTA when near footer
+        if (footer && 'IntersectionObserver' in window) {
+            const footerObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    isFooterIntersecting = entry.isIntersecting;
+                    updateStickyVisibility();
+                });
+            }, {
+                root: null,
+                threshold: 0.05,
+                rootMargin: '0px 0px 50px 0px'
+            });
+
+            footerObserver.observe(footer);
+        }
+
+        // Initial check
+        handleScroll();
+    };
+
+    initMobileStickyCTA();
 });
+
