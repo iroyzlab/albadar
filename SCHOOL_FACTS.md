@@ -40,7 +40,7 @@ Dokumen ini adalah sumber kebenaran mutlak (*Single Source of Truth*) mengenai d
   1. **Ibadah Berjamaah & Dzikir**
   2. **Kegiatan Akademik & Tahfizh**
   3. **Olahraga & Kebersihan**
-  4. **Belajar Mandiri Malam** (Studi mandiri dengan musyrif/ah mendampingi/standby)
+  4. **Belajar Malam** (Sesi belajar malam santri dengan pendampingan musyrif/ah standby)
 - **Program Full Day**: Pulang setelah Sholat Ashar berjamaah & membaca Al-Ma'tsurat (Dzikir Sore) di sekolah, dengan opsi melanjutkan ekstrakurikuler.
 - **Program Mingguan/Bulanan (Periodik)**:
   1. **Muhadhoroh** (Latihan Public Speaking & Dakwah Tiga Bahasa)
