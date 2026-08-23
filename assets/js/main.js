@@ -446,4 +446,49 @@ document.addEventListener('DOMContentLoaded', function() {
             lightbox.classList.remove('active');
         });
     }
+
+    // Luxury Form Submit Handlers (Direct WhatsApp Bridge)
+    const contactForm = document.getElementById('contactForm');
+    if (contactForm) {
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            const name = document.getElementById('contactName') ? document.getElementById('contactName').value.trim() : '';
+            const email = document.getElementById('contactEmail') ? document.getElementById('contactEmail').value.trim() : '';
+            const phone = document.getElementById('contactPhone') ? document.getElementById('contactPhone').value.trim() : '';
+            const topic = document.getElementById('contactTopic') ? document.getElementById('contactTopic').value : 'Informasi Umum';
+            const message = document.getElementById('contactMessage') ? document.getElementById('contactMessage').value.trim() : '';
+
+            const waText = `*Formulir Kontak SMP MBS Al Badar*\n\n` +
+                `*Nama:* ${name}\n` +
+                `*Email:* ${email}\n` +
+                `*No. HP/WA:* ${phone}\n` +
+                `*Topik:* ${topic}\n` +
+                `*Pesan:* ${message}`;
+
+            window.open('https://wa.me/6285729348915?text=' + encodeURIComponent(waText), '_blank');
+        });
+    }
+
+    const ppdbInquiryForm = document.getElementById('ppdbInquiryForm');
+    if (ppdbInquiryForm) {
+        ppdbInquiryForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            const parentName = document.getElementById('ppdbParentName') ? document.getElementById('ppdbParentName').value.trim() : '';
+            const studentName = document.getElementById('ppdbStudentName') ? document.getElementById('ppdbStudentName').value.trim() : '';
+            const phone = document.getElementById('ppdbPhone') ? document.getElementById('ppdbPhone').value.trim() : '';
+            const program = document.getElementById('ppdbProgramChoice') ? document.getElementById('ppdbProgramChoice').value : '';
+            const question = document.getElementById('ppdbQuestion') ? document.getElementById('ppdbQuestion').value.trim() : '-';
+
+            const programLabel = program === 'boarding' ? 'SMP Boarding School (Asrama 24 Jam)' : 'SMP Full Day School (Harian)';
+
+            const waText = `*Konsultasi PPDB SMP MBS Al Badar*\n\n` +
+                `*Orang Tua/Wali:* ${parentName}\n` +
+                `*Calon Santri:* ${studentName}\n` +
+                `*No. WA:* ${phone}\n` +
+                `*Pilihan Jalur:* ${programLabel}\n` +
+                `*Pertanyaan/Catatan:* ${question}`;
+
+            window.open('https://wa.me/6285729348915?text=' + encodeURIComponent(waText), '_blank');
+        });
+    }
 });

@@ -2040,6 +2040,121 @@ p {
     border: 0;
 }
 
+/* === LUXURY FLOATING LABEL FORM INPUTS === */
+.form-lux {
+    width: 100%;
+}
+
+.contact-form-card {
+    background: #ffffff;
+    border: 1px solid rgba(212, 181, 130, 0.35);
+    border-radius: 20px;
+    padding: 2.75rem 2.25rem;
+    box-shadow: 0 10px 35px rgba(0, 0, 0, 0.05);
+}
+
+.form-group-lux {
+    position: relative;
+    margin-bottom: 1.5rem;
+    width: 100%;
+}
+
+.form-input-lux {
+    width: 100%;
+    padding: 1.35rem 1rem 0.65rem 1rem;
+    background: #ffffff;
+    border: 1.5px solid rgba(0, 0, 0, 0.12);
+    border-radius: 10px;
+    font-family: var(--font-body);
+    font-size: 1rem;
+    color: var(--color-text);
+    outline: none;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+    display: block;
+}
+
+.form-input-lux:focus {
+    border-color: var(--lux-gold);
+    box-shadow: 0 0 0 3px rgba(212, 181, 130, 0.25);
+}
+
+.form-textarea-lux {
+    resize: vertical;
+    min-height: 120px;
+}
+
+.form-select-lux {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%2304473A' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 1rem center;
+    background-size: 16px;
+    cursor: pointer;
+}
+
+.form-label-lux {
+    position: absolute;
+    left: 1rem;
+    top: 1rem;
+    font-size: 0.95rem;
+    color: var(--color-text-muted);
+    pointer-events: none;
+    transition: all 0.25s cubic-bezier(0.22, 1, 0.36, 1);
+    transform-origin: left top;
+    padding: 0 0.35rem;
+    border-radius: 4px;
+    line-height: 1;
+}
+
+/* Floating effect on Focus or when containing text (placeholder not shown) */
+.form-input-lux:focus ~ .form-label-lux,
+.form-input-lux:not(:placeholder-shown) ~ .form-label-lux,
+.form-select-lux:focus ~ .form-label-lux,
+.form-select-lux:valid ~ .form-label-lux {
+    transform: translateY(-0.85rem) scale(0.82);
+    color: var(--color-primary);
+    background-color: #ffffff;
+    font-weight: 600;
+}
+
+.form-input-lux:focus ~ .form-label-lux,
+.form-select-lux:focus ~ .form-label-lux {
+    color: var(--color-primary);
+}
+
+/* Submit Button Luxury */
+.btn-submit-lux {
+    width: 100%;
+    padding: 1rem 1.5rem;
+    background: var(--color-primary);
+    color: #ffffff;
+    border: none;
+    border-radius: 10px;
+    font-family: var(--font-body);
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    box-shadow: 0 4px 15px rgba(4, 71, 58, 0.2);
+}
+
+.btn-submit-lux:hover {
+    background: var(--color-secondary);
+    box-shadow: 0 8px 25px rgba(17, 54, 110, 0.3);
+    transform: translateY(-2px);
+}
+
+.btn-submit-lux:active {
+    transform: translateY(0);
+}
+
 /* === PPDB PAGE === */
 .ppdb-hero {
     min-height: 70vh;
