@@ -522,6 +522,43 @@ document.addEventListener('DOMContentLoaded', function() {
         textRevealElements.forEach(el => textRevealObserver.observe(el));
     }
 
+    // ==========================================================================
+    // Springy Staggered Reveal Observer (Framer Motion-like)
+    // ==========================================================================
+    const staggerGroups = document.querySelectorAll('.stagger-group');
+    if (staggerGroups.length > 0) {
+        const staggerGroupObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    const items = entry.target.querySelectorAll('.stagger-item');
+                    items.forEach((item, index) => {
+                        // Stagger delay between items (100ms interval, capped at 800ms)
+                        const delay = Math.min(index * 100, 800);
+                        setTimeout(() => {
+                            item.classList.add('is-visible');
+                        }, delay);
+                    });
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.15 });
+        staggerGroups.forEach(group => staggerGroupObserver.observe(group));
+    }
+
+    // Standalone .stagger-item (elements not inside .stagger-group)
+    const standaloneStaggerItems = document.querySelectorAll('.stagger-item:not(.stagger-group .stagger-item)');
+    if (standaloneStaggerItems.length > 0) {
+        const standaloneObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.15 });
+        standaloneStaggerItems.forEach(item => standaloneObserver.observe(item));
+    }
+
     // Parallax Geometric Pattern (Islamic Rub el Hizb)
     const parallaxPatterns = document.querySelectorAll('.parallax-pattern');
     if (parallaxPatterns.length > 0) {
